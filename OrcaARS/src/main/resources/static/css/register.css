@@ -1,0 +1,454 @@
+ 
+ 		
+ 		.container {
+            width: 1180px;
+            margin: 0px auto 100px;
+        }
+
+
+        legend , .hidden, caption {
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: 0 !important;
+            height: 0 !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
+        }
+
+        fieldset {
+            border: 0;
+        }
+
+
+        .indicator_wrap {
+            width: 80px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .indicator_wrap > ul {
+            position: relative;
+        }
+        
+        .indicator_wrap > ul:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+
+        .indicator_wrap > ul > li:first-child {
+            margin-left: 0;
+        }
+
+        .indicator_wrap > ul > li.on {
+            background-position: 0 0;
+        }
+
+
+        .indicator_wrap > ul > li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            background: url(https://flyasiana.com/C/pc/image/common/ico_indicator.png) no-repeat 100% 0;
+            margin-left: 5px;
+        }
+
+
+        .container .mem_wrap h3.mem_tit {
+            margin: 40px 0 15px;
+        }
+
+
+        .container h3 {
+            font-size: 45px;
+            color: black;
+            text-align: center;
+            font-weight: normal;
+            margin: 60px 0 50px 0;
+            line-height: 1;
+        }
+
+        .text_type10 {
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .title_wrap_type {
+            margin: 50px 0 15px;
+        }
+
+        .title_wrap_type::after {
+            display: block;
+            clear: both;
+            content:'';
+        }
+
+        .f1 {
+            float: left;
+        }
+
+        .title_wrap_type h4 {
+            margin: 0 !important;
+        }
+
+        .container h4 {
+            font-size: 28px;
+            color: black;
+            line-height: 1;
+        }
+
+        .table_form {
+            border-top: 1px solid #666666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 0;
+        }
+        
+        .table_form th {
+            font-size: 18px;
+            font-weight: normal;
+            padding: 25px 25px;
+            border-bottom: 1px solid #ddd;
+            background-color: #9db6e9;
+            text-align: center;
+        }
+
+        th, td {
+            word-break: keep-all;
+            word-wrap: break-word;
+        }
+
+        .table_form tbody tr th label {
+            color: rgb(65, 58, 58);
+        }
+
+        .table_form td {
+            padding: 15px 25px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+            height: 44px;
+            padding: 0 15px;
+            margin-right: 10px;
+            border: 1px solid #f3f3f3;
+            border-bottom: 1px solid #ddd;
+            color: black;
+            background-color: #f3f3f3;
+            font-size: 16px;
+            line-height: 40px;
+        }
+
+        .txt_error_msg {
+            margin: 9px 0 9px 15px;
+            color: #d60815;
+        }
+
+        select {
+            height: 46px;
+            padding: 0 45px 0 15px;
+            margin-right: 10px;
+            border: 1px solid #f3f3f3;
+            border-bottom: 1px solid #ddd;
+            background: #f3f3f3 url(https://flyasiana.com/C/pc/image/common/bg_select_arrow.png) no-repeat right 13px top 50%;
+            background-size: 12px 8px;
+            color: black;
+            vertical-align: middle;
+            appearance: none;
+        }
+
+        button.white {
+            border: 1px solid #cccccc;
+            background-color:  white;
+            color: balck;
+        }
+
+        .btn_S {
+            padding: 9px 20px;
+            font-size: 14px;
+            min-height: 40px;
+            line-height: 16px;
+        }
+        .f14 {
+            font-size: 14px !important;
+        }
+
+        .mar_to {
+            margin-top: 10px !important;
+        }
+
+        .list_type > li:first-child, .list_type.brown li:first-child {
+            margin-top: 0;
+        }
+
+        .list_type > li:last-child {
+            margin-bottom: 0;
+        }
+
+        .list_type.f14 > li {
+            font-size: 14px;
+        }
+
+        .list_type > li {
+            padding-left: 13px;
+            text-indent: -10px;
+            line-height: 1.5;
+            font-weight: normal;
+            color: #555;
+        }
+
+        .list_type > li::before {
+            display: inline-block;
+            content: '';
+            width: 2px;
+            height: 2px;
+            margin: -4px 10px 0 0;
+            background:#555;
+            vertical-align: middle;
+        }
+
+        .tooltip_wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        /**도움말**/
+
+        .tooltip_wrap .layer_tooltip .inner {
+            padding: 40px;
+        }
+
+        .pwd_rule li {
+            position: relative;
+            font-size: 13px;
+            color: #737373;
+            padding-left: 17px;
+            line-height: 26px;
+        }
+
+        .pwd_rule li span.unable {
+            background: url(https://flyasiana.com/C/pc/image/sub/icon_tooltip_unable.png) no-repeat;
+        }
+
+        .pwd_rule li span.able {
+            background: url(https://flyasiana.com/C/pc/image/sub/icon_tooltip_able.png) no-repeat;
+        }
+
+        .pwd_rule li span {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 11px;
+            height: 11px;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .tooltip_wrap .layer_tooltip .tooltip_close {
+            top: 40px;
+            right: 40px;
+            width: 22px;
+            height: 22px;
+            background: url(https://flyasiana.com/C/pc/image/common/btn_close_gray.png);
+        }
+
+        .tooltip_wrap .tooltip_close {
+            position: absolute;
+            display: inline-block;
+        }
+
+        .tooltip_wrap .layer_tooltip {
+            position: absolute;
+            display: none;
+            top: -36px;
+            left: 20px;
+            margin-left: 20px;
+            min-width: 200px;
+            min-height: 50px;
+            border: 1px solid #ccc;
+            z-index: 201;
+            text-align: left;
+            background: white;
+            color: black;
+        }
+
+        .tooltip_wrap .layer_tooltip::before {
+            position: absolute;
+            display: inline-block;
+            top: 45px;
+            left: -10px;
+            width: 10px;
+            height: 15px;
+            background: url(https://flyasiana.com/C/pc/image/sub/tootip_left.png) ;
+            content: '';
+        }
+
+        /**도움말**/
+
+        
+        .btn_info {
+            width: 20px;
+            height: 20px;
+            background: url(https://flyasiana.com/C/pc/image/common/icon_info.png) no-repeat 0 0;
+            vertical-align: middle;
+            text-indent: -9999px;
+            font-size: 0;
+
+            display: inline-block;
+        }
+
+        .btn_info:hover {
+            background-position: 0 100%;
+        }
+
+        .btn_popup {
+            padding: 7px 15px;
+            min-height: 34px;
+            line-height: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 13px;
+            color: black;
+            background:white;
+        }
+
+        .register_btn_wrap {
+            padding-top: 50px;
+            text-align: center;
+               
+        }
+
+        button.white:hover {
+            border: 1px solid black;
+        }
+
+        button.white {
+            background-color: white;
+            color: black;
+        }
+
+        .btn_L {
+            min-width: 150px;
+            padding: 13px 40px 14px;
+            font-size: 18px;
+            min-height: 56px;
+            line-height: 21px;
+        }
+
+        button.red {
+            border: 1px solid #d60815;
+            background-color: #d60815;
+            color: white;
+        }
+        
+        .dim_layer {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,.7);
+            z-index: 9000;
+        }
+
+
+
+        .layer_pop {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            min-height: 200px;
+            background: white;
+            z-index: 9000;
+        }
+
+        .layer_pop .pop_cont {
+            position: relative;
+            padding: 40px;
+        }
+
+        .layer_pop .pop_cont .pop_tit.st1 {
+            word-break: keep-all;
+            padding-right: 40px;
+            font-size: 21px;
+            line-height: 30px;
+        }
+
+        .layer_pop .pop_cont .form_area2 {
+            margin: 30px 0 20px 0;
+        }
+
+        .btn_minwidth {
+            min-width: 160px;
+            height: 46px;
+            padding: 0;
+            line-height: 30px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .btn_M {
+            padding: 11px 30px;
+            font-size: 15px;
+            min-height: 46px;
+            line-height: 17px;
+        }
+
+        .col_brown {
+            color: #6b2900 !important;
+        }
+
+        .btn_wrap_cetype {
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .layer_pop .btn_wrap_cetype .btn_M {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .btn_wrap_cetype button {
+            margin: 0 5px;
+        }
+
+        button:disabled {
+            opacity: 0.4;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        button.red {
+            border: 1px solid #d60815;
+            background-color: #d60815;
+            color: white;
+        }
+
+        button.red:hover {
+            border: 1px solid #d3000b;
+            background-color: #d3000b;
+          
+        }
+
+
+        .dim_close {
+            position: absolute;
+            display: inline-block;
+            top: 40px;
+            right: 40px;
+            width: 22px;
+            height: 22px;
+            background: url(https://flyasiana.com/C/pc/image/common/btn_close_gray.png);
+        }

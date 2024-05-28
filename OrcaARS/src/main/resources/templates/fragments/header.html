@@ -1,0 +1,210 @@
+<html xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    
+		<!--헤더 시작--> 
+    <header th:fragment="header" class="header">
+       
+        <div class="header-main header-wrap">
+            <a class="headerlogo" th:href="@{/index}">
+                <span>
+                    <img th:src="@{/img/headerlogo.png}" width="190px" height="130px" alt="logo">
+                </span>
+            </a>
+            <nav role="menubar" class="nav-main">
+                <ul class="nav-main_wrap">
+                    <li class="nav-main_item">                                              
+                        <div class="nav-main_group">
+                            <a href="#" class="nav-main_group_link">여행 계획</a>
+                            <div class="nav-main_submenu">
+                                <div class="nav-main_submenu-wrap">
+                                    <div class="container-center nav-main_submenu">
+                                        <div class="nav-main_sub-nav">                                          
+                                            <ul role="menu" class="nav-main_sub-nav_wrap"  >
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a th:href="@{/booking/bookingtrip}">항공편 검색</a>
+                                                </li>
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">특가 항공권</a>
+                                                </li>
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">운항 목적지</a>
+                                                </li>
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">호텔</a>
+                                                </li>
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">렌터카</a>
+                                                </li>
+                                            </ul>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                            </div>                                
+                        </div>
+                        
+                    </li>
+                    <li class="nav-main_item">
+                        <div class="nav-main_group">
+                            <a href="#" class="nav-main_group_link">서비스</a>
+                            <div class="nav-main_submenu">
+                                <div class="nav-main_submenu-wrap">
+                                    <div class="container-center nav-main_submenu">
+                                        <div class="nav-main_sub-nav">
+                                            <ul role="menu" class="nav-main_sub-nav_wrap">
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">항공 서비스</a>
+                                                </li>
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">라운지</a>
+                                                </li>
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">기내 좌석</a>
+                                                    <div class="nav-main_submenu submenu1">
+                                                        <div class="nav-main_submenu-wrap">
+                                                            <div class="container-center nav-main_submenu">
+                                                                <div class="nav-main_sub-nav">
+                                                                    <ul role="menu" class="nav-main_sub-nav_wrap menu ">
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">스위트</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">퍼스트 클래스</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">비지니스 클래스</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">이코노미 클래스</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                               
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-main_item">
+                        <div class="nav-main_group">
+                            <a href="#" class="nav-main_group_link">여행 정보</a>
+                            <div class="nav-main_submenu">
+                                <div class="nav-main_submenu-wrap">
+                                    <div class="container-center nav-main_submenu">
+                                        <div class="nav-main_sub-nav">
+                                            <ul role="menu" class="nav-main_sub-nav_wrap" >
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">체크인</a>
+                                                    <div class="nav-main_submenu">
+                                                        <div class="nav-main_submenu-wrap">
+                                                            <div class="container-center nav-main_submenu submenu1">
+                                                                <div class="nav-main_sub-nav">
+                                                                    <ul role="menu" class="nav-main_sub-nav_wrap menu1" >
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">공항 체크인</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">온라인/모바일 체크인</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">키오스크 체크인</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">자동 수하물위탁</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-main_sub-nav_item">
+                                                    <a href="#">수하물</a>
+                                                    <div class="nav-main_submenu">
+                                                        <div class="nav-main_submenu-wrap">
+                                                            <div class="container-center nav-main_submenu submenu1">
+                                                                <div class="nav-main_sub-nav">
+                                                                    <ul role="menu" class="nav-main_sub-nav_wrap menu2">
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">수하물 허용한도</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">체크인 수하물</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">기내</a>
+                                                                        </li>
+                                                                        <li class="nav-main_sub-nav_item">
+                                                                            <a href="#">대형</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>                                           
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <aside class="social">
+                    <div class="lang_wrap">
+                        <div class="lang_select">
+                            <a href="#">
+                                <span class="country">한국</span>
+                                <span class="lang">한국어</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="login register">
+                        
+                        
+                        
+                        <div sec:authorize="isAnonymous()"  class="login_wrap">
+                            <a  th:href="@{/member/login}">
+                                <span class="login" >로그인</span>
+                                                             
+                            </a>
+                                                    
+                            <a th:href="@{/member/term}">
+                                <span class="term">회원가입</span>
+                            </a>
+                             
+                           
+                        </div>
+                        
+                        <div sec:authorize="isAuthenticated()"  class="login_wrap">
+                           
+                           <!--
+							   <a th:href="@{/member/login}">
+                               <span  sec:authentication="member.uid"></span> 
+                                                             
+                            </a>
+							   
+						   --> 
+                                                
+                         
+                             <a  th:href="@{/member/logout}">
+                               <span class="logout">로그아웃</span>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </nav>
+
+        </div>
+            
+    </header>
+    <!--헤더 끝-->
+    
+        
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- pom.xml - thymeleaf-layout-dialect 추가 -->
+<html xmlns:th="http://www.thymeleaf.org"
+	 xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">    
+    <title>오카항공</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+    <link rel="stylesheet" th:href="@{/css/admin.css}"/>
+
+	<script th:src="@{/js/index.js}"></script>
+   
+   
+    <script>
+
+    
+
+    </script>
+
+
+</head>
+<body>
+    <div>
+                        
+        <!-- header 시작 -->
+        <header th:insert="~{fragments/header.html::header}"></header>
+        <!-- header 끝 -->
+        
+        <main>
+          
+				<!-- 카테고리 -->
+				<!-- 
+					
+					<div th:replace="/fragments/_category.html::_category"></div>
+				
+				 <div layout:fragment="content"></div>
+				
+				-->
+				 <div layout:fragment="content"></div>
+				
+				
+          
+            
+            <!-- main content 시작 -->
+           
+            <!-- main content 끝 -->
+            
+        </main>
+        
+        <!-- footer 시작 -->
+        <footer  th:insert="~{fragments/footer.html::footer}"></footer>
+        <!-- footer 끝 -->
+        
+        <button type="button" id="top">상단이동</button>
+    </div>    
+</body>
+</html>

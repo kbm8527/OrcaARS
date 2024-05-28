@@ -1,0 +1,1890 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout/layout_booking.html">
+
+
+
+    <div layout:fragment="content">
+		
+		<script th:inline="javascript">
+			
+			
+			/**
+			
+			     //탭 메뉴 기능(아이디, 회원번호)
+   
+       $(function($) {
+          
+        $(".tab_cont > div").last().hide();
+            var radioCont = $(".tab_cont > div");
+          $("input[type='radio']").click(function(){
+            radioCont.hide();
+
+            radioCont.eq($("input[type='radio']").index(this)).show();
+          })
+      })
+
+    
+    
+        //탭 메뉴 기능(로그인, 비로그인)
+        $(function($) {
+          
+            $(".tab_head li").click(function(){
+                var idx2 = $(this).index();
+                $(".tab_head li").removeClass("on");
+                $(".tab_head li").eq(idx2).addClass("on");
+                $(".tab_content > div").hide();
+                $(".tab_content > div").eq(idx2).show();
+            
+            })
+        })
+
+			
+			
+			**/
+		$(function($) {
+          
+            $(".booking_type_items div ").click(function(){
+                var idx3 = $(this).index();
+                $(".booking_type_items div").removeClass("on2");
+                $(".booking_type_items div").eq(idx3).addClass("on2");
+                $(".tab_content1 > div").hide();
+                $(".tab_content1 > div").eq(idx3).show();
+            
+            })
+        })
+        
+        
+        $(function () {
+          
+            $(".booking_new_button").click(function() {
+                         
+            $(".countrytab").show();
+             
+             document.body.style.overflow = "hidden";
+              $(".h3").text("출발지 검색");
+              document.getElementById("view_list").value ='';
+            
+              var ref = [
+		    {key:1, name:'PUS 부산 /김해,대한민국'},
+		    {key:2, name:'INC 인천 ,대한민국'},
+		    {key:3, name:'TAE 대구 ,대한민국'},
+		    {key:4, name:'JEG 제주 ,대한민국'},
+			{key:5, name:'SEL 서울 ,대한민국'}
+			];
+
+			var isComplete = false;  //autoMaker 자식이 선택 되었는지 여부
+	
+		$('#view_list').keyup(function(){
+	    var txt = $(this).val();
+	    if(txt != ''){  //빈줄이 들어오면
+	        $('.combobox_listbox').children().remove();
+	
+	        ref.forEach(function(arg){
+	            if(arg.name.indexOf(txt) > -1 ){
+	                $('.combobox_listbox').append(
+	                    $('<div>').text(arg.name).attr({'key':arg.key})
+	                );		
+	            }
+	        });
+	        
+	        
+	            
+			   
+			    $('.combobox_listbox').children().each(function(){
+	            
+	            $(this).click(function(){
+	                $('#view_list').val($(this).text());
+	                
+	                //alert(this.innerText);
+	                
+	               
+				//alert(d_city[0].innerHTML);
+						
+				
+					var countrystr = (this.innerText).substr(0, 3);	 	  		
+  	  				var countrystr1 = (this.innerText).substr(3, 4);
+				
+			
+				
+							alert(countrystr);
+						
+				
+		 	var a_city = document.getElementsByClassName("booking_new_code1");
+	    	
+					//alert(a_city[0].innerHTML);
+					
+					if(countrystr == a_city[0].innerHTML) {	
+						
+				var countryt = document.getElementsByClassName("countrytab")[0];
+				var errorm = document.getElementsByClassName("error_message")[0];
+						countryt.style.display = 'block';
+						errorm.style.display = 'block';
+					
+						
+					}else {
+					
+						
+						   $(".countrytab").hide();
+					}
+					
+					
+				//var d_city = document.getElementsByClassName("from")[0].value;				
+				
+				//var a_city = document.getElementsByClassName("to")[0].value;
+				
+			
+					$(".booking_new_code").text(countrystr);	
+ 					$(".booking_new_airport").text(countrystr1);
+					
+								
+             			
+ 					
+	                
+	                //$('.booking_new_code').text($(this).text());
+	                             
+	                
+	                
+	                
+	                
+	                $('.combobox_listbox').children().remove();	
+	                isComplete = true;
+	            
+	            	          	         	             
+	            
+	            });
+	           
+	        });	
+	        
+	         
+	    		
+	    } else {
+	        $('.combobox_listbox').children().remove();
+	  	     
+	    }
+	    	    
+	    
+		});
+		
+					
+		 	var d_city = document.getElementsByClassName("booking_new_code");
+	    			
+					
+		
+	$('#view_list').keydown(function(event){
+    if(isComplete) {  //autoMaker 자식이 선택 되었으면 초기화
+    
+        $('.booking_new_code').val('')	
+        $('.error_message').hide();	
+        	
+    }
+           
+
+	
+	})
+	          
+			  
+            
+            })
+            
+                    	
+        
+		
+            
+            
+             $(".booking_new_button1").click(function() {
+             
+            $(".countrytab").show();
+             
+             document.body.style.overflow = "hidden";
+             
+             $(".h3").text("도착지 검색");
+             
+             document.getElementById("view_list").value ='';
+             
+                   
+              var ref = [
+		    {key:1, name:'PUS 부산 /김해,대한민국'},
+		    {key:2, name:'INC 인천 ,대한민국'},
+		    {key:3, name:'TAE 대구 ,대한민국'},
+		    {key:4, name:'JEG 제주 ,대한민국'},
+			{key:5, name:'SEL 서울 ,대한민국'}
+			];
+
+			var isComplete = false;  //autoMaker 자식이 선택 되었는지 여부
+	
+		$('#view_list').keyup(function(){
+	    var txt = $(this).val();
+	    if(txt != ''){  //빈줄이 들어오면
+	        $('.combobox_listbox').children().remove();
+	
+	        ref.forEach(function(arg){
+	            if(arg.name.indexOf(txt) > -1 ){
+	                $('.combobox_listbox').append(
+	                    $('<div>').text(arg.name).attr({'key':arg.key})
+	                );		
+	            }
+	        });
+	        
+	        
+	        
+	        
+	    
+	    
+			   
+			    $('.combobox_listbox').children().each(function(){
+	            
+	            $(this).click(function(){
+	                $('#view_list').val($(this).text());
+	                
+	                //alert(this.innerText);
+	                
+	               
+				
+						
+					var countrystr = (this.innerText).substr(0, 3);	 	  		
+  	  				var countrystr1 = (this.innerText).substr(3, 4);
+				
+				
+					var d_city = document.getElementsByClassName("booking_new_code");
+	    	
+					//alert(a_city[0].innerHTML);
+					
+					if(countrystr == d_city[0].innerHTML) {
+						
+						var countryt = document.getElementsByClassName("countrytab")[0];
+						var errorm1 = document.getElementsByClassName("error_message1")[0];
+						countryt.style.display = 'block';
+						errorm1.style.display = 'block';
+					
+						
+					}else {
+						
+						$(".countrytab").hide();
+					}
+					
+				
+			
+					
+				//var d_city = document.getElementsByClassName("from")[0].value;				
+				
+				//var a_city = document.getElementsByClassName("to")[0].value;
+				
+			
+					$(".booking_new_code1").text(countrystr);	
+ 					$(".booking_new_airport1").text(countrystr1);
+					
+								//$(".booking_new_code").text(countrystr);	
+ 								//$(".booking_new_airport").text(countrystr1);
+							
+					
+       
+									
+				
+ 					
+	                
+	                //$('.booking_new_code').text($(this).text());
+	                             
+	                
+	                
+	                
+	                
+	                $('.combobox_listbox').children().remove();	
+	                isComplete = true;
+	            
+	            
+	            
+	       
+	            
+	           
+	   
+	            });
+	        });			
+	    } else {
+	        $('.combobox_listbox').children().remove();
+	  
+	  	
+	  
+	    
+	    }
+	    
+	    	
+		});
+		
+		//var a_city = document.getElementsByClassName("booking_new_code1");
+		
+		$('#view_list').keydown(function(event){
+	    if(isComplete) {  //autoMaker 자식이 선택 되었으면 초기화
+	        $('.booking_new_code').val('')
+	        $('.error_message1').hide();	
+	    }
+	            
+		    
+		})
+	         	
+         
+         			//alert(a_city[0].innerHTML);
+         	
+         	
+           
+            
+            })
+            
+            
+            
+            
+            
+            
+            $(".search_airport_local").click(function(){
+             
+            $(".countrylist").show();
+             
+
+            
+            })
+           
+            
+            $(".booking_new_datepicker").click(function(){
+             
+            $(".datetab").show();
+             
+
+            
+             })
+            
+            
+            $(".booking_new_passengers").click(function(){
+             
+            $(".passengertab").show();
+             
+
+            
+             })
+            
+            $(".booking_new_seatclass").click(function(){
+             
+            $(".seatclasstab").show();
+             
+             
+             for (let i = 0; i < $(".seatclass_item").length; i++) {
+			
+			$(".seatclass_item").eq(i).on("click", function(){
+				
+		
+				   var seatclass_label = document.getElementsByClassName("seatclass_label")[i];
+        	
+        			//var seatclass_label = seatclass_label.value;
+				
+				
+					//alert(seatclass_label.innerText);
+				
+					$(".default").text(seatclass_label.innerText);		
+ 
+ 
+ 					$(".seatclasstab").hide();
+
+			})		
+		
+			}
+			
+            
+             })
+            
+             $(".dialog_close").click(function(){
+             
+             $(".countrytab").hide();
+             $(".countrytab1").hide();
+             $(".countrylist").hide();
+             $(".datetab").hide();
+             $(".passengertab").hide();
+             $(".seatclasstab").hide();
+             
+          	document.body.style.overflow = "unset";
+            
+            })
+            
+       		$(".auto_search_text").focus(function(){
+             
+            $("#placeholder-search").hide();
+         
+         	$("#placeholder-search1").hide();
+         
+            
+            })
+        	//$(".auto_search_text").focusout(function(){
+             
+           // $("#placeholder-search").show();
+         
+            
+           // })
+       
+                
+               
+            $(".booking_new_search").click(function(){
+                    
+             
+             
+             //var bnc = document.getElementsByClassName("booking_new_code")[0];
+             var bnc1 = document.getElementsByClassName("booking_new_code1")[0];
+             var bnd = document.getElementsByClassName("booking_new_date")[0];
+             var pn = document.getElementsByClassName("passenger_num")[0];
+             var sc = document.getElementsByClassName("seatclass")[0];
+             //var bnc = document.getElementsByClassName("booking_new_code")
+             
+             
+             //alert(bnc.innerHTML);
+            
+             
+             //if(bnc.innerHTML !== "") {
+				//alert("통과");
+				
+			//}
+			
+			
+			
+			if(bnc1.innerHTML !== "To" && sc.innerHTML !== "선택하세요." ) {
+				
+				alert("성공");
+				
+				location.href='flight-to'
+				
+				///booking/flight-to
+				
+				
+				
+			}else {
+				
+				if(bnc1.innerHTML == "To"){
+				alert("도착지를 선택해주세요.");
+				
+				}
+				
+				//if(pn.innerHTML !== "") {
+				
+				//alert("누락1");
+			
+				//}
+       		
+				
+				if(sc.innerHTML == "선택하세요.") {
+				
+				alert("좌석등급을 선택해주세요.");
+		
+				}
+				alert("실패");
+			}
+			
+		
+            
+            })  
+		
+    	
+        
+        
+        })
+        
+    		
+    		
+    
+			
+			
+		</script>
+	
+		
+		
+        <div class="container" role="main">
+            <div class="contents new_booking_gate">
+                <h1 class="h1">항공권 예매</h1>
+                <div class="tab x col2 combine new_tab_type">
+                    <div class="tab_wrap mo_diff">
+                        <div class="tab_modiff_wrap">
+                            <ul class="tab_list" role="tablist">
+                                <li class="tab_item active">
+                                    <button type="button" class="tab_button">예매</button>
+                                </li>
+                                <li class="tab_item">
+                                    <button type="button" class="tab_button">마일리지 예매</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab_panel active" role="tabpanel" tabindex="0">
+                        <div class="booking_new">
+                            <div class="star_inserted">
+                                <div>
+                                    <div class="booking_new_aligner book_type pristine valid touched">
+                                        <div class="booking_type inner_type" role="group">
+                                            <div class="booking_type_items">
+                                                <div class="booking_type_item on2 ">
+                                                    <div class="selection" >
+                                                        <input type="radio" name="trip" value="RT" class="pristine valid touched" id="round" checked>
+                                                        <label for="round" >
+                                                            왕복
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="booking_type_item star_inserted">
+                                                    <div class="selection">
+                                                        <input type="radio" name="trip" value="OW" class="pristine valid touched" id="oneway">
+                                                        <label for="oneway" >
+                                                            편도
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="booking_type_item">
+                                                    <div class="selection">
+                                                        <input type="radio" name="trip" value="MT" class="pristine valid touched" id="multi">
+                                                        <label for="multi" >
+                                                            다구간
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="opener popover_trigger">
+                                                        다구간 상세 안내
+                                                    </button>
+                                                    <div class="toggleWrap" style="display: none;">
+                                                        <div class="toggleclass popover down left star_insert active" style="top:36px; left:275px;">
+                                                            <span class="toggleclass_edge popover_edge"></span>
+                                                            <h2 class="popover_h2 star_inserted">일반 항공권 다구간 여정</h2>
+                                                            <ul class="list disc star_inserted">
+                                                                <li class="list_item">
+                                                                    대한민국, 동북아시아, 동/서남아시아, 미주, 유럽, 대양주, 러시아, 중동 중 3개 지역이 포함된 2개~6개 구간까지 예약할 수 있습니다.
+                                                                </li>
+                                                                <li class="list_item">
+                                                                    첫번째 여정의 출발지와 마지막 여정의 도착지가 동일해 지는 경우, 이후 여정 추가는 불가합니다.(단, 한국, 미주, 유럽, 대양주 지역에 한해 1회 추가 가능)
+                                                                </li>
+                                                            </ul>
+                                                            <button type="button" class="toggleclass_close popover_close">닫기</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+							<div class="tab_content1">
+								
+								
+							
+                            
+                            
+                            <div class="star_inserted">
+                                <div class="booking_new_wrap">
+                                    <div class="booking_new_seperate itinerary">
+                                        <div class="booking_new_items">
+                                            <div class="booking_new_item">
+                                                <div class="booking_new_aligner">
+                                                    <div>
+                                                        <div class="booking_new_aligner_inner star_inserted">
+                                                            <button type="button" class="booking_new_button from star_inserted" value="출발지" >
+                                                                <span class="hidden star_inserted">출발지&nbsp;</span>
+                                                                <span class="booking_new_code">SEL</span>
+                                                                <span class="booking_new_airport star_inserted">
+                                                                    &nbsp;서울
+                                                                </span>
+                                                            </button>
+                                                            <button type="button" class="booking_new_button1 to off star_inserted" value="도착지" >
+                                                                <span class="booking_new_code1">To</span>
+                                                                <span class="booking_new_airport1 star_inserted">
+                                                                    &nbsp;도착지
+                                                                </span>
+                                                            </button>
+                                                            <button type="" class="booking_new_swap star_inserted" disabled>
+                                                                출발지와 도착지 바꾸기
+                                                            </button>
+                                                            <div class="hidden star_inserted"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="booking_new_error">
+                                                        <div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="booking_new_aligner1 star_inserted">
+                                                    <div class="booking_new_aligner1_inner">
+                                                        <button type="button" class="booking_new_datepicker">
+                                                            <span class="booking_new_label ">탑승일</span>
+                                                            <span class="booking_new_date off star_inserted">
+                                                                <span class="from">가는날</span>
+                                                                <span class="wave">~</span>
+                                                                <span class="to">오는날</span>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="booking_new_error date_error">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="booking_new_options">
+                                        <div class="booking_new_seperate">
+                                            <div class="booking_new_option">
+                                                <button type="button" class="booking_new_passengers">
+                                                    <span class="booking_new_label star_inserted">승객 수&nbsp;</span>
+                                                    <span class="passenger_num">성인 1명</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="booking_new_seperate">
+                                            <div class="booking_new_option">
+                                                <button type="button" class="booking_new_seatclass">
+                                                    <span class="booking_new_label">좌석 등급&nbsp;</span>
+                                                    <span class="default star_inserted">선택하세요.</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>                                  
+                                </div>
+                            </div>
+                            
+                            <div class="star_inserted" style="display: none;">
+                                <div class="booking_new_wrap">
+                                    <div class="booking_new_seperate itinerary">
+                                        <div class="booking_new_items">
+                                            <div class="booking_new_item">
+                                                <div class="booking_new_aligner">
+                                                    <div>
+                                                        <div class="booking_new_aligner_inner star_inserted">
+                                                            <button type="button" class="booking_new_button from star_inserted"  value="출발지">
+                                                                <span class="hidden star_inserted">출발지&nbsp;</span>
+                                                                <span class="booking_new_code1">SEL</span>
+                                                                <span class="booking_new_airport star_inserted">
+                                                                    &nbsp;서울
+                                                                </span>
+                                                            </button>
+                                                            <button type="button" class="booking_new_button1 to off star_inserted"  value="도착지">
+                                                                <span class="booking_new_code1">To</span>
+                                                                <span class="booking_new_airport1 star_inserted">
+                                                                    &nbsp;도착지
+                                                                </span>
+                                                            </button>
+                                                            <button type="" class="booking_new_swap star_inserted" disabled>
+                                                                출발지와 도착지 바꾸기
+                                                            </button>
+                                                            <div class="hidden star_inserted"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="booking_new_error">
+                                                        <div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="booking_new_aligner1 star_inserted">
+                                                    <div class="booking_new_aligner1_inner">
+                                                        <button type="button" class="booking_new_datepicker">
+                                                            <span class="booking_new_label ">탑승일</span>
+                                                            <span class="booking_new_date off star_inserted">
+                                                                <span class="from">날짜 선택</span>
+                                                               
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="booking_new_error date_error">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="booking_new_options">
+                                        <div class="booking_new_seperate">
+                                            <div class="booking_new_option">
+                                                <button type="button" class="booking_new_passengers">
+                                                    <span class="booking_new_label star_inserted">승객 수&nbsp;</span>
+                                                    <span class="passenger_num">성인 1명</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="booking_new_seperate">
+                                            <div class="booking_new_option">
+                                                <button type="button" class="booking_new_seatclass">
+                                                    <span class="booking_new_label">좌석 등급&nbsp;</span>
+                                                    <span class="default star_inserted">선택하세요.</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>                                  
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            <div class="star_inserted" style="display: none;">
+                                <div class="booking_new_wrap">
+                                    <div class="booking_new_seperate itinerary">
+                                        <div class="booking_new_items">
+                                            <div class="star_inserted">
+                                                <div class="booking_new_items_wrap">
+                                                    <h2 class="booking_new_title">여정1</h2>
+                                                    <div class="booking_new_item multi">
+                                                        <div class="booking_new_aligner">
+                                                            <div>
+                                                                <div class="booking_new_aligner_inner star_inserted">
+                                                                     <button type="button" class="booking_new_button from star_inserted">
+                                                                        <span class="hidden star_inserted">출발지&nbsp;</span>
+                                                                        <span class="booking_new_code">SEL</span>
+                                                                        <span class="booking_new_airport star_inserted">
+                                                                            &nbsp;
+                                                                            &nbsp;서울
+                                                                        </span>
+                                                                    </button>
+                                                                    <button type="button" class="booking_new_button1 to off oneway star_inserted">
+                                                                        <span class="booking_new_code1">To</span>
+                                                                        <span class="booking_new_airport1 star_inserted">
+                                                                            &nbsp;
+                                                                            &nbsp;도착지
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="booking_new_error date_error">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="booking_new_aligner1">
+                                                            <div class="booking_new_aligner1_inner">
+                                                                <button type="button" class="booking_new_datepicker">
+                                                                    <span class="booking_new_label ">탑승일</span>
+                                                                    <span class="booking_new_date off star_inserted">
+                                                                        <span>탑승일 선택</span>
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="booking_new_error date_error">
+        
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="star_inserted">
+                                                <div class="booking_new_items_wrap">
+                                                    <h2 class="booking_new_title">여정2</h2>
+                                                    <div class="booking_new_item multi">
+                                                        <div class="booking_new_aligner">
+                                                            <div>
+                                                                <div class="booking_new_aligner_inner star_inserted">
+                                                                     <button type="button" class="booking_new_button from star_inserted">
+                                                                        <span class="hidden star_inserted">출발지&nbsp;</span>
+                                                                        <span class="booking_new_code">SEL</span>
+                                                                        <span class="booking_new_airport star_inserted">
+                                                                            &nbsp;
+                                                                            &nbsp;서울
+                                                                        </span>
+                                                                    </button>
+                                                                    <button type="button" class="booking_new_button1 to off oneway star_inserted">
+                                                                        <span class="booking_new_code1">To</span>
+                                                                        <span class="booking_new_airport1 star_inserted">
+                                                                            &nbsp;
+                                                                            &nbsp;도착지
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="booking_new_error date_error">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="booking_new_aligner1">
+                                                            <div class="booking_new_aligner1_inner">
+                                                                <button type="button" class="booking_new_datepicker">
+                                                                    <span class="booking_new_label ">탑승일</span>
+                                                                    <span class="booking_new_date off star_inserted">
+                                                                        <span>탑승일 선택</span>
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="booking_new_error date_error">
+        
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="booking_new_controls star_inserted">
+                                                <button type="button" class="booking_new_add">여정 추가</button>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="booking_new_options">
+                                        <div class="booking_new_seperate">
+                                            <div class="booking_new_option">
+                                                <button type="button" class="booking_new_passengers">
+                                                    <span class="booking_new_label star_inserted">승객 수&nbsp;</span>
+                                                    <span>성인 1명</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="booking_new_seperate">
+                                            <div class="booking_new_option">
+                                                <button type="button" class="booking_new_seatclass">
+                                                    <span class="booking_new_label">좌석 등급&nbsp;</span>
+                                                    <span class="seatclass default star_inserted">선택하세요.</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>                                  
+                                </div>
+                               
+                            </div>
+                             	<button type="button" class="booking_new_search">검색</button>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="countrytab" style="display: none;">
+		<div>
+			<div>
+	
+	
+		<div class="dialog full active p" role="dialog">
+		    <div  class="dialog_contents ex1" role="document">
+		        <h2 class="h1 h3" id="dialog_airport">출발지 검색</h2>
+		        <div class="dialog_aligner">
+		            <div class="search_airport">
+		                <label class="_hidden" >도시 및 공항 검색</label>
+		                <div >
+		                    <div class="combobox" id="combobox">
+		                        <div  class="auto_search">
+		                            <span  class="placeholder" id="placeholder-search" style="display: block;">도시, 공항</span>
+		                            <input aria-autocomplete="list" aria-haspopup="true" class="auto_search_text ng-pristine ng-valid ng-touched" role="combobox" type="text" id="view_list" aria-invalid="false" aria-expanded="false" aria-controls="combobox-list" autocomplete="off">
+		                            <button  class="auto-search_clear" type="button" style="display: none;"><span class="_hidden">전체 삭제</span></button>
+		                            
+		                            <p class="error_message" id="error_text">도착지와 같은 지역은 선택할 수 없습니다.</p>
+		                           	<p class="error_message1" id="error_text1">판매하지 않는 구간입니다.</p>
+		                            
+		                            
+		                            <div  aria-live="polite" class="autoCompleteResult _hidden" id="autoCompleteResult" role="status"></div>
+		                        </div>
+		                        <div class="combobox_listbox">
+		                            <ul id="combobox_list" role="listbox" class="combobox__list _pc-hidden _mo-hidden" aria-label="도시 또는 공항 선택">
+		                            
+		                            
+		                            </ul>
+		                        </div>
+		                    </div>
+		                </div>
+		                
+		                <div class="search_airport_wrap" aria-hidden="true"><!----><!----></div>
+		                <button class="search_airport_local" type="button">모든 지역 보기</button>
+		            </div>
+		        </div>
+		        <button class="dialog_close" type="button">닫기</button>
+		    </div>
+		</div>
+    
+			</div>
+		</div>	
+	</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <div class="countrylist" style="display: none;">
+		<div>
+			<div>
+	
+    
+    
+    <div class="dialog active full" role="dialog" id="dialog-datepicker503eed416e1f4ac33fabe6038c05d7bb">
+    <div  class="dialog_contents ex2" role="document" tabindex="-1" data-focus="true">
+        <div class="local">
+            <h2 class="h1" id="dialog-local-title503eed416e1f4ac33fabe6038c05d7bb">지역과 도시 선택</h2><!----><!---->
+            <div class="tab -y _mo-hidden ng-star-inserted" id="tab-local">
+                <ul class="tab_list" role="tablist"><!----><!---->
+                    <li role="presentation" class="tab_item active ng-star-inserted">
+                        <button  class="tab_button" role="tab" type="button" id="tab-local-0" aria-selected="true" aria-controls="panel-local-KOR"> 대한민국 </button>
+                    </li><!---->
+                    <li  role="presentation" class="tab_item ng-star-inserted">
+                        <button  class="tab_button" role="tab" type="button" id="tab-local-1" aria-selected="false" aria-controls="panel-local-EAA" tabindex="-1"> 동북아시아 </button>
+                    </li><!---->
+                    <li  role="presentation" class="tab_item ng-star-inserted">
+                        <button  class="tab_button" role="tab" type="button" id="tab-local-2" aria-selected="false" aria-controls="panel-local-SEA" tabindex="-1"> 동남아시아/서남아시아 </button>
+                    </li><!---->
+                    <li role="presentation" class="tab_item ng-star-inserted">
+                        <button  class="tab_button" role="tab" type="button" id="tab-local-3" aria-selected="false" aria-controls="panel-local-AME" tabindex="-1"> 미주 </button>
+                    </li><!---->
+                    <li role="presentation" class="tab_item ng-star-inserted">
+                        <button class="tab_button" role="tab" type="button" id="tab-local-4" aria-selected="false" aria-controls="panel-local-EUR" tabindex="-1"> 유럽 </button>
+                    </li><!---->
+                    <li role="presentation" class="tab_item ng-star-inserted">
+                        <button class="tab_button" role="tab" type="button" id="tab-local-5" aria-selected="false" aria-controls="panel-local-OCN" tabindex="-1"> 대양주/괌 </button>
+                    </li><!---->
+                    <li role="presentation" class="tab_item ng-star-inserted">
+                        <button class="tab_button" role="tab" type="button" id="tab-local-6" aria-selected="false" aria-controls="panel-local-CIS" tabindex="-1"> 러시아/몽골/중앙아시아 </button>
+                    </li><!---->
+                    <li role="presentation" class="tab_item ng-star-inserted">
+						<button class="tab_button" role="tab" type="button" id="tab-local-7" aria-selected="false" aria-controls="panel-local-MEA" tabindex="-1"> 중동/아프리카 </button>
+                    </li>
+                </ul><!----><!---->
+                <div  role="tabpanel" class="tab_panel active ng-star-inserted" id="panel-local-KOR" aria-labelledby="tab-local-0" aria-hidden="false" tabindex="0"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                    <h3  class="local_title ng-star-inserted">대한항공 취항지</h3><!---->
+                    <ul  class="local_list ng-star-inserted"><!----><!---->
+                        <li  class="local_item ng-star-inserted">
+                            <button  type="button" class="local_button -all" aria-disabled="false">
+                                <span  class="local_code">SEL</span>
+                                <span  class="local_airport">서울/모든 공항</span><!---->
+                                <span  class="_hidden ng-star-inserted">도시&nbsp;</span><!---->
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li  class="local_item -indent ng-star-inserted">
+                            <button type="button" class="local_button" aria-disabled="false">
+                                <span class="local_code">ICN</span>
+                                <span class="local_airport">서울/인천</span><!----><!---->
+                                <span  class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item -indent ng-star-inserted">
+                            <button type="button" class="local_button" aria-disabled="false">
+                                <span class="local_code">GMP</span>
+                                <span class="local_airport">서울/김포</span><!----><!---->
+                                <span class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li  class="local_item ng-star-inserted">
+                            <button type="button" class="local_button" aria-disabled="false">
+                                <span  class="local_code">PUS</span>
+                                <span  class="local_airport">부산/김해</span><!----><!---->
+                                <span class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item ng-star-inserted">
+                            <button type="button" class="local_button" aria-disabled="false">
+                                <span class="local_code">CJU</span><span class="local_airport">제주</span><!----><!---->
+                                <span  class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item ng-star-inserted">
+                            <button  type="button" class="local_button" aria-disabled="false">
+                                <span class="local_code">KWJ</span><span class="local_airport">광주</span><!----><!---->
+                                <span  class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item ng-star-inserted">
+                            <button type="button" class="local_button" aria-disabled="false">
+                                <span class="local_code">TAE</span><span class="local_airport">대구</span><!----><!---->
+                                <span class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item ng-star-inserted">
+                            <button type="button" class="local_button" aria-disabled="false">
+                                <span class="local_code">RSU</span><span class="local_airport">여수/순천</span><!----><!---->
+                                <span class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item ng-star-inserted">
+                            <button type="button" class="local_button" aria-disabled="false">
+                                <span class="local_code">USN</span><span class="local_airport">울산</span><!----><!---->
+                                <span  class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item ng-star-inserted">
+                            <button  type="button" class="local_button" aria-disabled="false">
+                                <span  class="local_code">HIN</span><span class="local_airport">진주/사천</span><!----><!---->
+                                <span  class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item ng-star-inserted">
+                            <button  type="button" class="local_button" aria-disabled="false">
+								<span class="local_code">CJJ</span>
+                                <span class="local_airport">청주</span><!----><!---->
+                                <span  class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        <li class="local_item ng-star-inserted">
+                            <button type="button" class="local_button" aria-disabled="false">
+                                <span class="local_code">KPO</span><span class="local_airport">포항/경주</span><!----><!---->
+                                <span class="_hidden ng-star-inserted">공항&nbsp;</span>
+                            </button>
+                        </li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                    </ul><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                        </div><!---->
+                        
+                        
+                     
+                    
+                    
+                    
+                   
+                   	<!--
+						   
+						      <div role="tabpanel" class="tab_panel ng-star-inserted" id="panel-local-EAA" aria-labelledby="tab-local-1" aria-hidden="true" tabindex="-1">            
+                        <ul class="local_list ng-star-inserted" style="display: none;">
+                        	<li class="local_item ng-star-inserted">
+								<button  type="button" class="local_button" aria-disabled="false">
+									<span class="local_code">KOJ</span>
+									<span class="local_airport">가고시마</span>
+									<span class="_hidden ng-star-inserted">공항&nbsp;</span>
+								</button>
+							</li>
+							<li  class="local_item ng-star-inserted">
+								<button type="button" class="local_button" aria-disabled="false">
+									<span class="local_code">KHH</span>
+									<span class="local_airport">가오슝</span>
+									<span class="_hidden ng-star-inserted">공항&nbsp;</span>
+								</button>
+							</li>>
+							<li class="local_item ng-star-inserted">
+								<button type="button" class="local_button" aria-disabled="false">
+									<span class="local_code">KMQ</span>
+									<span class="local_airport">고마쓰</span>
+									<span class="_hidden ng-star-inserted">공항&nbsp;</span>
+								</button>
+							</li>
+							<li class="local_item ng-star-inserted">
+								<button type="button" class="local_button" aria-disabled="false">
+									<span class="local_code">CAN</span>
+									<span class="local_airport">광저우</span>
+									<span class="_hidden ng-star-inserted">공항&nbsp;</span>
+								</button>
+							</li>
+							<li class="local__item ng-star-inserted">
+								<button type="button" class="local__button" aria-disabled="false">
+									<span class="local_code">KKJ</span>
+									<span class="local__airport">기타큐슈</span>
+									<span _ngcontent-jfj-c34="" class="_hidden ng-star-inserted">공항&nbsp;</span>
+								</button>
+								</li>
+								<li _ngcontent-jfj-c34="" class="local_item ng-star-inserted"><button _ngcontent-jfj-c34="" type="button" class="local_button" aria-disabled="false">
+									<span _ngcontent-jfj-c34="" class="local_code">NGO</span>
+									<span _ngcontent-jfj-c34="" class="local_airport">나고야</span>
+									<span _ngcontent-jfj-c34="" class="_hidden ng-star-inserted">공항&nbsp;</span>
+									</button>
+									</li>
+									<li _ngcontent-jfj-c34="" class="local_item ng-star-inserted">
+										<button _ngcontent-jfj-c34="" type="button" class="local_button" aria-disabled="false">
+											<span _ngcontent-jfj-c34="" class="local__code">NKG</span>
+											<span _ngcontent-jfj-c34="" class="local__airport">난징</span>
+											<span _ngcontent-jfj-c34="" class="_hidden ng-star-inserted">공항&nbsp;</span>
+										</button>
+									</li>
+									<li _ngcontent-jfj-c34="" class="local__item ng-star-inserted">
+										<button _ngcontent-jfj-c34="" type="button" class="local__button" aria-disabled="false">
+											<span _ngcontent-jfj-c34="" class="local__code">KIJ</span>
+											<span _ngcontent-jfj-c34="" class="local__airport">니가타</span>
+											<span _ngcontent-jfj-c34="" class="_hidden ng-star-inserted">공항&nbsp;</span>
+											</button>
+											</li>
+											<li _ngcontent-jfj-c34="" class="local__item ng-star-inserted">
+												<button _ngcontent-jfj-c34="" type="button" class="local__button" aria-disabled="false">
+													<span _ngcontent-jfj-c34="" class="local__code">DLC</span>
+													<span _ngcontent-jfj-c34="" class="local__airport">다롄</span>
+													<span _ngcontent-jfj-c34="" class="_hidden ng-star-inserted">공항&nbsp;</span>
+												</button>
+											</li>
+											<li _ngcontent-jfj-c34="" class="local__item ng-star-inserted">
+												<button _ngcontent-jfj-c34="" type="button" class="local__button -all" aria-disabled="false">
+													<span _ngcontent-jfj-c34="" class="local__code">TYO</span>
+													<span _ngcontent-jfj-c34="" class="local__airport">도쿄/모든 공항</span>
+													<span _ngcontent-jfj-c34="" class="_hidden ng-star-inserted">도시&nbsp;</span>
+												</button>
+												</li>
+												<li _ngcontent-jfj-c34="" class="local__item -indent ng-star-inserted">
+													<button _ngcontent-jfj-c34="" type="button" class="local__button" aria-disabled="false">
+														<span _ngcontent-jfj-c34="" class="local__code">NRT</span>
+														<span _ngcontent-jfj-c34="" class="local__airport">도쿄/나리타</span>
+														<span _ngcontent-jfj-c34="" class="_hidden ng-star-inserted">공항&nbsp;</span>
+														</button>
+														</li>
+												<li _ngcontent-jfj-c34="" class="local__item -indent ng-star-inserted">
+													<button _ngcontent-jfj-c34="" type="button" class="local__button" aria-disabled="false">
+														<span _ngcontent-jfj-c34="" class="local__code">HND</span>
+														<span _ngcontent-jfj-c34="" class="local__airport">도쿄/하네다</span>
+													<span _ngcontent-jfj-c34="" class="_hidden ng-star-inserted">공항&nbsp;</span>
+													</button>
+													</li>local__code">PEK</span><span _ngcontent-jfj-c34="" class="local__airport">베이징/서우두</span>
+													
+												</ul>
+                              
+                        
+                                           
+                        
+                        </div>
+						   
+						       <div role="tabpanel" class="tab_panel ng-star-inserted" id="panel-local-SEA" aria-labelledby="tab-local-2" aria-hidden="true" tabindex="-1">
+                        </div>
+                        <div role="tabpanel" class="tab_panel ng-star-inserted" id="panel-local-AME" aria-labelledby="tab-local-3" aria-hidden="true" tabindex="-1">
+                        </div>
+                        <div role="tabpanel" class="tab_panel ng-star-inserted" id="panel-local-EUR" aria-labelledby="tab-local-4" aria-hidden="true" tabindex="-1">
+                        </div>
+                        <div role="tabpanel" class="tab_panel ng-star-inserted" id="panel-local-OCN" aria-labelledby="tab-local-5" aria-hidden="true" tabindex="-1">
+                        </div>
+                        <div role="tabpanel" class="tab_panel ng-star-inserted" id="panel-local-CIS" aria-labelledby="tab-local-6" aria-hidden="true" tabindex="-1">
+                        </div>
+                        <div role="tabpanel" class="tab_panel ng-star-inserted" id="panel-local-MEA" aria-labelledby="tab-local-7" aria-hidden="true" tabindex="-1">
+                        </div> 
+                        
+                       
+                        -->
+                    
+                    </div><!----><!---->
+                    
+                    
+                    
+                    <div class="local_error">
+                        <div aria-live="assertive" class="message -error" id="totalAirportResult"><!---->
+                        </div>
+                    </div>
+        </div>
+        <button class="dialog_close" type="button">닫기</button>
+    </div>
+</div>
+   
+   
+   
+   	</div>
+		</div>	
+	</div>
+    
+  <!--
+	  
+	   <div class="countrytab1" style="display: none;">
+		<div>
+			<div>
+	
+	
+		<div class="dialog full active p" role="dialog">
+		    <div  class="dialog_contents ex1" role="document">
+		        <h2 class="h1" id="dialog_airport">도착지 검색</h2>
+		        <div class="dialog_aligner">
+		            <div class="search_airport">
+		                <label class="_hidden" >도시 및 공항 검색</label>
+		                <div >
+		                    <div class="combobox" id="combobox">
+		                        <div  class="auto_search">
+		                            <span  class="placeholder" id="placeholder-search1" style="display: block;">도시, 공항</span>
+		                            <input aria-autocomplete="list" aria-haspopup="true" class="view_list auto_search_text ng-pristine ng-valid ng-touched" role="combobox" type="text"  aria-invalid="false" aria-expanded="false" aria-controls="combobox-list" autocomplete="off">
+		                            <button  class="auto-search_clear" type="button" style="display: none;"><span class="_hidden">전체 삭제</span></button>
+		                            <div  aria-live="polite" class="autoCompleteResult _hidden" id="autoCompleteResult" role="status"></div>
+		                        </div>
+		                        <div class="combobox_listbox">
+		                            <ul id="combobox_list" role="listbox" class="combobox__list _pc-hidden _mo-hidden" aria-label="도시 또는 공항 선택">
+		                            
+		                            
+		                            </ul>
+		                        </div>
+		                    </div>
+		                </div>
+		                
+		                <div class="search_airport_wrap" aria-hidden="true"></div>
+		                <button class="search_airport_local" type="button">모든 지역 보기</button>
+		            </div>
+		        </div>
+		        <button class="dialog_close" type="button">닫기</button>
+		    </div>
+		</div>
+    
+			</div>
+		</div>	
+	</div>
+
+
+	  
+	  
+	  
+	  
+  -->
+  
+   
+
+
+<ke-dynamic-modal class="datetab"  style="display: none;">
+	<div>
+		<ke-calendar class="ng-tns-c35-1 ng-star-inserted">
+			<div aria-hidden="false" aria-labelledby="dialog-title" class="dialog active ng-tns-c35-1 full ng-star-inserted" id="dialog-datepicker" role="dialog">
+				<div  class="dialog_contents -datepicker ex2" role="document" tabindex="-1" data-focus="true">
+					<div class="datepicker -fixed-mode -common">
+						<div  class="datepicker_seperate">
+							<div class="datepicker_header">
+							<div class="datepicker_fix-group ng-tns-c35-1 ng-star-inserted">
+								<h2  class="h1" id="dialog-title"> 날짜 선택 </h2>
+								<div  class="datepicker_hgroup ng-tns-c35-1 ng-star-inserted">
+									<div  class="datepicker_booking-type -calendar" role="group" aria-label="여정 타입">
+										<div  class="datepicker_booking-type-items">
+											<div  class="datepicker_booking-type-item">
+												<div  class="selection">
+													<input  class="ng-tns-c35-1 ng-valid ng-dirty ng-touched" name="calendar-tripType" type="radio" value="RT" id="rdo183f33150dc9a05e49b65e55bdd8bb734" tabindex="0" checked>
+													<label  class="ng-tns-c35-1" for="rdo183f33150dc9a05e49b65e55bdd8bb734">
+														<span  class="_hidden">날짜 선택&nbsp;</span> 왕복 
+													</label>
+												</div>
+											</div>
+										 	<div class="datepicker_booking-type-item">
+												 <div  class="selection">
+													 <input class="ng-tns-c35-1 ng-valid ng-dirty ng-touched" name="calendar-tripType" type="radio" value="OW" id="rdo283f33150dc9a05e49b65e55bdd8bb734" tabindex="-1">
+													 <label class="ng-tns-c35-1" for="rdo283f33150dc9a05e49b65e55bdd8bb734">
+														 <span class="_hidden">날짜 선택&nbsp;</span> 편도 
+													 </label>
+												  </div>
+											</div>
+										</div>
+									</div>
+									<div class="datepicker_dispose ng-tns-c35-1 ng-star-inserted">
+										<div class="switch_wrap">
+											<button class="switch -left -calendar -active" type="button" aria-pressed="false">
+												<span class="switch_label"> 가까운 날짜 함께 조회 </span>
+											</button>
+										</div>
+										<button class="opener popover_trigger" aria-expanded="false" type="button" aria-controls="calendar-fare-popover183f33150dc9a05e49b65e55bdd8bb734">가까운 날짜 함께 조회 상세 안내 </button>
+										<div class="toggleWrap"></div>
+									</div>
+								</div>
+							</div>
+							<div _ngcontent-obs-c35="" class="datepicker_header-fix _pc-hidden">
+								<table _ngcontent-obs-c35="" class="datepicker_table" aria-hidden="true" aria-labelledby="dialog-title" role="presentation">
+									<colgroup _ngcontent-obs-c35="" class="ng-tns-c35-1">
+										<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+										<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+										<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+										<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+										<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+										<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+										<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+									</colgroup>
+									<thead _ngcontent-obs-c35="" class="datepicker_thead" role="presentation">
+										<tr _ngcontent-obs-c35="" class="ng-tns-c35-1" role="presentation">
+											<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">일</td>
+											<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">월</td>
+											<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">화</td>
+											<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">수</td>
+											<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">목</td>
+											<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">금</td>
+											<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">토</td>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+						<div _ngcontent-obs-c35="" class="_hidden" aria-live="assertive"></div>
+						<div _ngcontent-obs-c35="" class="datepicker_aligner">
+							<div _ngcontent-obs-c35="" class="datepicker_controls _mo-hidden" role="navigation" aria-label="출발일">
+								<button _ngcontent-obs-c35="" class="datepicker_prev prev1" type="button" aria-disabled="true">지난 2달</button>
+								<button _ngcontent-obs-c35="" class="datepicker_next next1" type="button"> 다음 2달 </button>
+							</div>
+							<div _ngcontent-obs-c35="" class="datepicker_list case2" id="datepicker-list">
+								<div _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_item -active ng-star-inserted ex3" id="month202310">
+									<div _ngcontent-obs-c35="" class="datepicker_year">
+										<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true"> 2023 
+											<span _ngcontent-obs-c35="" class="datepicker_month">10월</span>
+										</span>
+										<span _ngcontent-obs-c35="" class="_hidden" aria-hidden="false">2023년 10월</span>
+									</div>
+									<p _ngcontent-obs-c35="" class="_hidden">키보드 운용방법 : 화살표 키로 날짜를 탐색하고 Enter키로 날짜를 선택할 수 있습니다.</p>
+									<div _ngcontent-obs-c35="" class="ng-tns-c35-1" role="application">
+										<table _ngcontent-obs-c35="" class="datepicker_table" role="presentation">
+											<colgroup class="ng-tns-c35-1 ng-star-inserted">
+												<col class="ng-tns-c35-1" style="width: 14.28%">
+												<col class="ng-tns-c35-1" style="width: 14.28%">
+												<col class="ng-tns-c35-1" style="width: 14.28%">
+												<col class="ng-tns-c35-1" style="width: 14.28%">
+												<col class="ng-tns-c35-1" style="width: 14.28%">
+												<col class="ng-tns-c35-1" style="width: 14.28%">
+												<col class="ng-tns-c35-1" style="width: 14.28%">
+											</colgroup>
+											<thead class="datepicker_thead _mo-hidden ng-tns-c35-1 ng-star-inserted" role="none"></thead>
+											<tr _ngcontent-obs-c35="" class="ng-tns-c35-1" role="presentation">
+												<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">일</td>
+												<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">월</td>
+												<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">화</td>
+												<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">수</td>
+												<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">목</td>
+												<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">금</td>
+												<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">토</td>
+											</tr>
+											</thead>
+											<tbody _ngcontent-obs-c35="" class="ng-tns-c35-1" role="presentation">
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted">
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">1</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 1일, 일요일 , 선택 불가능 </span>
+													</td>
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -holiday -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">2</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 2일, 월요일, 공휴일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -holiday -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">3</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 3일, 화요일, 공휴일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">4</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 4일, 수요일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">5</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 5일, 목요일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">6</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 6일, 금요일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">7</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 7일, 토요일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!---->
+												</tr>
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">8</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 8일, 일요일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -holiday -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">9</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 9일, 월요일, 공휴일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -unavailable ng-star-inserted">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">10</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 10일, 화요일 , 선택 불가능 </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available -current ng-star-inserted" role="button" tabindex="0">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">11</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 11일, 수요일 , 오늘  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">12</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 12일, 목요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">13</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 13일, 금요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">14</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 14일, 토요일  </span><!----><!----><!---->
+													</td><!----><!---->
+												</tr>
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">15</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 15일, 일요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">16</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 16일, 월요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">17</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 17일, 화요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">18</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 18일, 수요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">19</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 19일, 목요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">20</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 20일, 금요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													
+												
+												<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">21</span>
+												<span _ngcontent-obs-c35="" class="_hidden"> 21일, 토요일  </span><!----><!----><!---->
+												</td><!----><!---->
+												
+												</tr>
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">22</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 22일, 일요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">23</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 23일, 월요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">24</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 24일, 화요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">25</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 25일, 수요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">26</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 26일, 목요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">27</span>
+													<span _ngcontent-obs-c35="" class="_hidden"> 27일, 금요일  </span><!----><!----><!---->
+												</td><!----><!----><!----><!---->
+												<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+													<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">28</span><span _ngcontent-obs-c35="" class="_hidden"> 28일, 토요일  </span><!----><!----><!---->
+												</td><!----><!---->
+												</tr>
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">29</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 29일, 일요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">30</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 30일, 월요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">31</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 31일, 화요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!---->
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div _ngcontent-obs-c35="" class="datepicker_error"><!----></div>
+								</div><!----><!----><!----><!---->
+								<div _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_item -active ng-star-inserted" id="month202311">
+									<div _ngcontent-obs-c35="" class="datepicker_year">
+										<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true"> 2023 <span _ngcontent-obs-c35="" class="datepicker_month">11월</span></span>
+										<span _ngcontent-obs-c35="" class="_hidden" aria-hidden="false">2023년 11월</span>
+									</div>
+									<p _ngcontent-obs-c35="" class="_hidden">키보드 운용방법 : 화살표 키로 날짜를 탐색하고 Enter키로 날짜를 선택할 수 있습니다.</p><!---->
+									<div _ngcontent-obs-c35="" class="ng-tns-c35-1" role="application">
+										<table _ngcontent-obs-c35="" class="datepicker_table" role="presentation"><!---->
+											<colgroup _ngcontent-obs-c35="" class="ng-tns-c35-1 ng-star-inserted">
+												<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+												<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+												<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+												<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+												<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+												<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+												<col _ngcontent-obs-c35="" class="ng-tns-c35-1" style="width: 14.28%">
+											</colgroup>
+											<thead _ngcontent-obs-c35="" class="datepicker_thead _mo-hidden ng-tns-c35-1 ng-star-inserted" role="none">
+												<tr _ngcontent-obs-c35="" class="ng-tns-c35-1" role="presentation">
+													<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">일</td>
+													<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">월</td>
+													<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">화</td>
+													<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">수</td>
+													<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">목</td>
+													<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">금</td>
+													<td _ngcontent-obs-c35="" class="datepicker_th" role="presentation">토</td>
+												</tr>
+											</thead>
+											<tbody _ngcontent-obs-c35="" class="ng-tns-c35-1" role="presentation"><!---->
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">1</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 1일, 수요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">2</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 2일, 목요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">3</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 3일, 금요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!----><td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">4</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 4일, 토요일  </span><!----><!----><!---->
+													</td><!----><!---->
+												</tr>
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">5</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 5일, 일요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">6</span><span _ngcontent-obs-c35="" class="_hidden"> 6일, 월요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">7</span><span _ngcontent-obs-c35="" class="_hidden"> 7일, 화요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">8</span><span _ngcontent-obs-c35="" class="_hidden"> 8일, 수요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">9</span><span _ngcontent-obs-c35="" class="_hidden"> 9일, 목요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">10</span><span _ngcontent-obs-c35="" class="_hidden"> 10일, 금요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">11</span><span _ngcontent-obs-c35="" class="_hidden"> 11일, 토요일  </span><!----><!----><!---->
+													</td><!----><!----></tr><tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">12</span><span _ngcontent-obs-c35="" class="_hidden"> 12일, 일요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">13</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 13일, 월요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">14</span><span _ngcontent-obs-c35="" class="_hidden"> 14일, 화요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">15</span><span _ngcontent-obs-c35="" class="_hidden"> 15일, 수요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">16</span><span _ngcontent-obs-c35="" class="_hidden"> 16일, 목요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">17</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 17일, 금요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">18</span><span _ngcontent-obs-c35="" class="_hidden"> 18일, 토요일  </span><!----><!----><!---->
+													</td><!----><!---->
+												</tr>
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">19</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 19일, 일요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">20</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 20일, 월요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">21</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 21일, 화요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">22</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 22일, 수요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">23</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 23일, 목요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">24</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 24일, 금요일  </span><!----><!----><!----></td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">25</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 25일, 토요일  </span><!----><!----><!---->
+													</td><!----><!---->
+												</tr>
+												<tr _ngcontent-obs-c35="" role="presentation" class="ng-tns-c35-1 ng-star-inserted"><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">26</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 26일, 일요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">27</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 27일, 월요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">28</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 28일, 화요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">29</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 29일, 수요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" class="ng-tns-c35-1 datepicker_td -available ng-star-inserted" role="button" tabindex="-1">
+														<span _ngcontent-obs-c35="" class="ng-tns-c35-1" aria-hidden="true">30</span>
+														<span _ngcontent-obs-c35="" class="_hidden"> 30일, 목요일  </span><!----><!----><!---->
+													</td><!----><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!----><!----><!----><!---->
+													<td _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_td ng-tns-c35-1 ng-star-inserted"></td><!---->
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div _ngcontent-obs-c35="" class="datepicker_error"><!----></div>
+								</div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+							</div>
+						</div>
+					</div><!---->
+					<div _ngcontent-obs-c35="" class="dialog_buttons -datepicker -fix">
+						<div _ngcontent-obs-c35="" class="dialog_new-datepicker-aligner calendar-bottom-fixed-area">
+							<div _ngcontent-obs-c35="" class="datepicker_util">
+								<div _ngcontent-obs-c35="" class="datepicker_guide">
+									<p _ngcontent-obs-c35="" class="caption _center" aria-hidden="true" id="datepicker-guide">키보드 운용방법 : 화살표 키로 날짜를 탐색하고 Enter키로 날짜를 선택할 수 있습니다.</p>
+								</div>
+								<div _ngcontent-obs-c35="" class="datepicker_directs _pc-hidden">
+									<div _ngcontent-obs-c35="" class="datepicker_direct">
+										<div _ngcontent-obs-c35="" class="datepicker_date-wrap">
+											<span _ngcontent-obs-c35="" class="datepicker_date">
+												<span _ngcontent-obs-c35="" class="ng-tns-c35-1"> 가는 날</span><!---->
+											</span>
+										</div>
+									</div><!----><!---->
+									<div _ngcontent-obs-c35="" aria-hidden="true" class="datepicker_direct -dash _pc-hidden ng-tns-c35-1 ng-star-inserted">~</div>
+									<div _ngcontent-obs-c35="" class="datepicker_direct ng-tns-c35-1 ng-star-inserted">
+										<div _ngcontent-obs-c35="" class="datepicker_date-wrap">
+											<span _ngcontent-obs-c35="" class="datepicker_date">
+												<span _ngcontent-obs-c35="" class="ng-tns-c35-1">오는 날</span><!---->
+											</span>
+										</div>
+									</div>
+								</div><!---->
+								<div _ngcontent-obs-c35="" class="dialog_buttons-area ng-tns-c35-1 ng-star-inserted">
+									<button _ngcontent-obs-c35="" class="dialog_confirm" type="button" disabled="disabled"> 선택 </button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="dialog_close" type="button"> 닫기 </button>
+			</div>
+		</div><!---->
+	</ke-calendar>
+</div>
+<ke-aria-message _ngcontent-obs-c36="">
+	<div aria-live="assertive"><!----></div>
+	<div aria-live="polite"><!----></div>
+</ke-aria-message>
+</ke-dynamic-modal>
+
+<div class="passengertab" style="display: none;" >
+                <div>
+                    <div class="star_inserted">
+                        <div class="dialog active passenger_num" >
+                            <div class="dialog_contents ex2" tabindex="-1">                               
+                                <h2 class="h2" id="dialog_local">승객 선택</h2>
+                                <div class="dialog_aligner">
+                                        <div class="alert">
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                        <div class="passenger">
+                                            <div class="passenger_items col3">
+                                                <div class="passenger_item">
+                                                    <div>
+                                                        <div class="passenger_title">
+                                                            <label for="adultCount">
+                                                                <span class="passenger_label">성인</span>
+                                                            </label>
+                                                            <button type="button" class="opener popover_trigger">
+                                                                성인 기준 상세 안내
+                                                            </button>
+                                                            <div class="toggleWrap">
+    
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="passenger_controls">
+                                                        <button type="button" class="passenger_control sub">
+                                                            성인 탑승자 한명 줄이기
+                                                        </button>
+                                                        <div class="forms">
+                                                            <input type="tel" class="center untouched pristine valid" maxlength="1">
+                                                        </div>
+                                                        <div class="hidden">
+    
+                                                        </div>
+                                                        <button type="button" class="passenger_control add">
+                                                            성인 탑승자 한 명 늘리기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="passenger_item">
+                                                    <div>
+                                                        <div class="passenger_title">
+                                                            <label for="childCount">
+                                                                <span class="passenger_label">소아</span>
+                                                            </label>
+                                                            <button type="button" class="opener popover_trigger">
+                                                                소아 기준 상세 안내
+                                                            </button>
+                                                            <div class="toggleWrap"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="passenger_controls">
+                                                        <button type="button" class="passenger_control sub">
+                                                            소아 탑승자 한 명 줄이기
+                                                        </button>
+                                                        <div class="forms">
+                                                            <input type="tel" class="center untouched pristine valid" maxlength="1">
+                                                        </div>
+                                                        <div class="hidden">
+    
+                                                        </div>
+                                                        <button type="button" class="passenger_control add">소아 탑승자 한 명 늘리기</button>
+                                                    </div>
+                                                </div>
+                                                <div class="passenger_item">
+                                                    <div>
+                                                        <div class="passenger_title">
+                                                            <label for="infantCount">
+                                                                <span class="passenger_label">유아</span>
+                                                            </label>
+                                                            <button type="button" class="opener popover_trigger">
+                                                                유아 기준 상세 안내
+                                                            </button>
+                                                            <div class="toggleWrap"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="passenger_controls">
+                                                        <button type="button" class="passenger_control sub">
+                                                            유아 탑승자 한 명 줄이기
+                                                        </button>
+                                                        <div class="forms">
+                                                            <input type="tel" class="center untouched pristine valid" maxlength="1">
+                                                        </div>
+                                                        <div class="hidden">
+    
+                                                        </div>
+                                                        <button type="button" class="passenger_control add">유아 탑승자 한 명 늘리기</button>
+                                                    </div>
+                                                </div>
+                                            </div>                                       
+                                            <div>
+                                                <button type="button" class="passenger_cal_button">나이계산기</button>
+                                                <div class="passenger_cal">
+                                                    <div class="mix">
+                                                        <label for="birthday" class="label">
+                                                            생년월일
+                                                            <span>(YYYY.MM.DD.)</span>
+                                                        </label>
+                                                        <div class="forms_option">
+                                                            <div class="forms">
+                                                                <span class="placeholder" style="display: block;">
+                                                                    <span class="hidden"> 년도 4자리, 월 2자리. 일 2자리</span>
+                                                                </span>
+                                                                <input type="tel" class="untouched pristine invalid" maxlength="11">
+                                                            </div>
+                                                            <button type="button" class="option ghost">
+                                                                <span class="hidden">나이(탑승일 기준)&nbsp;</span>
+                                                                계산하기
+                                                            </button>
+                                                        </div>
+                                                        <div class="mix_message active">
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="notice main">
+                                            <h3 class="hidden">유의사항</h3>
+                                            <ul class="list disc">
+                                                <li class="list_item">
+                                                    구매와 동시승급을 이용하시는 경우 마일리지 공제를 위해 등록된 가족 기준으로 승객선택을 해주시기 바랍니다.
+                                                </li>
+                                                <li class="list_item remark positive">
+                                                    만 14세 미만 승객은 예매 시 법정대리인의 동의 및 이증이 필요합니다. 로그인 후 예매를 진행하여 주시기 바랍니다.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="confirms center">
+                                            <button type="button" class="confirm">확인</button>
+                                        </div>
+                                </div>  
+                                <button type="button" class="dialog_close">닫기</button>                                                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div> 
+            
+
+		<div class="seatclasstab" style="display: none;">
+                <div>
+                    <div class="star_inserted">
+                        <div class="dialog active full seat_class" >
+                            <div class="dialog_contents ex2">                                                             
+                                <div class="dialog_aligner">
+                                    <h2 class="h2" id="dialog_seatclass">좌석 등급 선택</h2>    
+                                        <div class>
+                                       
+                                        </div>
+                                        <div class="seatclass">
+                                            <div class="seatclass_list" role="group">
+                                                <div class="seatclass_item star_inserted">
+                                                    <input type="radio" value="Y" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" id="seatclass_label" class="seatclass_label">
+                                                        일반석
+                                                    </label>
+                                                </div>
+                                                <div class="seatclass_item star_inserted">
+                                                    <input type="radio" value="C" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        프레스티지석
+                                                    </label>
+                                                </div>
+                                                <div class="seatclass_item star_inserted">
+                                                    <input type="radio" value="F" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        일등석
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="seatclass_dispose dispose left middle star_inserted">
+                                                <h3 class="h3">구매와 동시 승급</h3>
+                                                <button type="button" class="opener popover_trigger">
+                                                    좌석 승급 상세 안내
+                                                </button>
+                                                <div class="togglewrap"></div>
+                                            </div>
+                                            <div class="seatclass_list star_inserted" role="group">
+                                                <div class="seatclass_item">
+                                                    <input type="radio" value="Y,C" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        일반석 구매 + 프레스티지석 승급
+                                                    </label>
+                                                </div>
+                                                <div class="seatclass_item star_inserted">
+                                                    <input type="radio" value="C,F" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        프레스티지석 구매 + 일등석 승급
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="confirms center">
+                                            <button type="button" class="confirm" disabled>확인</button>
+                                        </div>
+                                    </div>  
+                                <button type="button" class="dialog_close">닫기</button>                                                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>           
+            </div>   
+        
+
+
+
+
+
+
+
+	</div>
+	
+	   
+
+
+
+
+
+
+
+
+
+
+</html>

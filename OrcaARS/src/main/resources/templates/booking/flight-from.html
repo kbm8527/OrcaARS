@@ -1,0 +1,1067 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout/layout_booking.html">
+
+
+
+    <div layout:fragment="content">
+        <div class="container" role="main">
+            <div class="star_inserted">
+
+            </div>
+            <div class="star_inserted">
+                <div class="flight step2 return">
+                    <div class="flight_heading">
+                        <h1 class="flight_title">오는 편</h1>
+                        <p class="flight_route">
+                            <span class="hidden">&nbsp;출발지&nbsp;</span>
+                            <span class="flight_from">
+                                SEL
+                                <span class="flight_airport">&nbsp;다낭</span>
+                            </span>
+                            <span class="hidden">&nbsp;도착지&nbsp;</span>
+                            <span class="flight_to">
+                                DAD
+                                <span class="flight_airport">&nbsp;서울</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="star_inserted">
+                <div class="star_inserted">
+                    <div class="star_inserted flight_widget step2">
+                        <h2 class="hidden">여정 요약 및 수정</h2>
+                        <div class="accordion flight_widget_fix">
+                            <div class="flight_widget_aligner">
+                                <div class="flight_widget_locals">
+                                    <div>
+                                        <button type="button" class="flight_widget_local from star_inserted">
+                                            <span class="hidden">출발지&nbsp;</span>
+                                            <span class="flight_widget_code">SEL</span>
+                                        </button>
+                                        <button type="button" class="flight_widget_local to star_inserted">
+                                            <span class="hidden">도착지&nbsp;</span>
+                                            <span class="flight_widget_code">DAD</span>
+                                        </button>
+                                        <button class="flight_widget_swap">출발지와 도착지 바꾸기</button>
+                                        <div class="hidden"></div>
+                                    </div>
+                                </div>
+                                <button type="button" class="flight_widget_expand">상세 여정</button>
+                                <div class="flight_widget_items">
+                                    <div class="flight_widget_item">
+                                        <button type="button" class="flight_widget_datepicker">
+                                            <span class="hidden">탑승일</span>
+                                            <span class="flight_widget_date star_inserted">
+                                                <span class="hidden">가는 날&nbsp;</span>
+                                                <span class="star_insert">2023년 05월 26일 (금)</span>
+                                                <span>~</span>
+                                                <span class="hidden">오는 날&nbsp;</span>
+                                                <span class="star_insert">2023년 06월 26일 (금)</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="flight_widget_item">
+                                        <button type="button" class="flight_widget_passengers">
+                                            <span class="hidden">승객</span>
+                                            <span>성인 1명</span>
+                                        </button>
+                                    </div>
+                                    <button type="button" class="flight_widget_change">검색</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="contents step2_contents">
+                <div>
+                    <ol class="small_steps lined_type">
+                        <li class="small_steps_item">
+                            <a href="#" class="small_steps_step">
+                                <span class="small_steps_number">
+                                    01
+                                </span>
+                                <span class="hidden">첫번째 단계&nbsp;</span>
+                                <span class="small_steps_title">검색</span>
+                            </a>
+                        </li>
+                        <li class="small_steps_item active">
+                            <a href="#" class="small_steps_step">
+                                <span class="small_steps_number">
+                                    02
+                                </span>
+                                <span class="hidden">두번째 단계&nbsp;</span>
+                                <span class="small_steps_title">항공편</span>
+                            </a>
+                        </li>
+                        <li class="small_steps_item">
+                            <a href="#" class="small_steps_step">
+                                <span class="small_steps_number">
+                                    03
+                                </span>
+                                <span class="hidden">세번째 단계&nbsp;</span>
+                                <span class="small_steps_title">결제</span>
+                            </a>
+                        </li>
+                    </ol>
+                    <div></div>
+                </div>
+                <div>
+
+                </div>
+                    <div class="departure_info step2">
+                        <h2 class="departure_info_title">가는 편</h2>
+                        <p class="departure_info_route">
+                            <span class="hidden">&nbsp;출발지&nbsp;</span>
+                            <span class="departure_info_from">
+                                SEL
+                                <span class="departure_info_airport">&nbsp;서울</span>
+                            </span>
+                            <span class="hidden">&nbsp;도착지&nbsp;</span>
+                            <span class="departure_info_to">
+                                DAD
+                                <span class="departure_info_airport">&nbsp;다낭</span>
+                            </span>
+                        </p>
+                        <p class="departure_info_desc">
+                            <span class="departure_info_date">2023년 05월 30일 (화)</span>
+                            &nbsp;11:20 ~ 14:05
+                        </p>
+                    </div>
+                <div >
+
+                </div>
+
+                <div class="flight_blank"></div>
+                <div>
+                    <div>
+                        <h2 class="hidden">주변 일자 운임</h2>
+                        <div class="flexible_date" role="navigation">
+                            <div class="flexible_date_controls">
+                                <button type="button" class="flexible_date_prev">이전 일자</button>
+                                <button type="button" class="flexible_date_next">다음 일자</button>
+                            </div>
+                            <div class="flexible_date_list">
+                                <ul class="flexible_date_items">
+                                    <li class="flexible_date_item">
+                                        <button type="button" class="flexible_date_link">
+                                            <span class="hidden">출발일</span>
+                                            <span class="flexible_date_date">23(화)</span>
+                                            <span class="hidden">&nbsp;항공편 없음</span>
+                                            <span class="flexible_date_fare">-</span>
+                                        </button>
+                                    </li>
+                                    <li class="flexible_date_item">
+                                        <button type="button" class="flexible_date_link">
+                                            <span class="hidden">출발일</span>
+                                            <span class="flexible_date_date">24(수)</span>
+                                            <span class="flexible_date_fare">250,000</span>
+                                        </button>
+                                    </li>
+                                    <li class="flexible_date_item">
+                                        <button type="button" class="flexible_date_link active">
+                                            <span class="hidden">출발일</span>
+                                            <span class="flexible_date_date">24(수)</span>
+                                            <span class="flexible_date_fare">250,000</span>
+                                        </button>
+                                    </li>
+                                    <li class="flexible_date_item">
+                                        <button type="button" class="flexible_date_link">
+                                            <span class="hidden">출발일</span>
+                                            <span class="flexible_date_date">24(수)</span>
+                                            <span class="flexible_date_fare">250,000</span>
+                                        </button>
+                                    </li>
+                                    <li class="flexible_date_item">
+                                        <button type="button" class="flexible_date_link">
+                                            <span class="hidden">출발일</span>
+                                            <span class="flexible_date_date">24(수)</span>
+                                            <span class="flexible_date_fare">250,000</span>
+                                        </button>
+                                    </li>
+                                    <li class="flexible_date_item">
+                                        <button type="button" class="flexible_date_link">
+                                            <span class="hidden">출발일</span>
+                                            <span class="flexible_date_date">24(수)</span>
+                                            <span class="flexible_date_fare">250,000</span>
+                                        </button>
+                                    </li>
+                                    <li class="flexible_date_item">
+                                        <button type="button" class="flexible_date_link">
+                                            <span class="hidden">출발일</span>
+                                            <span class="flexible_date_date">24(수)</span>
+                                            <span class="flexible_date_fare">250,000</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="flight_n mo_diff">
+                            <div class="flight_n_wrap">
+                                <div class="flight_n_sorting">
+                                    <h2 class="hidden">출발편 선택</h2>
+                                    <ul class="flight_n_tablist" role="tablist">
+                                        <li class="flight_n_tab" role="presentation">
+                                            <button type="button" class="flight_n_btn active">
+                                                일반석
+                                            </button>
+                                        </li>
+                                        <li class="flight_n_tab" role="presentation">
+                                            <button type="button" class="flight_n_btn active">
+                                                프레스티지석
+                                            </button>
+                                        </li>
+                                        <li class="flight_n_tab" role="presentation">
+                                            <button type="button" class="flight_n_btn active">
+                                                일등석
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab_panel active">
+                                    <div>
+                                        <div class="flight_util">
+                                            <div class="flight_util_wrap">
+                                                <ul class="flight_util_list">
+                                                    <li class="flight_util_item">
+                                                        <button type="button" aria-controls="filter-order" class="flight_util_filter">
+                                                            추천순 정렬
+                                                        </button>
+                                                        <div class="filter">
+                                                            <div class="filter_contents">
+                                                                <h3 class="h3">정렬 기준 선택</h3>
+                                                                <div class="filter_list" role="group">
+                                                                    <div class="selection filter_item">
+                                                                        <input type="radio">
+                                                                        <label for="order">추천 순</label>
+                                                                    </div>
+                                                                    <div class="selection filter_item">
+                                                                        <input type="radio">
+                                                                        <label for="order">출발 시간 순</label>
+                                                                    </div>
+                                                                    <div class="selection filter_item">
+                                                                        <input type="radio">
+                                                                        <label for="order">도착 시간 순</label>
+                                                                    </div>
+                                                                    <div class="selection filter_item">
+                                                                        <input type="radio">
+                                                                        <label for="order">여행 시간 순</label>
+                                                                    </div>
+                                                                    <div class="selection filter_item">
+                                                                        <input type="radio">
+                                                                        <label for="order">최저 요금 순</label>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="filter_apply">적용</button>
+                                                                <button type="button" class="filter_close">닫기</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="flight_util_item">
+                                                        <button type="button" class="flight_util_filter">
+                                                            직항 및 경유
+                                                        </button>
+                                                        <div class="filter">
+                                                            <div class="filter_contents">
+                                                                <h3 class="h3">경유 선택</h3>
+                                                                <div class="filter_list">
+                                                                    <div class="selection filter_item">
+                                                                        <input type="radio">
+                                                                        <label for="stop">전체</label>
+                                                                    </div>
+                                                                    <div class="selection filter_item">
+                                                                        <input type="radio">
+                                                                        <label for="stop1">직항</label>
+                                                                    </div>
+                                                                    <div class="selection filter_item">
+                                                                        <input type="radio">
+                                                                        <label for="stop2">경유</label>
+                                                                        <div>
+                                                                            <ul class="filter_sub active">
+                                                                                <li class="selection filter_item">
+                                                                                    <input type="checkbox">
+                                                                                    <label for="checkbox">부산/김해, 대한민국</label>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="filter_apply">적용</button>
+                                                                <button type="button" class="filter_close">닫기</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flight_n_list">
+                                        <ul class="flight_n_items">
+                                            <li class="flight_n_item">
+                                                <div>
+                                                    <div class="flight_n_info_wrap has_detail_pop">
+                                                        <div class="flight_n_info">
+                                                            <span class="flight_n_flag lowest">
+                                                                최저가
+                                                            </span>
+                                                            <div class="flight_n_aligner">
+                                                                <div class="flight_n_from">
+                                                                    <span class="hidden">출발시각&nbsp;</span>
+                                                                    <span class="flight_n_time">11:05</span>
+                                                                    <span class="hidden">출발지&nbsp;</span>
+                                                                    <span class="flight_n_time">ICN</span>
+                                                                </div>
+                                                                <div class="flight_n_to">
+                                                                    <span class="hidden">도착시각&nbsp;</span>
+                                                                    <span class="flight_n_time">13:50</span>
+                                                                    <span class="hidden">도착지&nbsp;</span>
+                                                                    <span class="flight_n_time">DAD</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_relative">
+                                                                <div class="flight_n_direction">
+                                                                    <span class="hidden">소요시간&nbsp;</span>
+                                                                    <span class="flight_n_duration">4시간 45분</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_desc s_detail">
+                                                                <div class="flight_n_numbers">
+                                                                    <div>
+                                                                        <span class="flight_n_inline_group">
+                                                                            <span class="hidden">편명</span>
+                                                                            <span class="flight_n_number">KE457</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="flight_n_detail in_flag">상세 보기</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flight_n_contents">
+                                                    <div>
+                                                        <div class="flight_n_container">
+                                                            <div class="flight_n_cabin_group prime" role="radiogroup">
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_ncabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio" checked>
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 스탠다드
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">420,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="flight_n_remaining_seat">&nbsp; 7석</span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 100,000 원, 환불 위약금 최대 150,000 원, 좌석배정 가능, 좌석승급 불가, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition active">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flight_n_data change">변경&nbsp; 100,000원</li>
+                                                                                <li class="flight_n_data refund">환불&nbsp; 위약금 최대 150,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button type="button" class="opener small flight_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 불가</span>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span class="star_inserted"> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>    
+                                                                </div>
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_n_cabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio" >
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 플렉스
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">500,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 50,000 원, 환불 위약금 최대 110,000원, 좌석배정 가능, 좌석승급 신청 가능, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flihgt_n_data change">변경&nbsp; 50,000원</li>
+                                                                                <li class="flihgt_n_data refund">환불&nbsp; 위약금 최대 110,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button class="opener small flignt_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 신청 가능</span>
+                                                                                        <button class="opener small flight_n_opener popover_trigger">
+                                                                                            좌석승급 신청 가능 운임 상세 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="flight_n_item">
+                                                <div>
+                                                    <div class="flight_n_info_wrap has_detail_pop">
+                                                        <div class="flight_n_info">
+                                                            <span class="flight_n_flag lowest">
+                                                                최저가
+                                                            </span>
+                                                            <div class="flight_n_aligner">
+                                                                <div class="flight_n_from">
+                                                                    <span class="hidden">출발시각&nbsp;</span>
+                                                                    <span class="flight_n_time">11:05</span>
+                                                                    <span class="hidden">출발지&nbsp;</span>
+                                                                    <span class="flight_n_time">ICN</span>
+                                                                </div>
+                                                                <div class="flight_n_to">
+                                                                    <span class="hidden">도착시각&nbsp;</span>
+                                                                    <span class="flight_n_time">13:50</span>
+                                                                    <span class="hidden">도착지&nbsp;</span>
+                                                                    <span class="flight_n_time">DAD</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_relative">
+                                                                <div class="flight_n_direction">
+                                                                    <span class="hidden">소요시간&nbsp;</span>
+                                                                    <span class="flight_n_duration">4시간 45분</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_desc s_detail">
+                                                                <div class="flight_n_numbers">
+                                                                    <div>
+                                                                        <span class="flight_n_inline_group">
+                                                                            <span class="hidden">편명</span>
+                                                                            <span class="flight_n_number">KE457</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="flight_n_detail in_flag">상세 보기</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flight_n_contents">
+                                                    <div>
+                                                        <div class="flight_n_container">
+                                                            <div class="flight_n_cabin_group prime" role="radiogroup">
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_ncabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio">
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 스탠다드
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">420,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 100,000 원, 환불 위약금 최대 150,000 원, 좌석배정 가능, 좌석승급 불가, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flight_n_data change">변경&nbsp; 100,000원</li>
+                                                                                <li class="flight_n_data refund">환불&nbsp; 위약금 최대 150,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button type="button" class="opener small flight_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 불가</span>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span class="star_inserted"> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>    
+                                                                </div>
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_n_cabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio">
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 플렉스
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">500,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 50,000 원, 환불 위약금 최대 110,000원, 좌석배정 가능, 좌석승급 신청 가능, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flihgt_n_data change">변경&nbsp; 50,000원</li>
+                                                                                <li class="flihgt_n_data refund">환불&nbsp; 위약금 최대 110,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button class="opener small flignt_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 신청 가능</span>
+                                                                                        <button class="opener small flight_n_opener popover_trigger">
+                                                                                            좌석승급 신청 가능 운임 상세 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="flight_n_item">
+                                                <div>
+                                                    <div class="flight_n_info_wrap has_detail_pop">
+                                                        <div class="flight_n_info">
+                                                            <span class="flight_n_flag lowest">
+                                                                최저가
+                                                            </span>
+                                                            <div class="flight_n_aligner">
+                                                                <div class="flight_n_from">
+                                                                    <span class="hidden">출발시각&nbsp;</span>
+                                                                    <span class="flight_n_time">11:05</span>
+                                                                    <span class="hidden">출발지&nbsp;</span>
+                                                                    <span class="flight_n_time">ICN</span>
+                                                                </div>
+                                                                <div class="flight_n_to">
+                                                                    <span class="hidden">도착시각&nbsp;</span>
+                                                                    <span class="flight_n_time">13:50</span>
+                                                                    <span class="hidden">도착지&nbsp;</span>
+                                                                    <span class="flight_n_time">DAD</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_relative">
+                                                                <div class="flight_n_direction">
+                                                                    <span class="hidden">소요시간&nbsp;</span>
+                                                                    <span class="flight_n_duration">4시간 45분</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_desc s_detail">
+                                                                <div class="flight_n_numbers">
+                                                                    <div>
+                                                                        <span class="flight_n_inline_group">
+                                                                            <span class="hidden">편명</span>
+                                                                            <span class="flight_n_number">KE457</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="flight_n_detail in_flag">상세 보기</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flight_n_contents">
+                                                    <div>
+                                                        <div class="flight_n_container">
+                                                            <div class="flight_n_cabin_group prime" role="radiogroup">
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_ncabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio">
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 스탠다드
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">420,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 100,000 원, 환불 위약금 최대 150,000 원, 좌석배정 가능, 좌석승급 불가, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flight_n_data change">변경&nbsp; 100,000원</li>
+                                                                                <li class="flight_n_data refund">환불&nbsp; 위약금 최대 150,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button type="button" class="opener small flight_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 불가</span>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span class="star_inserted"> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>    
+                                                                </div>
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_n_cabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio">
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 플렉스
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">500,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 50,000 원, 환불 위약금 최대 110,000원, 좌석배정 가능, 좌석승급 신청 가능, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flihgt_n_data change">변경&nbsp; 50,000원</li>
+                                                                                <li class="flihgt_n_data refund">환불&nbsp; 위약금 최대 110,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button class="opener small flignt_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 신청 가능</span>
+                                                                                        <button class="opener small flight_n_opener popover_trigger">
+                                                                                            좌석승급 신청 가능 운임 상세 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="flight_n_item">
+                                                <div>
+                                                    <div class="flight_n_info_wrap has_detail_pop">
+                                                        <div class="flight_n_info">
+                                                            <span class="flight_n_flag lowest">
+                                                                최저가
+                                                            </span>
+                                                            <div class="flight_n_aligner">
+                                                                <div class="flight_n_from">
+                                                                    <span class="hidden">출발시각&nbsp;</span>
+                                                                    <span class="flight_n_time">11:05</span>
+                                                                    <span class="hidden">출발지&nbsp;</span>
+                                                                    <span class="flight_n_time">ICN</span>
+                                                                </div>
+                                                                <div class="flight_n_to">
+                                                                    <span class="hidden">도착시각&nbsp;</span>
+                                                                    <span class="flight_n_time">13:50</span>
+                                                                    <span class="hidden">도착지&nbsp;</span>
+                                                                    <span class="flight_n_time">DAD</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_relative">
+                                                                <div class="flight_n_direction">
+                                                                    <span class="hidden">소요시간&nbsp;</span>
+                                                                    <span class="flight_n_duration">4시간 45분</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_desc s_detail">
+                                                                <div class="flight_n_numbers">
+                                                                    <div>
+                                                                        <span class="flight_n_inline_group">
+                                                                            <span class="hidden">편명</span>
+                                                                            <span class="flight_n_number">KE457</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="flight_n_detail in_flag">상세 보기</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flight_n_contents">
+                                                    <div>
+                                                        <div class="flight_n_container">
+                                                            <div class="flight_n_cabin_group prime" role="radiogroup">
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_ncabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio">
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 스탠다드
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">420,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 100,000 원, 환불 위약금 최대 150,000 원, 좌석배정 가능, 좌석승급 불가, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flight_n_data change">변경&nbsp; 100,000원</li>
+                                                                                <li class="flight_n_data refund">환불&nbsp; 위약금 최대 150,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button type="button" class="opener small flight_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 불가</span>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span class="star_inserted"> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>    
+                                                                </div>
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_n_cabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio">
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 플렉스
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">500,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 50,000 원, 환불 위약금 최대 110,000원, 좌석배정 가능, 좌석승급 신청 가능, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flihgt_n_data change">변경&nbsp; 50,000원</li>
+                                                                                <li class="flihgt_n_data refund">환불&nbsp; 위약금 최대 110,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button class="opener small flignt_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 신청 가능</span>
+                                                                                        <button class="opener small flight_n_opener popover_trigger">
+                                                                                            좌석승급 신청 가능 운임 상세 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="flight_n_item">
+                                                <div>
+                                                    <div class="flight_n_info_wrap has_detail_pop">
+                                                        <div class="flight_n_info">
+                                                            <span class="flight_n_flag lowest">
+                                                                최저가
+                                                            </span>
+                                                            <div class="flight_n_aligner">
+                                                                <div class="flight_n_from">
+                                                                    <span class="hidden">출발시각&nbsp;</span>
+                                                                    <span class="flight_n_time">11:05</span>
+                                                                    <span class="hidden">출발지&nbsp;</span>
+                                                                    <span class="flight_n_time">ICN</span>
+                                                                </div>
+                                                                <div class="flight_n_to">
+                                                                    <span class="hidden">도착시각&nbsp;</span>
+                                                                    <span class="flight_n_time">13:50</span>
+                                                                    <span class="hidden">도착지&nbsp;</span>
+                                                                    <span class="flight_n_time">DAD</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_relative">
+                                                                <div class="flight_n_direction">
+                                                                    <span class="hidden">소요시간&nbsp;</span>
+                                                                    <span class="flight_n_duration">4시간 45분</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flight_n_desc s_detail">
+                                                                <div class="flight_n_numbers">
+                                                                    <div>
+                                                                        <span class="flight_n_inline_group">
+                                                                            <span class="hidden">편명</span>
+                                                                            <span class="flight_n_number">KE457</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="button" class="flight_n_detail in_flag">상세 보기</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flight_n_contents">
+                                                    <div>
+                                                        <div class="flight_n_container">
+                                                            <div class="flight_n_cabin_group prime" role="radiogroup">
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_ncabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio">
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 스탠다드
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">420,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 100,000 원, 환불 위약금 최대 150,000 원, 좌석배정 가능, 좌석승급 불가, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flight_n_data change">변경&nbsp; 100,000원</li>
+                                                                                <li class="flight_n_data refund">환불&nbsp; 위약금 최대 150,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button type="button" class="opener small flight_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 불가</span>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span class="star_inserted"> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>    
+                                                                </div>
+                                                                <div class="flight_n_cabin_wrap">
+                                                                    <div class="flight_n_cabin_wrap">
+                                                                        <input type="radio" class="flight_n_cabin_inforadio">
+                                                                        <label for="flightprime" class="flight_n_cabin_info prime">
+                                                                            <span class="flight_n_cabin_data prime">
+                                                                                <span class="flight_n_cabin_name">
+                                                                                    일반석 플렉스
+                                                                                </span>
+                                                                                <span class="hidden">최저가</span>
+                                                                                <span class="flight_n_price">
+                                                                                    <span class="hidden">&nbsp;</span>
+                                                                                    <span class="flight_n_price_num">500,000</span>
+                                                                                    원
+                                                                                </span>
+                                                                                <span class="hidden">
+                                                                                    편명 KE456,변경 50,000 원, 환불 위약금 최대 110,000원, 좌석배정 가능, 좌석승급 신청 가능, 1861 마일 적립&nbsp;
+                                                                                </span>
+                                                                            </span>
+                                                                        </label>
+                                                                        <div class="flight_n_condition">
+                                                                            <ul class="flight_n_data_list">
+                                                                                <li class="flihgt_n_data change">변경&nbsp; 50,000원</li>
+                                                                                <li class="flihgt_n_data refund">환불&nbsp; 위약금 최대 110,000원</li>
+                                                                                <li class="flight_n_data seat">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석배정&nbsp; 가능</span>
+                                                                                        <button class="opener small flignt_n_opener popover_trigger">
+                                                                                            사전 좌석 배정 가능 안내 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                </li>
+                                                                                <li class="flight_n_data mileage">
+                                                                                    <div class="flight_n_popover">
+                                                                                        <span>좌석승급&nbsp; 신청 가능</span>
+                                                                                        <button class="opener small flight_n_opener popover_trigger">
+                                                                                            좌석승급 신청 가능 운임 상세 보기
+                                                                                        </button>
+                                                                                        <div class="togglewrap"></div>
+                                                                                    </div>
+                                                                                    <span> / </span>
+                                                                                    1861 마일 적립
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="flight_n_dummy"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div >
+                    <div class="payment_widget bottom_fixed_area">
+                        <div class="payment_widget_wrap">
+                            <div class="payment_widget_aligner flex_end">
+                                <h2 class="payment_widget_key">총액</h2>
+                                <div class="payment_widget_currencyfares">
+                                    <div class="payment_widget_fares">
+                                        <span class="payment_widget_fare">
+                                            <em class="payment_widget_fare_num">
+                                                340,000
+                                            </em>
+                                            &nbsp;원
+                                        </span>                                            
+                                    </div>                           
+                                </div>
+                                <div class="payment_widget_confirms">
+                                    <button type="button" class="payment_widget_confirm ghost">비회원으로 진행</button>
+                                    <button type="button"  th:onclick="|location.href='@{/booking/passenger}'|"  class="payment_widget_confirm">회원으로 진행</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>

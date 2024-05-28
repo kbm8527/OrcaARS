@@ -1,0 +1,303 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout/layout_member.html">
+
+
+
+  
+<div layout:fragment="content">    
+	
+	<script th:inline="javascript">
+	
+		$(function(){			
+			$('.agree_all').click(function(){
+
+						if($('.agree_all').is(":checked")) $("input[name=agree]").prop("checked", true);
+				else $("input[name=agree]").prop("checked", false);
+		
+				
+		
+			})
+			
+			
+			$("input[name=agree]").click(function() {
+				var total = $("input[name=agree]").length;
+				var checked = $("input[name=agree]:checked").length;
+				
+				if(total != checked) $('.agree_all').prop("checked", false);
+				else $('.agree_all').prop("checked", true); 
+			});
+
+				$('.confirm').click(function(){
+
+					
+
+					if($('.agree1').is(':checked') == false){
+						alert('동의 하셔야 합니다1.');
+						return false;
+					}else if($('.agree2').is(':checked') == false){
+						alert('동의 하셔야 합니다2.');
+						return false;
+					}else if($('.agree3').is(':checked') == false){
+						alert('동의 하셔야 합니다3.');
+												
+						return true;									
+					
+					}else {
+						
+					}
+					
+					
+				var type = [[${type}]];	
+					
+				if(type == 'normal'){
+					location.href='/OrcaARS/member/term';
+					
+				}else{
+					location.href='/OrcaARS/member/register';
+				
+				}
+
+			
+
+		
+			})
+			
+
+		})
+
+
+	</script>
+			
+    <div  id="whole">
+        <div class="container">
+            <div class="contents" role="main">
+                <h1 class="h1">회원가입</h1>
+                <ol class="steps">
+                    <li class="steps_item active">
+                        <span class="steps_step join_agree">
+                            <span class="hidden">첫번째 단계</span>
+                            <span class="steps_title">약관 동의</span>
+                        </span>
+                    </li>
+                    <li class="steps_item">
+                        <span class="steps_step join_certify">
+                            <span class="hidden">두번째 단계</span>
+                            <span class="steps_title">본인인증</span>
+                        </span>
+                    </li>
+                    <li class="steps_item">
+                        <span class="steps_step join_forms">
+                            <span class="hidden">세번째 단계</span>
+                            <span class="steps_title">회원정보 입력</span>
+                        </span>                        
+                    </li>
+                    <li class="steps_item">
+                        <span class="steps_step join_complete">
+                            <span class="hidden">네번째 단계</span>
+                            <span class="steps_title">
+                                <span class="hidden">회원가입 &nbsp;</span>
+                                완료
+                            </span>        
+                        </span>
+                    </li>
+                </ol>
+                <div class="alert">
+                    <p class="p">
+                        <em class="remark negative">필수 약관에 대하여 모두 동의 해주시기 바랍니다.</em>
+                    </p>
+                </div>
+                <h2 class="h2">약관 동의</h2>
+                <p class="p">약관 및 개인정보 수집 이용에 동의 해주세요.</p>
+                <fieldset>
+                    <legend class="hidden">약관 목록</legend>
+                    <div class="data_all">
+                        <div class="selection">
+                            <input type="checkbox" name="agree_all" class="agree_all" >
+                            <label for="checkbox_all" class="bold">
+                                필수 및 선택 약관에 모두 동의합니다.
+                            </label>
+                        </div>
+                    </div>
+                    <ul class="data boxed">
+                        <li class="data_item">
+                            <div class="data_key">
+                                <div class="selection has_detail">
+                                    <input type="checkbox" name="agree" class="agree1">
+                                    <label for="checkbox1">
+                                    
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="data_value">
+								
+								 [[${termsVo.terms}]]
+								
+                                <button type="button" class="detail">보기</button>
+                            </div>
+                        </li>
+                        <li class="data_item">
+                            <div class="data_key">
+                                <div class="selection">
+                                    <input type="checkbox" name="agree" class="agree2">
+                                    <label for="chechkbox2">
+                                       
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="data_value">
+								
+								
+								 [[${termsVo.privacy}]]
+                                <button type="button" class="detail">보기</button>
+                            </div>
+                        </li>
+                        <li class="data_item">
+                            <div class="data_key">
+                                <div class="selection">
+                                    <input type="checkbox" name="agree" class="agree3">
+                                    <label for="checkbox3">
+                                        
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="data_value">
+								 [[${termsVo.location}]]
+                                <button type="button" class="detail">보기</button>
+                            </div>
+                        </li>
+                        <li class="data_item">
+                            <div class="data_key">
+                                <div class="selection">
+                                    <input type="checkbox" name="agree">
+                                    <label for="checkbox4">
+                                        
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="data_value">
+								
+								 [[${termsVo.thirdparty}]]
+                                <button type="button" class="detail">보기</button>
+                            </div>
+                        </li>
+                        <li class="data_item">
+                            <div class="data_key">
+                                <div class="selection">
+                                    <input type="checkbox" name="agree">
+                                    <label for="chechkbox5">
+                                      
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="data_value">
+								
+								 [[${termsVo.marketing}]]
+								 
+                                <button type="button" class="detail">보기</button>
+                            </div>
+                            <div class="data_details">
+                                <ul>
+                                    <li class="data_detail">
+                                        <div class="selection">
+                                            <input type="checkbox" >
+                                            <label for="chechkbox6">
+                                                뉴스레터 (회원 소식지 등)
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="data_detail">
+                                        <div class="selection">
+                                            <input type="checkbox">
+                                            <label for="chechkbox7">
+                                                프로모션 정보
+                                            </label>
+                                        </div>
+                                        <div class="data_promotions">
+                                            <ul>
+                                                <li class="data_promotion selection">
+                                                    &nbsp; (
+                                                    <input type="checkbox">
+                                                    <label for="checkbox8">
+                                                        이메일
+                                                    </label>
+                                                </li>
+                                                <li class="data_promotion selection">
+                                                    <input type="checkbox">
+                                                    <label for="checkbox9">
+                                                        SMS
+                                                    </label>
+                                                    )
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="confirms half">
+                    <button type="button" class="confirm ghost">취소</button>
+                    <button type="button" class="confirm" >확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none;">
+        <div>
+            <div class="dialog active full" role="dialog">
+                <div class="dialog_contents" role="document">
+                    <h2 class="h2">약관 상세</h2>
+                    <div class="dialog_aligner">
+                        <div>
+                            <div class="cmp_text">
+                                <div class="ts">
+                                    <h2 class="ts_h2 bold">온라인 회원 약관</h2>
+                                    <h3 class="ts_h3 bold">제 1 장 총칙</h3>
+                                    <h4 class="ts_h4 bold colored">제1조 (목적)</h4>
+                                    <p class="ts_p">
+                                        이 약관은 오카항공이 운영하는 오카항공 온라인 플랫폼에서 제공하는 온라인 서비스를 이용함에 있어 오카항공과 이용자의 권리
+                                        및 의무 및 책임사항을 규정함을 목적으로 합니다.
+                                    </p>
+                                    <h4 class="ts_h4 bold colored">제2조 (용어의 정의)</h4>
+                                    <ol class="ts_list number">
+                                        <li class="ts_item">
+                                            오카항공 온라인 플랫폼이란 오카항공이 정보 또는 서비스를 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비와 정보통신망을 이용하여
+                                            정보 및 서비스를 이용자에게 제공하고 재화 또는 용역을 거래할 수 있도록 설정한 가상의 영업장(pc/모바일웹, 모바일 어플리케이션)을 말합니다.
+                                        </li>
+                                        <li class="ts_item">
+                                            오카항공 온라인 플랫폼이란 오카항공이 정보 또는 서비스를 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비와 정보통신망을 이용하여
+                                            정보 및 서비스를 이용자에게 제공하고 재화 또는 용역을 거래할 수 있도록 설정한 가상의 영업장(pc/모바일웹, 모바일 어플리케이션)을 말합니다.
+                                        </li>
+                                        <li class="ts_item">
+                                            오카항공 온라인 플랫폼이란 오카항공이 정보 또는 서비스를 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비와 정보통신망을 이용하여
+                                            정보 및 서비스를 이용자에게 제공하고 재화 또는 용역을 거래할 수 있도록 설정한 가상의 영업장(pc/모바일웹, 모바일 어플리케이션)을 말합니다.
+                                        </li>
+                                        <li class="ts_item">
+                                            오카항공 온라인 플랫폼이란 오카항공이 정보 또는 서비스를 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비와 정보통신망을 이용하여
+                                            정보 및 서비스를 이용자에게 제공하고 재화 또는 용역을 거래할 수 있도록 설정한 가상의 영업장(pc/모바일웹, 모바일 어플리케이션)을 말합니다.
+                                        </li>
+                                        <li class="ts_item">
+                                            오카항공 온라인 플랫폼이란 오카항공이 정보 또는 서비스를 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비와 정보통신망을 이용하여
+                                            정보 및 서비스를 이용자에게 제공하고 재화 또는 용역을 거래할 수 있도록 설정한 가상의 영업장(pc/모바일웹, 모바일 어플리케이션)을 말합니다.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="confirms center">
+                            <button type="button" class="confirm">확인</button>
+                        </div>
+                    </div>
+                    <button type="button" class="dialog_close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</html>

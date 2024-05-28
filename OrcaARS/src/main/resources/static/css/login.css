@@ -1,0 +1,656 @@
+ 
+ 
+ 
+ 		.l_container {
+            width: 1180px;
+            margin: 0 auto 100px;
+        }
+        .l_container h3 {
+            font-size: 40px;
+            font-weight: 400;
+            text-align: center;
+            line-height: 1;
+            margin: 60px 0 50px 0;
+        }
+
+        fieldset {
+            border: 0;
+            padding:0;
+            margin: 0;
+        }
+
+        legend , .hidden, caption {
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: 0 !important;
+            height: 0 !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
+        }
+        .login_wrap {
+            position: relative;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .tab_wrap {
+            position: relative;
+         
+        }
+        
+        .tab_wrap .tab_head:after {
+            display: block;
+            content: '';
+            clear: both;
+
+            /*커서오류 해결*/
+        }
+       
+        .tab_wrap .tab_head li {
+            width: 50%;
+        }
+        .tab_wrap .tab_head li {
+            position: relative;
+            display: table;
+            float: left;
+            line-height: 20px;
+            
+        }
+        .tab_wrap .tab_head li a {
+            display: table-cell;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            word-break: keep-all;
+            background: rgb(155, 220, 234);
+            
+        }
+        .tab_wrap .tab_head li a:hover {
+            background: rgb(189, 222, 233);
+
+        }
+        .tab_wrap .tab_head li:last-child.on a {
+            border: 1px solid gray ;
+            border-bottom-color: white;
+         
+        }
+
+        .tab_wrap .tab_head li.on a {
+           font-weight: 400;
+           border: 1px solid gray ;
+           border-right: none;
+           border-bottom-color: white;
+           color: red;
+           background: white;
+            
+        }
+        .tab_wrap .tab_head li.on + li a {          
+           border-left: 1px solid gray ;
+          
+            
+        }
+        .tab_wrap .tab_head li.on a span {
+            padding-left: 30px;
+            background: url(https://flyasiana.com/C/pc/image/common/ico_tab_on.png) 0 3px no-repeat;
+            color:black;
+        }
+
+        .login_wrap .tab_wrap + .inner {
+            position: relative;
+            margin-top: 25px;
+            
+        }
+        
+        .login_wrap .inner .login_check_area {
+            margin: 0 0 30px;
+        }
+        .login_check_area {
+            padding-top: 20px;
+        }
+        .login_check_area input {
+        
+            accent-color: black;
+        }
+        .login_check_area input + label {
+            padding:0 5px;
+            font-size: 18px; 
+            font-weight: 550;  
+            line-height: 18px;
+        }
+        .input_wrap {
+            position: relative;
+            display: block;
+        }
+
+        input[type="text"],input[type="email"],input[type="password"],input[type="number"] {
+            height: 44px;
+            padding: 0 15px;
+            margin-right: 10px;
+            border: 1px solid gray;
+            border-bottom: 1px solid #ddd;
+            color: black;
+            background-color: white;
+            font-size: 15px;
+            line-height: 40px;
+        }
+        input[type="password"] {
+            margin-top: 10px;
+        }
+        input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover, input[type="number"]:hover {
+            border:1px solid rgb(235, 185, 21);
+            background-color: white;
+        }
+
+
+
+
+        .saveid , .savemem {
+            padding-top: 0;
+            margin: 16px 0 0;
+         
+        }
+        input[type="checkbox"] + label {
+            min-height: 20px;
+            font-size: 18px;
+            color: black;
+            vertical-align: middle;
+            line-height: 16px;
+
+        }
+        label {
+            display: inline-block;
+        }
+      
+        .saveid input {
+        
+        }
+
+        button {
+            background: transparent;
+            cursor: pointer;
+        }
+        .loginbtn_wrap button {
+            display: block;
+            width: 100%;
+        }
+
+        button.red {
+            border: 1px solid rgb(230, 97, 97);
+            background-color: rgb(219, 21, 21);
+            color: white;
+        }
+
+        .lbtn {
+            min-width: 150px;
+            min-height: 56px;
+            padding: 13px 40px 14px;
+            margin-top: 10px;
+            font-size: 20px;
+            line-height: 20px;
+            border-radius: 3px;
+            text-align: center;
+
+        }
+
+
+        /**로그인 실패**/
+        .login_fail {
+            padding: 20px 0;
+        }
+
+        .text_type {
+            font-size: 20px;
+            color: black;
+        }
+
+        .login_fail_count {
+            color: red;
+            font-weight: bold;
+        }
+        .login_find {
+            padding: 20px 0;
+        }
+        .co._red {
+            color: red !important;
+        }
+
+        .login_btn_wrap {
+            margin-top: 25px;
+        }
+
+        .login_wrap .inner .login_info {
+            margin: 17px 0;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            overflow: visible !important;
+        }
+        .left {
+            float: left;
+            padding-top: 10px;
+        }
+        .left .login_link li:first-child::before {
+            display: none;
+        }
+        .left .login_link li:before {
+            display: inline-block;
+            content: '';
+            width: 1px;
+            height: 17px;
+            background: rgb(202, 189, 189);
+            vertical-align: middle;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+        .left .login_link li {
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .left .login_link li:first-child {
+            margin: 0;
+        }
+
+        .login_link {
+            padding:0;
+            margin: 0;
+        }
+        a {
+            display: inline-block;
+            border: 0;
+            color: black;
+           
+        }
+        .col_black {
+            color: black !important;
+        }
+
+        .right {
+            float: right;
+        }
+        .register_btn {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        button.gray {
+            border: 1px solid gray;
+            background-color: gray;
+            color: white;
+        }
+        .rbtn {
+            min-height: 46px;
+            padding: 11px 30px;
+            font-size: 15px;
+            line-height: 15px;
+        }
+
+        /**sns로그인**/
+        .snsBtn ul {
+            width: 500px;
+        }
+        .snsBtn {
+            padding-top: 40px;
+        }
+
+        .kakao_btn {
+            background: url(https://flyasiana.com/C/pc/image/sub/btn_sns_kakao.png) no-repeat;
+        }
+
+        .snsBtn li {
+            float: left;
+            width: 163px;
+            line-height: 18px;
+            border: 1px solid #ddd;
+            color: #555;
+            word-break: keep-all;
+            vertical-align: top;
+            box-sizing: border-box;
+           
+        }
+        .snsBtn li + li {
+            margin-left: 5px;
+        }
+        .snsBtn li > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 15px 10px 16px 66px;
+            box-sizing: border-box;
+        }
+        .snsBtn li > a strong {
+            display: block;
+           
+        }
+    
+        .google_btn {
+            background: url(../img/google.png) no-repeat;
+            background-size:27px 27px;
+            background-position: 18px 18px;
+        
+        }
+
+        .naver_btn {
+            background: url(https://flyasiana.com/C/pc/image/sub/btn_sns_naver.png) no-repeat;
+        }
+
+        /**비로그인 예약조회**/
+
+        .login_wrap .inner {
+            position: relative;
+        }
+        .login_wrap .itinerary {
+            height: auto;
+            margin: 0 0 10px;
+        }
+
+        .login_wrap .itinerary .itinerary_cal, .login_wrap .itinerary .itinerary_cal + .itinerary_select, .login_wrap .itinerary .itinerary_select + .itinerary_select {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .login_wrap .itinerary .itinerary_select, .login_wrap .itinerary_cal {
+            display: block;
+            float: none;
+            width: 100%;
+            height: 46px;
+            margin: 0;
+           
+        }
+        .itinerary {
+            position: relative;
+            display: block;
+            width: 100%;  
+        }
+        .itinerary_cal {
+            position: relative;
+            display: block;
+            float: none;
+            width: 100%;
+            height: 46px;
+            margin: 0;
+            margin-top: 10px;
+        }
+        .calendar_wrap {
+            position: relative;
+        }
+        
+        .login_wrap .itinerary .itinerary_select .spot,
+        .login_wrap .itinerary .itinerary_cal .spot {
+            top: 15px;
+            left: 15px;
+            font-size: 16px;
+        }
+        .itinerary .itinerary_cal .spot {
+            position: absolute;
+            display: block;
+            line-height: 1;
+            color: gray;
+            cursor: text;
+        }
+
+        .itinerary .itinerary_select .spot {
+            position: absolute;
+            display: block;
+            line-height: 1;
+            color:#737373;
+            cursor: text;
+        }
+        .login_wrap .itinerary .itinerary_cal input[type="text"].datepicker {
+            width: 100%;
+            height: 46px;
+
+            padding: 0 15px;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+            text-indent: -9999px;
+            background: #f3f3f3 url(https://flyasiana.com/C/pc/image/common/icon_calendar.png) no-repeat right 15px bottom 13px ;
+            box-sizing: border-box;
+            color: black;
+        }
+        .btn_airport {
+            position: absolute;
+            display: inline-block;
+            width: 40px;
+            z-index: 200;
+            background: rgba(255,255,255,0);
+        }
+        .btn_airport.type2 {
+            bottom: 8px;
+            right: 5px;
+            height: 40px;
+        }
+
+        .roundtrip {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            line-height: 1;
+        }
+
+        .login_wrap .itinerary .itinerary_cal .roundtrip span:nth-child(1),
+        .login_wrap .itinerary_cal .roundtrip span:nth-child(3) {
+            font-size: 15px ;
+            font-weight: bold;
+            color: red;
+        }
+        .login_wrap .itinerary .itinerary_cal .roundtrip span {
+            font-size: 16px;
+            color: red;
+        }
+
+
+        .calendar_layer {
+            position: absolute;
+            /**display: none;**/
+            height: auto;
+            border: 1px solid #ccc;
+            background: #fff;
+            box-shadow: rgba(0,0,0,.05) 5px 5px 3px;
+            box-sizing: border-box;
+            z-index: 300;
+        }
+        .login_wrap .itinerary .calendar_layer {
+            top: 46px;
+            width: 600px;
+            left: -50px;
+        }
+
+        .container h4 {
+            margin: 50px 0 30px;
+            color: #000;
+        }
+
+        .calendar_layer .calendar_top {
+            position: relative;
+            height: 57px;
+            padding: 7px 25px;
+            text-align: left;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .calendar_layer .calendar_top select {
+            padding-right: 28px;
+            border: none;
+            font-size: 18px;
+            color: #000;
+        }
+
+        select.white {
+            height: 40px;
+            background: #fff url(https://flyasiana.com/C/pc/image/common/bg_select_arrow.png) no-repeat right 13px top 50%;
+        }
+
+        select {
+            padding: 0 45px 0 15px;
+            margin-right: 10px;
+            vertical-align: middle;
+            appearance: none;
+        }
+
+        .compareCalendar .datepicker_multi {
+            position: relative;
+            width: 100% !important;
+            height: 100%;
+        }
+
+        .compareCalendar .datepicker_group {
+            position:relative;
+            float: left;
+            padding: 30px 40px 46px 40px;
+            box-sizing: border-box;
+        }
+
+        .compareCalendar .datepicker_prev.state_disabled {
+            background: url(https://flyasiana.com/C/pc/image/common/btn_dispreC.png) 0 0 no-repeat;
+        }
+        
+        .compareCalendar .datepicker_prev {
+            position: absolute;
+            display: block;
+            left: 14px;
+            top: 180px;
+            width: 15px;
+            height: 27px;
+            text-indent: -9999px;
+            cursor: pointer;
+        }
+        .compareCalendar .datepicker_next {
+            position: absolute;
+            display: block;
+            right: 14px;
+            top: 180px;
+            width: 15px;
+            height: 27px;
+            background: url(https://flyasiana.com/C/pc/image/common/btn_nextC.png) 0 0 no-repeat;
+            text-indent: -9999px;
+            cursor: pointer;
+        }
+
+
+        .datepicker_title {
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            
+        }
+
+        .compareCalendar .datepicker_cal thead th.datepicker_week:first-child {
+            color: red;
+        }
+
+        .compareCalendar .datepicker_cal thead th {
+            width: 75px;
+            height: 42px;
+            padding: 0;
+            font-size: 14px;
+            color: black;
+            font-weight: normal;
+            text-align: center;
+            background: #fff;
+            border: none;
+        }
+        .compareCalendar .datepicker_cal tbody td {
+            width: 75px;
+            height: 42px;
+            padding: 0;
+            font-size: 14px;
+            color: black;
+            font-weight: normal;
+            text-align: center;
+            box-sizing: border-box;
+            border: none;
+        }
+
+        .compareCalendar .datepicker_cal tbody td a {
+            position: relative;
+            display: block;
+            line-height: 42px;
+            box-sizing: border-box;
+        }
+        .compareCalendar .datepicker_cal tbody td.state_disabled {
+            color: #999;
+            background-color: white;
+        }
+
+        .calendar_layer .cal_status {
+            position: absolute;
+            display: inline-block;
+            top: 10px;
+            right: 250px;
+            font-size: 24px;
+            font-weight: normal;
+            text-align: center;
+            z-index: 3;
+        }
+
+        .calendar_layer .cal_reset {
+            position: absolute;
+            display: inline-block;
+            top: 20px;
+            right: 65px;
+            width: 19px;
+            height: 19px;
+            background: url(https://flyasiana.com/C/pc/image/common/btn_calen_reset.png) 0 0 no-repeat ;
+            z-index: 3;
+        }
+        .calendar_layer .btncal_close {
+            position: absolute;
+            display: inline-block;
+            top: 20px;
+            right: 25px;
+            width: 22px;
+            height: 22px;
+            background: url(https://flyasiana.com/C/pc/image/common/btn_close_gray2.png) 0 0 no-repeat;
+            z-index: 3;
+        }
+
+        .itinerary_select input[type="text"] {
+            padding: 0 15px;
+            height: 46px;
+            font-size: 16px;
+            background: #f3f3f3 url(https://flyasiana.com/C/pc/image/sub/icon_point.png) no-repeat right 15px bottom 11px;
+            border-bottom: 1px solid #ddd;
+        }
+        .itinerary .itinerary_select input[type=text] {
+            display: block;
+            width: 100%;
+            margin: 0;
+            border: 1px solid #f3f3f3;
+            color: #000;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .login_wrap .inner .login_btnwrap {
+            margin-top: 25px;
+        }
+        .login_wrap .inner .login_btnwrap button {
+            width: 100%;
+            display: block;
+        }
+
+        .btn_L {
+            min-width: 150px;
+            min-height: 56px;
+            padding: 13px 40px 14px;
+            font-size: 20px;
+            line-height: 20px;
+            border-radius: 3px;
+            text-align: center;
+        }
+

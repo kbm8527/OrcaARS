@@ -1,0 +1,327 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout/layout_member.html">
+
+
+    <div layout:fragment="content" id="whole">    
+      
+      
+      
+      <script th:inline="javascript">
+      
+    
+   
+      
+      
+      
+      </script>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+            <div class="l_container">    
+                    <h3>로그인</h3>
+                    <!--로그인 폼 시작-->
+                    <form th:action="@{/member/login}" method="post">
+                        <fieldset>
+                            <legend>로그인 및 비로그인 예약조회 폼</legend>
+                            <div class="login_wrap">
+                                <div class="tab_wrap">
+                                    <ul class="tab_head">
+                                    <li class="on" >
+                                        <a href="#" class="loginTab" title="선택됨" style="height: 63px;">
+                                            <span>로그인</span>
+                                        </a>
+                                    </li>
+                                    <li class >
+                                        <a href="#" class="nologinTab" style="height: 63px;">
+                                            <span>비회원 예약조회</span>
+                                        </a>
+                                    </li>
+                                    </ul>
+                                </div>
+                                <!--로그인-->
+                                <div class="tab_content">
+                                    <div class="inner ">
+                                        <div class="login_check_area">
+                                            <input type="radio" id="loginTypeID" class="on1" name="loginType" checked>
+                                            <label for="loginTypeID" >아이디 로그인</label>
+                                            <input type="radio" id="loginTypeAC" name="loginType" >
+                                            <label for="loginTypeAC"  class>회원번호 로그인</label>
+                                                                                     
+                                        </div>
+
+                                        <div class="tab_cont">
+                                            <div >
+                                                <div class="input_wrap ">
+                                                    <input type="text" placeholder="아이디 입력" name="uid" title="아이디 입력" style="width: 468px;">
+                                                    <input type="password" placeholder="비밀번호 입력" name="pass"  title="비밀번호 입력" style="width: 468px;">
+                                                </div>
+                                                <div class="saveid">
+                                                    <input type="checkbox" id="saveID">
+                                                    <label for="saveID" id="labelID">아이디 저장</label>
+                                                </div>
+                                            </div>
+
+                                            <div  style="display:none" >
+                                                <div class="input_wrap" >
+                                                    <input type="text" placeholder="회원번호 입력" title="회원번호 입력" style="width: 468px;">
+                                                    <input type="password" placeholder="비밀번호 입력" title="비밀번호 입력" style="width: 468px;">
+                                                </div>
+
+                                                <div class="savemem" style="padding-top: 0px;">
+                                                    <input type="checkbox" id="saveMEMNO">
+                                                    <label for="saveMEMNO" id="labelMEM">회원번호 저장</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="loginbtn_wrap">
+                                            <button type="submit" id="loginBtn" class="lbtn red">로그인</button>
+                                        </div>
+                                        <div class="login_fail" style="display: none;">
+                                            <p class="text_type">
+                                                비밀번호 입력
+                                            <strong class="login_fail_count">1</strong>회 실패하였습니다.
+                                            </p>
+                                            <p class="text_type">5회 이상 실패시 본인확인 후 로그인 가능합니다.</p>
+                                        </div>
+                                        <div class="login_find" style="display: none;">
+                                            <p class="text_type col_red">
+                                                비밀번호 입력 실패 횟수가 5회 초과했습니다.
+                                            <br>
+                                            <br>
+                                            로그인 비밀번호 5회이상 실패시 이용이 제한됩니다. 개인정보보호를 위해 본인 확인 이후에 로그인이 가능합니다.
+                                            </p>
+                                            <div class="login_btn_wrap">
+                                                <button type="button" class="find_btn">본인확인(비밀번호찾기)</button>
+                                            </div>
+                                        </div>
+                                        <div class="login_info">
+                                            <div class="left">
+                                                <ul class="login_link">
+                                                    <li>
+                                                    <a href="#" id="serchID">
+                                                        <span class="col_black">아이디 찾기</span>
+                                                    </a>
+                                                    </li>
+                                                    <li>
+                                                    <a href="#" id="serchAccNum">
+                                                        <span class="col_black">회원번호 찾기</span>
+                                                    </a>
+                                                    </li>
+                                                    <li>
+                                                    <a href="#" id="serchPW">
+                                                        <span class="col_black">비밀번호 찾기</span>
+                                                    </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="right">
+                                                <div class="register_btn">
+                                                    <button type="button" id="Register" class="rbtn gray" th:onclick="|location.href='@{/member/term}'|">회원가입</button>
+                                                </div>                                       
+                                            </div>
+                                        </div>
+                                        <div class="snsBtn">
+                                            <ul>
+                                                <li class="kakao_btn">
+                                                    <a href="#">
+                                                    <strong>카카오톡</strong>
+                                                        간편로그인
+                                                    </a>
+                                                </li>
+                                                <li class="google_btn">
+                                                    <a href="#">
+                                                    <strong>구글</strong>
+                                                        간편로그인
+                                                    </a>
+                                                </li>
+                                                <li class="naver_btn">
+                                                    <a href="#">
+                                                    <strong>네이버</strong>
+                                                        간편로그인
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                    <!--비로그인 예약조회 시작-->
+                                    <div class="inner" style="margin-top: 25px; display: none;">
+                                        <h4 class="hidden">비로그인 예약조회</h4>
+                                        <div class="input_wrap">
+                                            <input type="text" placeholder="예약번호 입력 ex) 5xt9uu" title="예약번호 입력" style="width: 468px;">
+                                            <div class="itinerary">
+                                                <div class="itinerary_cal">
+                                                    <div class="calendar_wrap">
+                                                        <label for="sCalender" class="spot" >탑승일 선택</label>
+                                                        <input type="text" name="departureDate" id="sCalender" class="datepicker"  autocomplete="off" data-type="single" onclick="open_cal()" readonly value="">
+                                                   
+                                                        <a href="javascript:open_cal();" class="btn_airport type2 cal_focus" >
+                                                            <span class="hidden">탑승일 선택 달력보기</span>
+                                                        </a>
+                                                    <div class="roundtrip" name="roundtrip">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+
+                                            <!--달력-->        
+                                            <div class="calendar_layer" style="display: block; top:46px;">
+                                                <h3 class="hidden">달력</h3>
+                                                <div class="calendar_top">
+                                                    <select name="#"  class="white"  id="sel_yearmonth" title="탑승연도 및 월" onchange="">
+                                                   
+                                                    </select>    
+                                                </div>
+                                                <div class="compareCalendar hasdatepicker">
+                                                    <div class="ui_datepicker helper widget datepicker_multi" style="display: block; width: 34em;">
+                                                        <div class="datepicker_group datepicker_group_first">
+                                                            <div class="datepicker_header widget_header">
+                                                                <a class="datepicker_prev state_disabled" onclick="datepicker_prev()" title="이전달">
+                                                                    <span class="ui_icon icon_circle">이전달</span>
+                                                                </a>
+                                                                <div class="datepicker_title">
+                                                                    <span id="datepicker_year"></span>
+                                                                    .&nbsp;
+                                                                    <span id="datepicker_month"></span>
+                                                                </div>
+                                                                 <a class="datepicker_next" onclick="datepicker_next()" title="다음달">
+                                                                    <span class="ui_icon icon_circle">다음달</span>
+                                                                </a>
+                                                            </div>
+
+                                                            <table class="datepicker_cal">
+                                                                <caption>2023.&nbsp;04 달력</caption>
+                                                                <thead>
+                                                            
+                                                                    <tr>
+                                                                        <th scope="col" class="datepicker_week">
+                                                                            <span title="일요일">일</span>
+                                                                        </th>
+                                                                        <th scope="col" class="datepicker_week">
+                                                                            <span title="월요일">월</span>
+                                                                        </th>
+                                                                        <th scope="col" class="datepicker_week">
+                                                                            <span title="화요일">화</span>
+                                                                        </th>
+                                                                        <th scope="col" class="datepicker_week">
+                                                                            <span title="수요일">수</span>
+                                                                        </th>
+                                                                        <th scope="col" class="datepicker_week">
+                                                                            <span title="목요일">목</span>
+                                                                        </th>
+                                                                        <th scope="col" class="datepicker_week">
+                                                                            <span title="금요일">금</span>
+                                                                        </th>
+                                                                        <th scope="col" class="datepicker_week">
+                                                                            <span title="토요일">토</span>
+                                                                        </th>                                                                      
+                                                                    </tr>              
+                                                                </thead>
+                                                                <tbody id="test">
+                                                          
+                                                                </tbody>
+
+                                                            </table>
+                                                        </div>
+                                                        
+                                                        
+                                                       
+                                                        <div class="datepicker_rowbreak"></div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="cal_status">가는날</a>
+                                                <a href="javascript:refresh();" class="cal_reset" name="cal_reset">
+                                                    <span class="hidden">달력 새로고침</span>
+                                                </a>
+                                                <a href="javascript:close_cal();" class="btncal_close">
+                                                    <span class="hidden">닫기</span>
+                                                </a>
+                                            </div>
+                                                </div>
+                                        <div class="itinerary_select depart_spot">
+                                            <input type="hidden" id="departureArea">
+                                            <input type="hidden" id="departureArea1">
+                                            <input type="hidden" id="departureArea2">
+                                            <label for="departuareAirport" name="departuareAirport" class="spot">출발지 선택</label>
+                                            <input type="text" id="departureAirport" name="departureAirport" class="spotentry" title="출발지 입력">
+                                            <input type="hidden" name="default">
+                                            <a href="#" class="airporttype" name="btnlayer" onclick="javascript:showAirportLayer(this)">
+                                                <span class="hidden">전체도시보기</span>
+                                            </a>
+                                            <div class="shadow_layer search_flight" name="shadow_layer" style="display: none;">
+                                                <div class="inner">
+                                                    <div class="route_list serch_auto" id="" name="search_auto">
+                                                        <p class="title">자동완성</p>
+                                                        <div class="empty_box" name="empty_box">매칭되는 공항이 없습니다.</div>
+                                                        <ul tabindex="0" class="ui_menu ui_widget" style="display: none;"></ul>
+                                                    </div>
+                                                    <input type="hidden" name="default">
+                                                    <button type="button" class="btnpopup" title="전체도시보기 새창으로 열기">전체도시보기</button>
+                                                </div>
+                                                <a href="#" class="layer_close">
+                                                    <span class="hidden">닫기</span>
+                                                </a>
+                                        
+                                            </div>
+                                        </div>
+                                        <div class="itinerary_select destination_spot">
+                                            <input type="hidden" id="arrivalArea">
+                                            <input type="hidden" id="arrivalArea1">
+                                            <input type="hidden" id="arrivalArea2">
+                                            <label for="arrivalAirport" name="arrivaleAirport" class="spot">도착지 선택</label>
+                                            <input type="text" id="arrivalAirport" name="arrivelAirport" class="spotentry" title="도착지 입력">
+                                            <input type="hidden" name="default">
+                                            <a href="#" class="airporttype" name="btnlayer" onclick="javascript:showAirportLayer(this)">
+                                                <span class="hidden">전체도시보기</span>
+                                            </a>
+                                            <div class="shadow_layer search_flight" name="shadow_layer" style="display: none;">
+                                                <div class="inner">
+                                                    <div class="route_list serch_auto" id="" name="search_auto">
+                                                        <p class="title">자동완성</p>
+                                                        <div class="empty_box" name="empty_box">매칭되는 공항이 없습니다.</div>
+                                                        <ul tabindex="0" class="ui_menu ui_widget" style="display: none;"></ul>
+                                                    </div>
+                                                    <input type="hidden" name="default">
+                                                    <button type="button" class="btnpopup" title="전체도시보기 새창으로 열기">전체도시보기</button>
+                                                </div>
+                                                <a href="#" class="layer_close">
+                                                    <span class="hidden">닫기</span>
+                                                </a>
+                                        
+                                            </div>
+                                        </div>
+                                            </div>
+                                        <input type="text" id="passengerName" placeholder="예약 시 입력한 영문/국문 성(Last Name) 입력" title="예약 시 입력한 영문/국문 성" style="width:468px;">
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <div class="login_btnwrap">
+                                        <button type="button" id="btnNoLogin" class="btn_L red">예약조회</button>                                        
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>                
+        
+    </div>
+
+</html>

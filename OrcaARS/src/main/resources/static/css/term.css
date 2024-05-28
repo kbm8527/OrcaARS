@@ -1,0 +1,510 @@
+
+
+ legend , .hidden, caption {
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: 0 !important;
+            height: 0 !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
+        }
+
+        [class] {
+            box-sizing: border-box;
+        }
+        
+    
+
+    [class].hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        clip: rect(1px,1px,1px,1px);
+        clip-path: inset(50%);
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .contents {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 60px 0 100px;
+    }
+
+    .h1 {
+        font-weight: 400;
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    .steps {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 32px 0 12px;
+    }
+
+    .steps_step {
+        position: relative;
+        display: flex;
+        min-width: 44px;
+        padding: 2px 0 8px 2px;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .steps_step:before {
+        display: block;
+        width: 36px;
+        height: 36px;
+        margin-right: 14px;
+        border: 1px solid #00256c;
+        border-radius: 50%;
+        content: "";
+    }
+
+    .steps_item.active .steps_step.join_agree:before {
+        background: url(https://www.koreanair.com/step-agree-active.svg) center center/24px 24px no-repeat #00256c;
+    }
+
+    .stpes_title {
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        clip: inherit;
+        clip-path: none;
+        color: #00256c;
+        font-size: 18px;
+        line-height: 1.5;
+        overflow: visible;
+        white-space: normal;
+    }
+
+    .steps_item.active .steps_title {
+        font-weight: 700;
+    }
+
+    .steps_step:after {
+        position: absolute;
+        width: 28px;
+        height: 1px;
+        left: 6px;
+        bottom: 3px;
+        background-color: #00256c;
+    }
+
+    .steps_item.active .steps_step:after {
+        display: block;
+    }
+
+    .steps_item+.steps_item {
+        position: relative;
+        padding-left: 58px;
+    }
+
+    .steps_item+.steps_item:before {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url(https://www.koreanair.com/step-arrow.svg) left center no-repeat;
+        left: 20px;
+        content: "";
+    }
+
+    .steps_item.active~.steps_item .steps_step:before {
+        border-color: #f3f4f8;
+        background-color: #f3f4f8;
+    }
+
+    .steps_step.join_certify:before {
+        background: url(https://www.koreanair.com/step-certify.svg) center center/24px 24px no-repeat #fff;
+    }
+
+    .steps_step.join_forms:before {
+        background: url(https://www.koreanair.com/step-forms.svg) center center/24px 24px no-repeat #fff;
+    }
+
+    .steps_step.join_complete:before {
+        background: url(https://www.koreanair.com/step-complete.svg) center center/24px 24px no-repeat #fff;
+    }
+
+    .alert {
+        margin: 20px 0;
+        padding: 12px 20px 12px 44px;
+        background-position: 20px 17px;
+        font-size: 18px;
+        border-radius: 10px;
+        background: url(https://www.koreanair.com/ico-caution.svg) 18px 18px/16px 16px no-repeat #fff6f6;
+        line-height: 1.5;
+    }
+
+    .p {
+        display: block;
+        margin: 8px 0;
+        color: #555;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .p:first-child {
+        margin-top: 0;
+    }
+
+    .p:last-child {
+        margin-bottom: 0;
+    }
+
+    .remark.negative {
+        color: #de001b;
+    }
+
+    .h2 {
+        margin: 40px 0 8px;
+        font-size: 28px;
+        line-height: 1.5;
+        color: #00256c;
+        font-weight: 700;
+    }
+
+    fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .data_all {
+        padding: 20px;
+        border-bottom: 0;
+        border: 1px solid #d9dbe1;
+        color: #767676;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .selection {
+        position: relative;
+    }
+
+    .selection label {
+        position: relative;
+        display: inline-block;
+        padding-left: 20px;
+        top: -3px;
+        font-size: 18px;
+        line-height: 1.5;
+        color: black;
+        text-indent: 0;
+    }
+
+    .selection [type=checkbox] {
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+        margin-left: 10px;
+    
+    }
+
+    /**
+           .selection [type=checkbox]~label:before {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 10px;
+        left: 0;
+        border-radius: 2px;
+        border: 1px solid #00256c;
+        background-size: 11px 9px;
+        box-sizing: border-box;
+        content: "";
+    }
+    
+    **/ 
+
+    
+ 
+
+    .selection [type=checkbox]:focus~label:before {
+        outline:0;
+        box-shadow: 0 0 0 3px white, 0 0 0 4px #0064de;
+    }
+
+    .data {
+        margin: 12px 0;
+    }
+
+    .data_all~.data {
+        margin-top: 0;
+    }
+
+    .data.boxed {
+        border: 1px solid #d9dbe1;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .data:last-child {
+        margin-bottom: 0;
+    }
+
+    .data_item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .data_item+.data_item {
+        border-top: 1px solid #d9dbe1;
+    }
+
+
+    .data.boxed .data_item {
+        min-height: 64px;
+        padding: 13px 20px 14px;
+    }
+
+    .data_key {
+        padding-right: 10px;
+        color: #767676;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .data.boxed .data_key {
+        display: flex;
+        align-items: center;
+        min-height: 38px;
+    }
+
+    .data_value {
+        flex-shrink: 0;
+        margin-left: auto;
+        color: #767676;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .detail {
+        min-width: 50px;
+        padding: 2px 14px;
+        border-radius: 14px;
+        border: 1px solid #d9dbe1;
+        color: #555;
+        background: 0 0;
+        font-size: 16px;
+        line-height: 1.5;
+        text-decoration: none;
+    }
+
+    .data_details {
+        width: 100%;
+        margin: 14px 0 6px;
+        padding: 16px 32px 0;
+        border-top: .1rem solid #d9dbe1;
+    }
+
+    .data_detail {
+        display: inline-block;
+        margin-right: 58px;
+        list-style: none;
+    }
+
+    .data_detail .selection {
+        display: inline-block;
+    }
+
+    .data_detail+.data_detail {
+        margin-top: 0;
+    }
+
+
+    .data_promotions {
+        display: inline-block;
+        padding-left: 0;
+        margin-top: 4px;
+    }
+
+    .data_promotion label {
+        margin:  0 4px;
+    }
+
+    .data_promotion+.data_promotion {
+        margin-left: 6px;
+    }
+
+    .confirms {
+        display: flex;
+        justify-items: flex-start;
+        margin: 60px 0 ;
+    }
+
+    .confirms.half {
+        justify-content: center;
+    }
+
+    .confirms:last-child {
+        margin-bottom: 0;
+    }
+
+    .confirm {
+        display: inline-block;
+        width: auto;
+        min-width: 240px;
+        padding: 15px 20px;
+        margin: 0;
+        text-decoration: none;
+        text-align: center;
+        appearance: none;
+        font-size: 20px;
+        line-height: 1.5;
+        border: 1px solid #013066;
+        border-radius: 10px;
+        background-color: #013066;
+        color: white;
+        cursor: pointer;
+
+    }
+
+    .confirm.ghost {
+        background-color: white;
+        color: #013066;
+    }
+
+    .confirms.half .confirm:nth-of-type(1) {
+        flex: 0 1 auto;
+        margin-right: 4px;
+    }
+
+    
+    .confirms.half .confirm:nth-of-type(2) {
+        flex: 0 1 auto;
+        margin-left: 4px;
+    }
+
+    /** 약관 상세 **/
+
+    .dialog {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0,.5);
+        top: 0;
+        left: 0;
+        z-index:9999;
+    }
+
+    .dialog.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dialog_contents {
+        position: relative;
+        display: inline-block;
+        padding: 46px 40px 0;
+        outline: 0;
+        overflow-y: auto ;
+        background-color: white;
+    }
+
+    .dialog.full .dialog_contents {
+        width: 880px;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%!important;
+        border-radius: 12px;
+    }
+
+
+
+    .dialog .h2 {
+        margin-right: 60px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.5;
+    }
+
+    .dialog_aligner {
+        margin: 20px 0 0;
+        padding-bottom: 40px;
+    }
+
+    .ts_h2 {
+        margin: 40px 0 24px;
+        font-size: 24px;
+    }
+
+    .ts_h2:first-child {
+        margin-top: 0;
+    }
+
+    .ts_h2.bold {
+        font-weight: 700;
+    }
+
+    .ts_h3 {
+        margin: 24px 0 16px;
+        font-size: 24px;
+    }
+
+    .ts_h3.bold {
+        font-weight: 700;
+    }
+
+    .ts_h4 {
+        margin: 16px 0 8px;
+        font-size: 24px;
+    }
+
+    .ts_h3.bold {
+        font-weight: 700;
+    }
+
+    .ts_h4.colored {
+        color: #00256c;
+    }
+
+    .ts_p {
+        display: block;
+        margin: 8px 0;
+        color: #555;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .dialog_close {
+        position: absolute;
+        display: block;
+        width: 44px;
+        height: 44px;
+        top: 42px;
+        right: 30px;
+        border: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        background: url(https://www.koreanair.com/dialog__close.svg) 50% 50%/24px 24px no-repeat;
+        text-indent: 100%;
+        cursor: pointer;
+    }
+
+    .dialog_close:hover {
+        outline: 0;
+        border-radius: 3px;
+        box-shadow: inset 0 0 0 1px #0064de;
+    }

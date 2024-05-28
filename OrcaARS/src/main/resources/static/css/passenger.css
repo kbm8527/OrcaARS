@@ -1,0 +1,2100 @@
+		
+		
+		.flight.step2 {
+            top: 200px;
+        }
+
+        .flight {
+            position:absolute;
+            display: block;
+            left: 0;
+            right: 0;
+            padding: 0 20px;
+        }
+
+        .flight_heading {
+            display: flex;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .flight_title {
+            font-size: 20px;
+            color: #00256c;
+        }
+
+        .flight_route {
+            font-size: 20px;
+            color: #00256c;
+        }
+
+        .flight_from {
+            display: inline-block;
+            vertical-align: top;
+            white-space: nowrap;
+            margin-left: 16px;
+        }
+
+        .flight_airport {
+            display: inline;
+            font-weight: 400;
+        }
+
+        .flight_to {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            white-space: nowrap;
+            margin-left: 28px;
+        }
+
+        .flight_to:before {
+            position: absolute;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            top: 7px;
+            left: -22px;
+            background: url(https://www.koreanair.com/ib-h1__to.svg) 50% 50%/16px 16px no-repeat;
+            content: "";
+        }
+
+        .flight_widget {
+            position: relative;
+            height: 56px;
+        }
+
+        .flight_widget_fix {
+            position: absolute;
+            left: -20px;
+            right: -20px;
+            height: 86px;
+            top: 0;
+            padding: 0 20px;
+            background-color: #c7f3ff;
+            z-index: 200;
+        }
+
+        .flight_widget_aligner {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            max-width: 1300px;
+            min-height: 78px;
+            padding: 0 0 0 6px;
+            margin: 20px auto 0;
+            border-radius: 10px;
+            box-shadow: 4px 10px 20px 0 rgba(0,25,72,.18);
+            background-color: white;
+            z-index: 1;
+        }
+
+        .flight_widget_locals {
+            position: relative;
+            display: inline-block;
+            width: 240px;
+            height: 44px;
+            margin-top: 17px;
+        }
+
+        .flight_widget_local {
+            position: absolute;
+            display: block;
+            top: 0;
+            height: 44px;
+            padding: 0 10px;
+            border: 0;
+            background: 0 0;
+            cursor: pointer;
+        }
+
+        .flight_widget_local.from {
+            right: 50%;
+            margin-right: 28px;
+        }
+
+        .flight_widget_code {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.8;
+            color: black;
+        }
+
+        .flight_widget_local.to {
+            left: 50%;
+            margin-left: 28px;
+        }
+
+        .flight_widget_swap {
+            position: absolute;
+            display: block;
+            width: 44px;
+            height: 44px;
+            top: 0;
+            left: 50%;
+            margin-left: -22px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-indent: 100%;
+            border: 0;
+            background: url(https://www.koreanair.com/flight-widget__swap.svg) 50% 50%/32px 32px no-repeat;
+            cursor: pointer;
+        }
+
+        .flight_widget_expand {
+            display: none;
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 44px;
+            height: 44px;
+            border: 0;
+            white-space: nowrap;
+            text-indent: 100%;
+            cursor: pointer;
+            background: url(https://www.koreanair.com/flight-widget__down.svg) 50% 50%/16px 16px no-repeat;
+        }
+
+        .flight_widget_items {
+            display: block!important;
+            margin-top: 17px;
+        }
+
+        .flight_widget_item {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .flight_widget_item:before {
+            position: absolute;
+            display: block;
+            top: 13px;
+            left: 0;
+            width: 1px;
+            height: 18px;
+            background-color: black;
+            opacity: .4;
+            content: "";
+        }
+
+        .flight_widget_datepicker {
+            display: inline-block;
+            width: auto;
+            min-height: 40px;
+            margin: 2px 27px 2px 33px;
+            padding: 5px 0 5px 34px;
+            padding-right: 5px;
+            border-bottom: 0;
+            border: 0;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.8;
+            background: url(https://www.koreanair.com/flight-widget__datepicker.svg) 0 50%/24px 24px no-repeat;
+            cursor: pointer;
+        }
+
+        .flight_widget_passengers {
+            display: inline-block;
+            width: auto;
+            padding: 5px 0 5px 34px;
+            margin: 2px 35px 2px 34px;
+            padding-right: 5px;
+            border-bottom: 0;
+            font-size: 16px;
+            line-height: 1.8;
+            min-height: 40px;
+            text-align: left;
+            border: 0;
+            background: url(https://www.koreanair.com/flight-widget__passenger.svg) 0 50%/24px 24px no-repeat;
+        }
+        
+        .flight_widget_change {
+            position: absolute;
+            display: block;
+            top: 13px;
+            right: 20px;
+            margin: 0;
+            min-width: 80px;
+            padding: 12px 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            border: 0;
+            border-radius: 10px;
+            background-color: #0064de;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+            color: white;
+        }
+
+        .flight_blank {
+            height: 30px;
+            margin: 28px 0 20px;
+        }
+
+        .contents {
+            margin: 0 auto;
+            max-width: 1300px;
+        }
+
+        .contents.step2_contents {
+            position: static;
+            padding: 70px 0 100px!important;
+        }
+        .small_steps {
+            display: flex;
+            align-items: center;
+        }
+
+        .small_steps.lined_type {
+            justify-content: flex-end;
+            padding: 0;
+            margin-bottom: 38px;
+        }
+
+        .small_steps:first-child {
+            margin-top: 0;
+        }
+
+        .lined_type .small_steps_item {
+            position: relative;
+            width: 90px;
+        }
+
+        .small_steps_step {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .lined_type .small_steps_step {
+            padding: 0;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .small_steps_number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 14px;
+            color: #00256c;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .lined_type .small_steps_number {
+            position: static;
+            border: none;
+            flex: initial;
+            font-size: 16px;
+        }
+
+        .lined_type .small_steps_number:after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 3px;
+            bottom: -6px;
+            border-radius: 3px;
+            left: 0;
+            right: 0;
+            transform: none;
+            background-color: #00256c;
+            border: 0;
+            color: #00256c;
+            content: "";
+        }
+
+        .lined_type .small_steps_title {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            clip: rect(1px,1px,1px,1px);
+            clip-path: inset(50%);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .small_steps_title {
+            display: block;
+            margin-left: 8px;
+            font-size: 16px;
+        }
+
+        .lined_type .small_steps_item.active {
+            flex-grow: initial;
+            min-width: 280px;
+        }
+
+        .small_steps_item+.small_steps_item {
+            margin-left: 8px;
+        }
+
+        .lined_type .small_steps_item.active .small_steps_step {
+            justify-content: flex-start;
+        }
+
+        a.small_steps_step {
+            cursor: not-allowed;
+        }
+
+        .lined_type .small_steps_item.active .small_steps_title {
+            position: static;
+            display: block;
+            width: auto;
+            height: auto;
+            margin-left: 8px;
+            clip-path: none;
+            clip: inherit;
+            white-space: normal;
+            overflow: visible;
+        }
+
+        .small_steps_item.active .small_steps_title {
+            font-weight: 700;
+        }
+
+        .lined_type .small_steps_item.active~.small_steps_item .small_steps_number {
+            background-color: transparent;
+            font-weight: 400;
+        }
+
+        .small_steps_item.active~.small_steps_item .small_steps_number {
+            border: 0;
+            color: #555;
+        }
+
+        .flight_title_aside_button {
+            display: block;
+            height: 44px;
+            padding: 0 5px 0 28px;
+            border: 0;
+            color: #00256c;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .flight_title_aside_button:hover {
+            outline: 0;
+            border-radius: 3px;
+            box-shadow: inset 0 0 0 1px #0064de;
+        }
+
+        .flight_title_aside_button.share {
+            background: url(https://www.koreanair.com/ib-title-aside__button--share.svg) 0 50%/24px 24px no-repeat;
+        }
+
+        .payment {
+            position: relative;
+            margin: 20px 0 0;
+            padding: 0 280px 0 0;
+        }
+
+        .payment_contents {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hgroup.h2:first-child {
+            margin-top: 0;
+        }
+
+        .hgroup.h2 {
+            margin: 40px 0 8px;
+        }
+
+        .hgroup.fixed {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .hgroup>* {
+            margin-bottom: 0;
+        }
+
+        .fixed.hgroup>*+* {
+            margin-top: 0;
+        }
+
+        .hgroup>*+.push {
+            margin-left: auto;
+        }
+
+        .h2 {
+            margin: 40px 0 8px;
+            font-size: 24px;
+            color: #00256c;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .h2:first-child {
+            margin-top: 0;
+        }
+
+        .option {
+            display: inline-block;
+            min-width: 84px;
+            padding: 7px 8px;
+            margin: 0;
+            border: 1px solid #0064de;
+            border-radius: 10px;
+            background-color: white;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .option.ghost {
+            border-color: #767676;
+            color: #555;
+        }
+
+        .itinerary {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .itinerary_list {
+            margin-top: 20px;
+            margin: 12px 0 0;
+        }
+
+        .itinerary_item {
+            position: relative;
+            display: flex;
+            padding: 30px 40px;
+            padding-right: 140px;
+            border: 1px solid #d9dbe1;
+            border-radius: 10px;
+        }
+
+        .itinerary_title {
+            display: block;
+            float: none;
+            width: 105px;
+            margin: 0;
+            font-size: 20px;
+            word-wrap: break-word;
+            line-height: 1.8;
+        }
+
+        .itinerary_details {
+            float: none;
+            padding-bottom: 0;
+        }
+
+        .itinerary_more {
+            position: absolute;
+            padding: 3px 9px;
+            top: 30px;
+            right: 30px;
+            border: 1px solid #969696;
+            border-radius: 14px!important;
+            background-color: white;
+            color: #555;
+            font-size: 18px;
+        }
+
+        .itinerary_bound {
+            width: calc(100% - 105px);
+            clear: both;
+        }
+
+        .itinerary_route {
+            margin: 1px 0 7px;
+        }
+
+        .itinerary_from {
+            display: inline;
+            color: black;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .itinerary_code {
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .itinerary_to {
+            position: relative;
+            display: inline;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        
+        .itinerary_to:before {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0 16px;
+            background: url(https://www.koreanair.com/itinerary__to.svg) 50% 50%/16px 16px no-repeat;
+            content: "";
+        }
+
+        .itinerary_code {
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .itinerary_date {
+            display: inline-block;
+            vertical-align: top;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .itinerary_info {
+            display: inline-block;
+            margin: 0 30px 0 12px;
+            vertical-align: top;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .itinerary_item + .itinerary_item {
+            margin-top: 16px;
+        }
+
+        .itinerary_details {
+            float: none;
+            padding-bottom: 0;
+        }
+
+        .hgroup_wrap {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .hgroup.wrap .h2 {
+            margin-bottom: 8px;
+        }
+
+        .hgroup.fwrap {
+            flex-wrap: wrap;
+        }
+
+        .hgroup_button+.requires {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .requires {
+            margin: 8px 0;
+            color: #555;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .required {
+            position: relative;
+            display: inline-block;
+            width: 5px;
+            overflow: hidden;
+            text-indent: 100%;
+            white-space: nowrap;
+            font-size: inherit;
+            vertical-align: bottom;
+        }
+
+        .requires:last-child {
+            margin-bottom: 0;
+        }
+
+        .requires:before {
+            display: inline-block;
+            width: 8px;
+            height: 22px;
+            margin: 0;
+            vertical-align: top;
+            background: url(https://www.koreanair.com/requires--before.svg) center/8px 22px no-repeat;
+            content: "";
+        }
+
+        .required:after {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            background-color: #de001b;
+            content: "";
+        }
+
+        .requires:after {
+            display: inline-block;
+            width: 8px;
+            height: 22px;
+            margin: 0;
+            vertical-align: top;
+            background: url(https://www.koreanair.com/requires--after.svg) center/8px 22px no-repeat;
+            content: "";
+        }
+
+
+        .required {
+            position: relative;
+            display: inline-block;
+            width: 5px;
+            white-space: nowrap;
+            text-indent: 100%;
+            font-size: inherit;
+            vertical-align: bottom;
+        }
+
+        .requires .required {
+            top:9px
+        }
+
+        .info {
+            margin: 12px 4px;
+            background-position: 32px 16px;
+            background-color: #f8f9fc;
+        }
+
+        .info.wide {
+            padding: 16px 32px;
+            border-radius: 10px;
+        }
+
+        .p {
+            display: block;
+            margin: 8px 0;
+            color: #555;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.5s;
+        }
+       
+        .p:first-child {
+            margin-top: 0;
+        }
+
+        .p:last-child {
+            margin-bottom: 0;
+        }
+
+        .remark {
+            font-style: normal;
+        }
+
+        .remark.positive {
+            color: #0064de;
+        }
+
+        .folders {
+            display: block;
+            margin: 20px 0;
+        }
+
+        .folders:last-child {
+            margin-bottom: 0;
+        }
+
+        .folders.ib {
+            margin: 0;
+        }
+
+        .folders.ib.active {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .folders_expander {
+            display: flex;
+            width: 100%;
+            padding: 24px 64px 24px 40px;
+            align-items: center;
+            text-align: left;
+            cursor: pointer;
+            background: url(https://www.koreanair.com/ico-expander.svg) right 20px center no-repeat;
+        }
+
+        .folders.ib.active .folders_expander {
+            background-color: #00256c;
+            border: 1px solid #00256c;
+            background-image: url(https://www.koreanair.com/ico-expander-active-white.svg);
+        }
+
+        .folders.ib.active .folders_expander {
+            border-top: 1px solid #00256c!important;
+        }
+
+        .folders_subject {
+            flex: 1;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .folders.ib.active .folders_subject {
+            color: white;
+        }
+        .folders_expander {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .folders_contents {
+            border: 1px solid #d9dbe1;
+            border-top-width: 0;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bundle {
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .bundle:first-child {
+            margin-top: 0;
+        }
+
+        .bundle:last-child {
+            margin-bottom: 0;
+        }
+
+        .bundle.medium {
+            padding: 32px 40px;
+        }
+
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -20px;
+        }
+
+        .column {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .label {
+            display: block;
+            color: #767676;
+            margin-bottom: 9px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .forms {
+            position:relative;
+        }
+
+        .placeholder {
+            position: absolute;
+            width: 100%;
+            top: 10px;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #767676;
+            user-select: none;
+        }
+
+        .forms [type=text], .forms [type=tel], .forms select, .forms [type=email], .forms [type=password] {
+            display: block;
+            width: 100%;
+            height: 50px;
+            font-size: 20px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            border-bottom: 1px solid #00256c;
+            border-radius: 0;
+            color: black;
+            transition: border .2s .3s,color .2s .3s,box-shodow .2s .3s;
+            opacity: 1;
+        }
+
+        .forms_option {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .gender {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .gender_item {
+            position: relative;
+            width: 100%;
+        }
+
+        .gender_item:first-child {
+            padding-right: 5px;
+        }
+
+        .gender_item [type=radio]{
+            position: absolute;
+            width: calc(100% - 5px);
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            clip: rect(1px,1px,1px,1px);
+            clip-path: inset(50%);
+            white-space: nowrap;
+            overflow: hidden;
+            appearance: none;
+        }
+
+        .gender_item [type=radio]:checked ~ label:before {
+            position: absolute;
+            display: block;
+            width: 24px;
+            height: 24px;
+            top: 12px;
+            right: 24px;
+            background: url(https://www.koreanair.com/gender__radio--checked.svg) 50% 50%/24px 24px no-repeat;
+        }
+
+        
+        .gender_item [type=radio]:checked ~ label:before {
+            border-color: #0064de;
+            color: #0064de;
+        }
+
+
+        .gender_item label {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 11px 32px 11px 20px;
+            border: 1px solid #767676;
+            border-radius: 2px;
+            box-sizing: border-box;
+            color: #555;
+            text-indent: 0;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .payment_divider {
+            display: flex;
+        }
+
+        .opener {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            text-indent: 100%;
+            flex-shrink: 0;
+            white-space: nowrap;
+            border: 0;
+            border-radius: 50%;
+            background: url(https://www.koreanair.com/ico-opener.svg) 50% 50%/24px 24px no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .payment_divider .opener {
+            margin-top: -5px
+        }
+
+        .buttons {
+            display: flex;
+            justify-items: flex-start;
+            margin: 20px 0 40px;
+        }
+
+        .buttons:last-child {
+            margin-bottom: 0;
+        }
+
+        .buttons.right {
+            justify-content: flex-end;
+        }
+
+        .folders_contents .buttons {
+            padding: 0 3px;
+        }
+        .folders_contents .buttons:last-child {
+            padding-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            min-width: 150px;
+            padding: 12px 10px;
+            margin: 0;
+            border: 0;
+            border-radius: 10px;
+            background-color: #0064de;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+        }
+
+
+        /** 정보 입력 완료**/
+     
+        .folders.ib.radius_bottom .folders_expander {
+            border-bottom-left-radius: 10px!important;
+            border-bottom-right-radius: 10px!important;
+        }
+
+        .folders.ib.complete .folders_expander{
+            position: relative;
+            padding-left: 74px;
+        }
+
+
+        .folders.ib.complete .folders_expander:before {
+            position: absolute;
+            display: block;
+            width: 22px;
+            height: 22px;
+            left: 40px;
+            top: 50%;
+            margin-top: -11px;
+            border-radius: 50%;
+            background: url(https://www.koreanair.com/ico-expander-complete.svg) 50% 50%/18px 18px no-repeat #00256c;
+            content: "";
+        }
+        /** 연락처 정보 **/
+
+        .columns.col3 .column {
+            width: 33.3333%;
+        }
+
+        .forms_option .option {
+            margin-top: 8px;
+        }
+
+        .forms_option .option:first-child {
+            margin-right: 20px;
+        }
+        
+        .forms_option .forms {
+            flex: 1;
+        }
+
+        .column.half, .columns.col3 .column.half {
+            width: 50%;
+        }
+
+        .column.expand, .columns.col3 .column.expand {
+            width: 100%;
+        }
+
+        .columns_title.block {
+            display: block;
+        }
+
+        .columns_title {
+            width: 100%;
+            padding: 20px 20px 0;
+            padding-bottom: 10px;
+          
+            line-height: 1.5;
+        }
+
+        .columns_title * {
+            margin: 0;
+        }
+
+        .columns_heading {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .caption {
+            padding-left: 20px;
+            text-indent: -20px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .caption:last-child {
+            margin-bottom: 0;
+        }
+
+        .columns_title.block .columns_heading+* {
+            margin-left: 0;
+            margin-top: 6px;
+        }
+
+        .caption:before {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            background: url(https://www.koreanair.com/ico-caption.svg) center center/16px 16px no-repeat;
+            vertical-align:  -3px;
+            content: "";
+        }
+
+        .remark.negative {
+            color: red;
+        }
+
+        .buttons {
+            display: flex;
+            justify-items: flex-start;
+            margin: 20px 0 40px;
+        }
+
+        .buttons.right {
+            justify-content: flex-end;
+        }
+
+        /** 요금 정보 **/
+
+        .payment_aside {
+            display: block;
+        }
+
+        .payment_aside.active {
+            position: fixed;
+            width: auto;
+            top: 250px;
+            left: 0;
+            right: 0;
+            padding: 0 20px; 
+        }
+
+        .payment_aside.active .payment_summary {
+            position: relative;
+            max-width: 1300px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        .summary {
+            position: absolute;
+            display: block;
+            width: 260px;
+            top: 0;
+            right: 0;
+            border-top: 1px solid #d9dbe1;   
+            border-bottom: 1px solid #d9dbe1;     
+        }
+
+        .summary_title {
+            display: block;
+            margin-top: 30px;
+            color: black;
+            font-size: 22px;
+        }
+
+        .summary_list {
+            padding: 16px 0 20px;
+            border-bottom: 1px solid #d9dbe1;
+        }
+
+        .summary_item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .summary_key {
+            display: block;
+            margin-top: 1px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .summary_value {
+            display: block;
+            margin-left: auto;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        .summary_info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 32px 0;
+        }
+
+        .summary_total {
+            width: 35%;
+            padding-top: 3px;
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        .summary_fare {
+            display: inline-block;
+            width: 65%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: 0 0;
+            text-decoration: underline;
+            text-align: right;
+            font-size: 25px;
+            cursor: pointer;
+            appearance: none;
+            color: #0054de;
+        }
+
+        .payment_widget {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            box-shadow:4px 0 16px 0 rgba(105, 138, 161, .33);
+            z-index: 200;
+        }
+
+        .payment_widget_aligner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .payment_widget_key {
+            display: block;
+            color: black;
+            padding-left: 0;
+            padding-right: 40px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .payment_widget_fares {
+            display: flex;
+            margin-left: auto;
+            align-items: center;
+        }
+
+        .payment_widget_fare {
+            display: block;
+            border: 0;
+            padding: 11px 0;
+            padding-right: 40px;
+            background: 0 0;
+            color: #00256c;
+            white-space: nowrap;
+            line-height: 2;       
+        }
+
+        .payment_widget_fare_num {
+            margin-right: 4px;
+            font-size: 28px;
+            font-weight: 700;
+            font-style: normal;
+            vertical-align: -1px;
+        }
+
+        .payment_widget_confirm {
+            display: inline-block;
+            width: auto;
+            min-width: 240px;
+            height: 60px;
+            margin: 0;
+            padding: 16px 20px;
+            border: 1px solid #00256c;
+            border-radius: 0;
+            background-color: #00256c;
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /** 여정 정보 **/
+        
+        .dialog {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,.5);
+            z-index: 9999;
+        }
+
+        .dialog.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dialog_contents {
+            position: relative;
+            padding: 46px 40px 0;
+            display: inline-block;
+            outline: 0;
+            overflow-y: auto;
+            background-color: white;
+        }
+
+        .dialog.full .dialog_contents {
+            width: 900px;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%!important;
+            border-radius: 12px;
+        }
+
+        .flight_info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            padding: 25px 40px;
+            margin-top: 26px;
+            margin-bottom: -14px;
+            background-color: #e6f9ff;
+            border-radius: 12px;
+        }
+
+        .flight_info_list {
+            display: block;
+        }
+
+        .flight_info_item {
+            display: inline-block;
+            width: auto;
+            text-align: center;
+            padding-right: 28px;
+        }
+
+        .flight_info_code {
+            display: inline-block;
+            margin-right: -4px;
+            font-size: 24px;
+            color: #00256c;
+            font-weight: 700;
+            line-height: 1.25;
+            vertical-align: top;
+        }
+
+        .flight_info_airport {
+            display: inline-block;
+            margin-left: 4px;
+            color: #00256c;
+            font-size: 18px;
+            line-height: 1.6;
+            vertical-align: top;
+        }
+
+        .flight_info_item:first-child {
+            padding-right: 28px;
+        }
+
+        .flight_info_item:last-child {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            padding-left: 28px;
+        }
+
+        .flight_info_item:last-child:before {
+            position: absolute;
+            display: block;
+            width: 24px;
+            height: 24px;
+            top: 3px;
+            left: -12px;
+            background: url(https://www.koreanair.com/flight-info__direction.svg) 50% 50%/16px 16px no-repeat;
+            content: "";
+        }
+        
+        .flight_info_duration {
+            display: block;
+            margin: 0;
+            color: #00256c;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .flight_plan {
+            margin-bottom: 34px;
+        }
+
+        .flight_plan_item {
+            position: relative;
+            margin: 34px 0;
+            padding: 30px;
+            border-radius: 12px;
+            border: .1rem solid #d9dbe1;
+        }
+
+        .flight_plan_flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .flight_plan_number {
+            display: inline-block;
+            margin-right: 6px;
+            color: #00256c;
+            font-weight: 700;
+            font-size: 18px;
+            vertical-align: top;
+        }
+
+        .flight_plan_aircraft {
+            display: inline-block;
+            color: black;
+            font-size: 18px;
+            vertical-align: top;
+        }
+
+        .flight_plan_facility {
+            margin: -10px 0;
+        }
+
+        .flight_plan_amenities {
+            display: flex;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            vertical-align: top;
+        }
+
+        .tooltip:focus, .tooltip:hover {
+            outline: 0;
+            border-radius: 3px;
+            box-shadow: inset 0 0 0 1px #0064de;
+        }
+
+        .tooltip, .tooltip_text, .tooltip:focus .tooltip_text, .tooltip:hover .tooltip_text {
+            display: inline-block;
+            margin: 9px 0 0;
+            padding: 10px 12px;
+            border: 1px solid #c7f3ff;
+            border-radius: 2px;
+            background-color: #e6f9ff;
+            box-shadow: 0 4px 6px 0 rgba(0,0,0,.1);
+        }
+
+        .flight_plan_amenity {
+            display: block;
+            width: 44px;
+            height: 44px;
+        }
+
+        .flight_plan_amenity.seat {
+            background: url(https://www.koreanair.com/flight-plan__amenity--seat.svg) 50% 50%/44px 44px no-repeat;
+        }
+
+        .tooltip_desc {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            clip: rect(1px,1px,1px,1px);
+            clip-path: inset(50%);
+            white-space: nowrap;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .flight_plan_amenity.seat + .tooltip_desc .tooltip_text {
+            text-align: left;
+        }
+
+        .tooltip_text:after {
+            position: absolute;
+            width: 10px;
+            height: 8px;
+            left: 50%;
+            top: 2px;
+            margin-left: -5px;
+            background: url(https://www.koreanair.com/ico-tooltip-edge.svg) 0 0/10px 8px no-repeat;
+            z-index: 1;
+            content: "";
+        }
+
+        .flight_plan_amenity.isps {
+            background: url(https://www.koreanair.com/flight-plan__amenity--isps.svg) 50% 50%/44px 44px no-repeat;
+        }
+
+        .tooltip_text {
+            text-align: center;
+        }
+
+        .tooltip.right .tooltip_text:after {
+            left: auto;
+            right: 11px;
+            margin-left: 0;
+            margin-right: -5px;
+        }
+
+        .flight_plan_amenity.avod {
+            background: url(https://www.koreanair.com/flight-plan__amenity--avod.svg) 50% 50%/44px 44px no-repeat;
+        }
+
+        .flight_plan_info {
+            position: relative;
+            width: 100%;
+            padding-left: 30px;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #d9dbe1;
+        }
+
+        .flight_plan_from_info {
+            position: relative;
+        }
+
+        .flight_plan_from_info:before {
+            position: absolute;
+            display: block;
+            left: -27px;
+            top: 12px;
+            bottom: -12px;
+            border-left: 1px solid #00256c;
+            content: "";
+        }
+
+        .flight_plan_airport:before {
+            position: absolute;
+            display: block;
+            width: 8px;
+            height: 8px;
+            left: -30px;
+            top: 9px;
+            border-radius: 50%;
+            background-color: #00256c;
+            content: "";
+        }
+
+        .flight_plan_terminal {
+            position: relative;
+            display: inline-block;
+            padding-left: 21px;
+            color: #555;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .flight_plan_terminal:before {
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 13px;
+            left: 9px;
+            top: 6px;
+            background-color: #d9dbe1;
+        }
+
+        .flight_plan_airport {
+            position: relative;
+            display: block;
+            margin-bottom: 4px;
+            color: black;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .flight_plan_airport:before {
+            position: absolute;
+            display: block;
+            width: 8px;
+            height: 8px;
+            left: -30px;
+            top: 9px;
+            border-radius: 50%;
+            background-color: #00256c;
+            content: "";
+        }
+
+        .dialog_close {
+            position: absolute;
+            display: block;
+            width: 44px;
+            height: 44px;
+            border: 0;
+            top: 42px;
+            right: 30px;
+            border-radius: 2px;
+            background: url(https://www.koreanair.com/dialog__close.svg) 50% 50%/24px 24px no-repeat;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .flight_plan_duration {
+            display: inline-block;
+            margin: 20px 0;
+            color: #0064de;
+            font-size: 16px;
+            line-height: 1.5;
+            vertical-align: top;
+        }
+
+        /** 좌석 배정 **/
+
+        .additional_services {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0 40px;
+            margin-bottom: 60px;            
+        }
+        
+        .additional_services_aligner {
+            display: block;
+            width: 100%;
+            margin-bottom: auto;
+            border: 1px solid #d9dbe1;
+            border-radius: 10px;
+        }
+
+        .additional_services_link {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 112px 0 40px;
+            color: #00256c;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .additional_services_link:before {
+            position: absolute;
+            display: block;
+            width: 72px;
+            height: 74px;
+            margin-left: -36px;
+            left: 50%;
+            top: 40px;
+            content: "";
+
+        }
+
+        .additional_services_service.seat .additional_services_link:before {
+            background-size: 72px 74px;
+            background: url(https://www.koreanair.com/additional-services__link-seat.svg) 0 0/54px 54px no-repeat;
+        }
+
+        .additional_services_aligner + .additional_services_aligner {
+            margin-top: 0;
+            margin-left: 20px;
+        }
+
+        .additional_services_service.baggage .additional_services_link:before {
+            background-size: 72px 74px;
+            background: url(https://www.koreanair.com/additional-services__link-baggage.svg) 0 0/54px 54px no-repeat;
+        }
+
+        .agree._payment {
+            margin: 20px 0 40px;
+        }
+
+        .h2+.agree.payment {
+            margin-bottom: 20px;
+        }
+
+        .agree_list {
+            border: 1px solid #d9dbe1;
+            border-radius: 10px;
+        }
+
+        .agree_item {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .agree_item+.agree_item {
+            border-top: 1px solid #d9dbe1;
+        }
+
+        .agree_key {
+            order: 1;
+            flex: 10;
+            padding-right: 10px;
+        }
+
+        .agree_selection {
+            display: flex;
+            width: 90%;
+        }
+
+        .option.agree {
+            position: relative;
+            min-width: fit-content;
+            padding: 3px 6px 3px 28px;
+            margin-right: 8px;
+            height: max-content;
+            color: #555;
+            border: 1px solid #767676;
+            text-align: left;
+        }
+
+        .option.agree:before {
+            position: absolute;
+            width: 19px;
+            height: 19px;
+            top: 0;
+            bottom: 0;
+            left: 7px;
+            margin: auto;
+            background: url(https://www.koreanair.com/icon-agree-check.svg) 100% no-repeat;
+            vertical-align: -2px;
+            content: "";
+        }
+
+        .agree_title {
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 0;
+            align-self: center;
+        }
+
+        .link {
+            display: inline-block;
+            border: 0;
+            text-decoration: underline;
+            color: #0064de;
+            text-decoration-skip-ink:auto;
+            text-indent: 0;
+        }
+
+        .agree_summary {
+            order: 3;
+            width: 100%;
+            margin-top: 12px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .agree_summary.full {
+            padding-left: 0;   
+        }
+
+        .agree_value {
+            order: 2;
+            flex: 1;
+            margin-left: auto;
+            flex-shrink: 0;
+            text-align: right;
+        }
+
+        .agree_value.position {
+            position: absolute;
+            right: 20px;
+        }
+
+        .detail {
+            min-width: 50px;
+            background: 0 0;
+            color: #555;
+            padding: 2px 16px;
+            border: 1px solid #d9dbe1;
+            border-radius: 16px;
+            font-size: 16px;
+            line-height: 1.5;
+            text-decoration: none;
+        }
+
+        .agree .detail {
+            white-space: nowrap;
+        }
+
+        /** 수하물 정보 **/
+
+        ._folders {
+            display: block;
+            margin: 20px 0;
+        }
+
+        .folders:first-child {
+            margin-top: 0;
+        }
+
+        .folders:last-child {
+            margin-bottom: 0;
+        }
+
+        .folders_subject.type1 {
+            font-size: 20px;
+        }
+
+     
+        .folders_expander {
+            border-radius: 10px;
+        }
+
+        ._folders+._folders {
+            margin-top: 20px;
+        }
+
+        .bundles {
+            margin: 20px 0;
+        }
+
+        .bundles.bordered {
+            border: 1px solid #d9dbe1;
+            border-radius: 10px;
+        }
+
+        .bundles.bordered {
+            border: 1px solid #d9dbe1;
+            border-radius: 10px
+        }
+
+        .bundles:first-child {
+            margin-top: 0;
+        }
+
+        .bundles:last-child {
+            margin-bottom: 0;
+        }
+
+        .bundle {
+            position: relative;
+            width: 100%;
+        }
+
+        .bundle.small {
+            padding: 24px 40px;
+        }
+
+        .bundles>.bundle {
+            margin: 0;
+        }
+
+        .h3:first-child {
+            margin-top: 0;
+        }
+
+        .h3:last-child {
+            margin-bottom: 0;
+        }
+
+        .h3{
+            margin: 40px 0 8px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .bundle.lined+.lined {
+            border-top: 1px solid #d9dbe1;
+        }
+
+        .list {
+            margin: 20px 0;
+            padding: 0;
+        }
+
+        .list:first-child {
+            margin-top: 0;
+        }
+
+        .expander {
+            display: inline-block;
+            border: 0;
+        }
+
+        .expander.small {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            overflow: visible;
+            white-space: normal;
+            padding-right: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #0064de;
+            background: url(https://www.koreanair.com/ico-expander-small.svg) 100% 50%/16px 16px no-repeat;
+            text-align: left;
+            text-indent: 0
+        }
+
+        .expand {
+            display: none ;
+            padding-top: 10px;
+        }
+
+        /** 쿠폰 할인 **/
+
+        .ib_title_heading {
+            display: block;
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+         /** 결제 수단 **/
+
+         .payment_method {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 36px 0;
+            margin-bottom: -8px;
+            flex-direction: inherit;
+        }
+
+        .payment_method_item {
+            position: relative;
+            width: calc(33.33333% - 8px);
+            margin: 0 4px 8px;
+        }
+
+        .payment_method_item [type=radio] {
+            position: absolute;
+            width: calc(100% - 7px);
+            height: calc(100% - 8px);
+            left: 35px;
+            top: 4px;
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            opacity: 0;
+            -webkit-appearance: none;
+            background: white;
+        }
+
+        .payment_method_item label {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            min-height: 52px;
+            padding: 13px 24px;
+            border: 1px solid #d9dbe1;
+            border-radius: 2px;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            vertical-align: top;
+            line-height: 1.5;
+            vertical-align: top;
+            text-indent: 0;
+            text-align: center;
+            background-color: white;
+            box-sizing: border-box;
+        }
+
+        .payment_method_item.active label {
+            border-color: #0063de;
+        }
+
+        .payment_method_item.active label:before {
+            position: absolute;
+            display: block;
+            width: 24px;
+            height: 24px;
+            right: 4px;
+            top: 50%;
+            margin-top: -12px;
+            background: url(https://www.koreanair.com/payment-method__item--checked.svg) 50% 50%/24px 24px no-repeat;
+            content: "";
+        }
+
+        .payment_method_icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: top;
+        }
+
+        .payment_method_icon.direct {
+            background: url(https://www.koreanair.com/payment-method__item--direct.svg) 50% 50%/24px 24px no-repeat;
+        }
+
+        .payment_method_icon.naverpay {
+            width: 86px;
+            background: url(https://www.koreanair.com/payment-method__item--naverpay.png) 50% 50% no-repeat;
+        }
+
+        .payment_method_icon.samsungpay{
+            width: 108px;
+            background: url(https://www.koreanair.com/payment-method__item--samsungpay.svg) 50% 50%/108px 16px no-repeat;
+        }
+
+        
+        .payment_method_icon.kakaopay{
+            width: 55px;
+            background: url(https://www.koreanair.com/payment-method__item--kakaopay.png) 50% 50%/55px 22px no-repeat;
+        }
+
+        .payment_method_icon.payco{
+            width: 58px;
+            background: url(https://www.koreanair.com/payment-method__item--payco.svg) 50% 50%/58px 22px no-repeat;
+        }
+
+        .payment_method_icon.toss{
+            width: 97px;
+            background: url(https://www.koreanair.com/payment-method__item--toss.svg) 50% 50%/97px 22px no-repeat;
+        }
+
+        .payment_method_icon.trans{
+            background: url(https://www.koreanair.com/payment-method__item--trans.svg) 50% 50%/24px 24px no-repeat;
+        }
+
+        
+        .payment_method_icon.debit{
+            background: url(https://www.koreanair.com/payment-method__item--debit.svg) 50% 50%/24px 24px no-repeat;
+        }
+
+        /** 유의 사항 **/
+        .notice {
+            margin: 60px 0 40px;
+            background-color: #f8f9fc;
+            border-radius: 10px;
+        }
+
+        .notice.extned {
+            padding: 0;
+        }
+
+        .notice:first-child {
+            margin-top: 0;
+        }
+
+        .notice:last-child {
+            margin-bottom: 0;
+        }
+
+        .bundle .notice {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .notice_expander {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 24px 64px 24px 40px;
+            background: 0 0;
+            border: 0;
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .notice_expander:before {
+            position: absolute;
+            display: block;
+            width: 24px;
+            height: 24px;
+            top: 50%;
+            right: 20px;
+            margin-top: -12px;
+            background: url(https://www.koreanair.com/ico-expander.svg) 50% 50%/24px 24px no-repeat;
+            content: "";
+        }
+
+        .notice_expand {
+            display: none;
+            padding: 0 40px 32px;
+        }
+
+        .notice .list>.list_item {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .list li {
+            position: relative;
+            color: #555;
+            text-indent: 0;
+        }
+
+        .list.disc>.list_item {
+            padding-left: 12px;
+        }
+
+        .notice .list_item+.list_item {
+            margin-top: 4px;
+        }
+
+        .link.inner {
+            position: relative;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /** 실시간 계좌 이체 **/
+
+        .selections {
+            margin: 22px 0;
+        }
+
+        .selections:last-child {
+            margin-bottom: 0;
+        }
+
+        .selections.col3 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .selection {
+            position: relative;
+        }
+
+        .selections.col3 .selection {
+            width: 33.33333%;
+            padding-right: 10px;
+        }
+
+    
+        .selection label {
+            position: relative;
+            display: inline-block;
+            /**padding-left: 10px;**/
+            font-size: 18px;
+            line-height: 1.5;
+            text-indent: 0;
+        }
+
+       

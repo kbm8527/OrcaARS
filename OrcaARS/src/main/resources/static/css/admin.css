@@ -1,0 +1,2281 @@
+ /*-- 공통--*/
+        * {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul, li {
+            list-style: none;
+           
+        }
+        legend , .hidden, caption {
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: 0 !important;
+            height: 0 !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
+        }
+        [class] {
+            box-sizing: border-box;
+        }
+
+
+
+        /*--헤더--*/
+        
+        .header {
+        
+          
+        }
+        .header-main {
+        
+
+        }
+        .header-wrap {
+            background-color: rgb(31, 78, 123);
+            display: grid; 
+            grid-template-columns: 250px auto;
+            grid-template-rows: auto;
+            
+            padding-left: 30px;
+            height: 140px;
+        }
+    
+        .headerlogo{
+        
+        }
+        .nav-main {
+            display: grid; 
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+            position: relative;
+           
+        }
+        .menu{
+            left: 100%; top: 35px;
+            
+        }
+        .menu1{
+            left: 100%; top: -51px;
+        }
+        .menu2{
+            left: 100%; top: -11px;
+        }
+
+        .nav-main_wrap {    
+          display:flex;
+          margin-left: 100px;
+          
+        }
+        .nav-main_wrap li{
+          
+
+        }
+        
+        .nav-main_item {
+          
+            width: 280px;
+            height: 300px;
+
+            position: relative;
+           
+        }
+       
+        .nav-main_group {
+            padding-top: 40px;
+            
+          
+        }
+     
+        .nav-main_group_link{
+            font-size: 25px;
+        }
+
+       
+        .nav-main_sub-nav{
+        
+        }
+
+        .nav-main_sub-nav_wrap{
+            background-color: rgb(225, 235, 147);
+            margin-top: 51px;
+            position: absolute;
+            display: none;
+            z-index: 9999;
+            width: 180px; 
+              
+       
+        }
+
+        .submenu1 ul{
+            background-color: rgb(234, 235, 173);
+            
+            
+        }
+        .nav-main_sub-nav_wrap:hover{
+            
+        }
+
+
+        .nav-main_sub-nav_item{
+            padding: 10px;
+            
+        }
+
+        .social{
+            padding-top: 50px;
+        }
+        .login_wrap{
+         
+            padding-top: 10px;
+            
+        }
+        .separator{
+            padding: 5px;
+        }
+
+        .nav-main_item a {
+            color: rgb(216, 93, 208);
+        }
+        .nav-main_item a:hover {color: rgb(205, 169, 102);}
+        .nav-main_item .nav-main_sub-nav_wrap {display:none;}
+
+        .nav-main_sub-nav_item {}
+        .nav-main_sub-nav_wrap1 {
+        }
+
+        .lang_select span, .login_wrap a{
+            color: rgb(216, 93, 208);
+        }
+
+        .login {
+          margin-right: 8px;
+        }
+
+        /**메인**/
+        .header_wrap{
+            width: 100%;
+        }
+        .mainhead_wrap{
+            position: relative;
+            background-position: center center;
+            height: 500px;
+        }
+
+        .blur_image{
+            position:absolute;
+            background-position: center center;
+            background-repeat:no-repeat ;
+            background-image: url(../img/mainbanner.jpg);
+            background-size: 100% 100%;
+            width: 100%;            
+            height: 500px;
+        
+        }
+
+        .blurcontain {
+        
+        }
+
+        .mainhead_intro_msg {
+            position: relative;
+            font-weight: bold; 
+            top: 50px;
+            left: 100px; 
+            color:rgb(206, 189, 189); 
+            font-size: 30px;
+        }
+
+
+        /**항공권 예약 탭**/
+        .booking_widget {
+            position: relative;
+            bottom: 350px;
+        }
+
+
+
+        .booking_widget_inner {
+            position: relative;
+            max-width: 1300px;
+            margin: 0 auto;
+            z-index: 9099;
+        }
+
+        .booking_widget_inner:before {
+            position: absolute;
+            display: block;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            content: "";
+            background-color: #65728a;
+            z-index: -1;
+        }
+
+        .booking_widget_list {
+            position: relative;
+            display: flex;
+            background-color: transparent;
+        }
+
+        .booking_widget_item {
+            position: relative;
+            flex: auto;
+            width: 25%;
+            height: 50px;
+            border: 0 #65728a;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 2rem 2rem 0 0;
+            background-color: #b0bfda ;
+        }
+
+        .booking_widget_item.active {
+            position: relative;
+            border-color: black;
+            background-color: white;
+        }
+
+        .booking_widget_item:first-child {
+            border-top-left-radius: 2rem;
+        }
+
+        .booking_widget_item.active:after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 2rem;
+            background-color: white;
+            bottom: -2rem;
+            z-index: 1;
+            content: '';
+            
+        }
+
+
+        .booking_widget_button {
+            display: block;
+            width: 100%;
+            min-height: 50px;
+            border: 0;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+            overflow: hidden;
+            background-color: transparent;
+            padding: 0 4rem;
+            font-size: 17px;
+        }
+
+        .booking_widget_item.active .booking_widget_button {
+            position: relative;
+            color: black;
+            font-weight: 500;
+        }
+
+        .booking_widget_text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .booking_widget_item+.booking_widget_item {
+            margin-left: 1.1px;
+        }
+
+        .booking_widget_panel.active {
+            display: block;
+        }
+
+        .booking_widget_panel {
+            display: none;
+            clear: both;
+            min-height: 230px;
+            padding: 30px 40px 10px;
+            border-radius: 2rem;
+            background-color: white;
+            box-shadow: 0 0 1rem 0 rgba(0,0,0,.2);
+        }
+
+        .show {
+            display: block;
+        }
+
+        .quickbookings {
+            max-width: 1300px;
+            margin: 0 auto;
+            word-wrap: break-word;
+        }
+
+        .booking_widget_side_wrap {
+            float: left;
+            width: auto;
+            margin-top: 0;
+            margin-right: 50px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .booking_widget_tabs {
+            display: inline-block;
+        }
+
+        .booking_widget_tab {
+            display: flex;
+            justify-content: center;
+            width: auto;
+            margin: 0 auto;
+            background-color: #65728a;
+            border-radius: 3.2rem;
+        }
+
+        .booking_widget_item1.active {
+            background-color:#0064de ;
+        }
+
+        .booking_widget_item1 {
+            display: flex;
+            min-width: auto;
+            padding: 2px 25px;
+            text-align: center;
+            border-radius: 3.2rem;
+            transition: .2s;
+        }
+
+        .booking_widget_item1.active .booking_widget_item_press {
+            font-weight: 500;
+        }
+
+        .booking_widget_item_press {
+            position: relative;
+            display: block;
+            width: 100%;
+            min-height: 40px;
+            line-height: 1.35;
+            outline: 0;
+            color: white;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .quickbookings_booking_type {
+            position: relative;
+            display: inline-block;
+            height: 45px;
+            margin-top: 0;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 0;
+            vertical-align: top;
+            line-height: 3.1rem;
+        }
+
+        .quickbookings_booking_type:after {
+            display: block;
+            width: 100%;
+            content: '';
+            clear: both;
+        }
+
+
+     
+        .quickbookings_type {
+            display: inline-block;
+            text-align: center;
+            
+        }
+
+        .quickbookings_type_item {
+            display: inline-block;
+            margin-top: 0;
+            padding: 0 18px;
+        }
+
+        .selection {
+            position: relative;
+        }
+
+        .selection label {
+            position: relative;
+            display: inline-block;
+            text-indent: 0;
+            line-height: 1.5;
+        }
+        
+        /*
+         .selection [type=radio] {
+            position: absolute;
+            opacity: 0;
+            left: 0;
+            border: 0;
+        }
+        
+        */
+       
+
+        .quickbookings_type_item [type=radio] {
+            top: 0;
+        
+            height: calc(100% - .5rem);
+        }
+
+        .quickbookings_type_item [type=radio]~label {
+            min-height: 37px;
+            margin-bottom: 0;
+            padding: 0 4px 10px;
+            text-align: center;
+            font-size: 17px;
+            vertical-align: middle;
+        }
+
+        .quickbookings_type_item [type=radio]:checked~label {
+            color: #297de4;
+            font-weight: 600;
+        }
+        .quickbookings_type_item [type=radio]:checked~label:before {
+            position: absolute;
+            bottom: 0;
+            top: auto;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #0064de;
+            border-color: #0064de;
+            border-radius: .2rem;
+            content: "";
+        }
+        
+        .quickbookings_type_link {
+            display: inline-block;
+            margin-top: 0;
+            padding: 0 1.4rem;
+        }
+
+        .quickbookings_multiple {
+            position:relative;
+            display: inline-block;
+            min-height: 30px;
+            padding: 0 15px 15px 20px;
+            text-decoration: none;
+            line-height: 1.5;
+            font-size: 16px;
+            vertical-align: middle;
+            color: #555;
+            margin-left: 0;
+            min-width: 70px;
+        }
+
+        .quickbookings_multiple:after {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: -.3rem 0 0 .4rem;
+            content: '';
+            border-left: 1px solid #555;
+            border-bottom: 1px solid #555;
+            transform: rotate(225deg);
+            vertical-align: middle;
+        }
+
+        .quickbookings_ali {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .quickbookings_separate.itinerary {
+            width: calc(21.334% + 1rem);
+            margin-left: -1rem;
+            border: 0;
+            padding: 0;
+        }
+
+        .quickbookings_ali_inner {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            justify-content: space-between;
+            margin: 10px 0 0;
+        }
+
+        .quickbookings_location.from {
+            float: left;
+        }
+
+        .quickbookings_location {
+            display: block;
+            width: 40.5%;
+            letter-spacing: -.01em;
+            border: 0;
+            background: none;
+            cursor: pointer;
+        }
+
+        .quickbookings_code {
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: black;
+            vertical-align: middle;
+        }
+
+        .quickbookings_airport {
+            display: block;
+            line-height: 1.5;
+            margin-top: 5px;
+            margin-left: -13px;
+            font-size: 18px;
+        }
+
+        .quickbookings_location.to {
+            float: right;
+            order: 2;
+        }
+
+        .quickbookings_swap {
+            display: block;
+            width: 45px;
+            height: 45px;
+            margin-top: 15px;
+            text-indent: 100%;
+            margin: 15px auto 0;
+            border: 0;
+            order: 1;
+            overflow: hidden;
+            background: url(https://www.koreanair.com/booking__swap--disabled.svg) 0 0/100% no-repeat;
+            white-space: nowrap;
+            cursor: not-allowed;
+        }
+
+        .quickbookings_separate.itinerary .booking_widget_message {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .booking_widget .message {
+            text-align: left;
+            margin-top: 15px;
+            color: red;
+        }
+        
+        .message:last-child {
+            margin-bottom: 0;
+        }
+
+        .quickbookings_separate.date {
+            width: 28.66%;
+            padding: 0;
+        }
+
+        .quickbookings_label {
+            display: flex;
+            align-items: center;
+            height: 35px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            word-break: break-word;
+        }
+
+        .label {
+            color: #767676;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .forms {
+            position: relative;
+        }
+
+        .quickbookings_datepicker {
+            display: block;
+            width: 100%;
+            border: 0;
+            min-height: 45px;
+            padding: 0;
+            border-bottom: .1rem solid #767676;
+            box-sizing: border-box;
+            appearance: none;
+            color: black;
+            text-align: center;
+            cursor: pointer;
+            line-height: 1.5;
+            background: 0 0;
+            transition: padding .2s,border .2s,background .2s,color .2s,box-shadow .2s;
+        }
+
+        .quickbookings_date {
+            display: flex;
+            align-items: center;
+            border-bottom: 0;
+            justify-content: flex-start;
+        }
+
+        .quickbookings_date.off {
+            font-weight: 400;
+            line-height: 1.3;
+            text-align: left;
+            font-size: 16px;
+            letter-spacing: initial;
+            color: #767676;
+        }
+
+        .quickbookings_date:before {
+            display: inline-block;
+            width: 25px;
+            min-width: 25px;
+            height: 25px;
+            background-position: 100% 50%;
+            background-size: 25px 25px;
+            margin-right: 5px;
+            vertical-align: middle;
+            content: "";
+            margin-bottom: 5px;
+            background: url(https://www.koreanair.com/icon-main-quick__calendar.svg) left 0/30px 30px no-repeat;
+        }
+
+        .quickbookings_date .from, .quickbookings_date .to {
+            display: inline-block;
+            text-align: left;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+
+        .quickbookings_separate.passenger {
+            width: 12.83%;
+            padding: 0;
+        }
+
+        .quickbookings_passenger {
+            display: block;
+            width: 100%;
+            height: 45px;
+            padding: 0 30px 0 0;
+            border: 0;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
+            border-bottom: .1rem solid #767676;
+            background-size: 24px 24px;
+            background: url(https://www.koreanair.com/icon-main-quick__passenger.svg) right center/30px 30px no-repeat ;
+        }
+
+        .quickbookings_separate.seats {
+            width: 14%;
+            padding: 0;
+        }
+
+        .quickbookings_seatclass {
+            display: block;
+            width: 100%;
+            min-height: 45px;
+            padding: 0 30px 0 0;
+            border: 0;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: left;
+            cursor: pointer;
+            border-bottom: .1rem solid #767676;
+            appearance: none;
+            box-sizing: border-box;
+            background: url(https://www.koreanair.com/icon-main-quick__seatclass.svg) right center/30px 30px no-repeat;
+            background-size: 30px 30px;
+        }
+
+        .quickbookings_separate.search {
+            width: 9.83%;
+            margin-right: 0;
+            margin-top: 35px;
+            padding: 0;
+            border-bottom: none;
+        }
+
+        .booking_widget_find {
+            display: flex;
+            width: 100%;
+            padding: 0 5px;
+            overflow: hidden;
+            border: 0;
+            outline: 0;
+            background: #a1b4d8;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            border-radius: 1rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /**출발지 검색**/
+        .departure {
+            padding-left: 270px;
+        }
+
+
+        .dialog.main {
+            position: absolute;
+            left: 35.5%;
+            justify-content: flex-start;
+            max-width: 1300px;
+            
+            background-color: transparent;
+            transform: translateX(-50%);
+            z-index: 9999;
+        }
+        .dialog.main.departure .dialog_contents {
+            width: 700px!important;
+        }
+
+        .dialog.main .dialog_contents {
+            position: relative;
+            display: block;
+            max-width: 1300px;
+            height: auto;
+            padding-top: 36px;
+            margin: 1rem 0 0;
+            border-radius: 20px;
+            box-shadow: 0 0 1rem 0 rgba(0,0,0,.2);
+        }
+
+        .dialog.full .dialog_contents {
+            height: auto;
+            max-height: 100%!important;
+        }
+
+        .dialog_contents {
+            outline: 0;
+            top: -170px;
+            overflow-y: auto;
+            background-color: white;
+        }
+
+        .dialog.main .h2 {
+            margin-bottom: 16px;
+        }
+
+        .dialog .h2 {
+            margin-right: 60px;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        .dialog_contents {
+            padding: 45px 40px 0;
+        }
+
+        .dialog.main .dialog_aligner {
+            margin-top: 0;
+        }
+
+        .dialog_aligner {
+            margin: 20px 0 0;
+            padding-bottom: 40px;
+        }
+
+        .search_airport {
+            margin-top: 30px;
+        }
+
+        .combobox {
+            position: relative;
+            margin-top: 10px;
+            margin: 16px 0 40px;
+        }
+
+        .auto_search {
+            position: relative;
+        }
+
+        .auto_search_text {
+            display: block;
+            width: 100%;
+            height: 60px;
+            padding: 0 100px 0 0;
+            font-size: 20px;
+            margin: 0;
+            border: 2px solid white;
+            border-bottom: 1px solid #00256c;
+            border-radius: 0;
+            background: 0 0;
+            background-size: 32px 32px;
+            color: black;
+            appearance: none;
+            box-sizing: border-box;
+            transition: padding .2s,border .2s,color .2s;
+        }
+
+        .auto_search_clear {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border: 0;
+            top: 10px;
+            right: 6px;
+            white-space: nowrap;
+            text-indent: 100%;
+            overflow: hidden;
+            vertical-align: top;
+            transition: right .2s;
+            background: url(https://www.koreanair.com/search__clear.svg) 50% 50%/24px 24px no-repeat white;
+        }
+
+        .search_airport_wrap {
+            min-height: 90px;
+            margin-bottom: 30px;
+        }
+
+        .search_airport_local {
+            display: inline-block;
+            padding-left: 32px;
+            font-size: 18px;
+            line-height: 1.5;
+            border: 0;
+            background:url(https://www.koreanair.com/search-airport__local.svg) 0 50%/24px 24px no-repeat;
+            color: black;
+        }
+
+        .main .dialog_close {
+            top: 32px;
+        }
+
+        .dialog_close {
+            position: absolute;
+            display: block;
+            width: 44px;
+            height: 44px;
+            right: 30px;
+            border: 0;
+            border-radius: .2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            background: url(https://www.koreanair.com/dialog__close.svg) 50% 50%/24px 24px no-repeat;
+            text-indent: 100%;
+            cursor: pointer;
+        }
+        /** 지역과 도시 선택 **/
+        .tab.y {
+            position: relative;
+            display: flex;
+            margin: 25px 0 0;
+            border: 1px solid #dfe2e5;
+        }
+
+        .local .tab.y .tab_list {
+            width: 30%;
+        }
+
+        .local {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            justify-content: space-between;
+            height: 100%;
+            -webkit-transform: translate(0,0);
+            padding-bottom: 50px;
+        }
+
+        .tab.y .tab_item.active .tab_button {
+            background-color: white;
+            font-weight: 600;
+        }
+
+        .tab.y .tab_button {
+            display: block;
+            width: 100%;
+            padding: 13px 10px 13px 20px;
+            border: 0;
+            color: black;
+            text-align: left;
+            cursor: pointer;
+            appearance: none;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .local .tab.y .tab_panel {
+            width: 70%;
+        }
+
+        .tab.y .tab_panel {
+            position: absolute;
+            overflow-y: auto;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            padding: 0 24px 0 30px;
+        }
+
+        .tab_panel.active {
+            display: block;
+        }
+
+        .tab_panel {
+            clear: both;
+        }
+
+        .local_title {
+            margin-top: 14px;
+            padding-bottom: 12px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #00256c;
+        }
+
+        .local_list {
+            padding: 18px 0 15px;
+        }
+
+        .local_item:first-child {
+            margin-top: 0;
+        }
+
+        .local_item {
+            margin: 16px 0;
+        }
+
+        .local_button {
+            display: flex;
+            font-size: 16px;
+            line-height: 1.5;
+            border: 0;
+            color: black;
+            background: none;
+            text-align: left;
+            cursor: pointer;
+            appearance: none;
+        }
+
+        .local_button.all .local_code {
+            background: url(https://www.koreanair.com/local__code--all.svg) 0 50%/16px 16px no-repeat;
+        }
+
+        .local_code {
+            display: inline-block;
+            min-width: 68px;
+            padding: 0 4px 0 24px;
+            background: url(https://www.koreanair.com/local__code.svg) 0 50%/16px 16px no-repeat;
+        }
+
+        .local_item.indent {
+            padding-left: 24px;
+        }
+
+        .main .dialog_close {
+            top: 32px;
+        }
+
+        .dialog_close:focus, .dialog_close:hover {
+            outline: 0;
+            border-radius: .3rem;
+            box-shadow: inset 0 0 0 1px #0064de;
+        }
+
+
+        .departure_city {
+            display: none;
+        }
+
+        .departure_city1 {
+            display: none;
+        }
+
+        .show1 {
+            display: block;
+        }
+
+        /**도착지 검색**/
+
+        .dialog.main.arrival .dialog_contents {
+            width: 750px;
+            margin-left: 430px;
+        }
+
+        /** 탑승일 달력 **/
+
+        .dialog {
+           width: 100%;
+        }
+
+        .dialog.main .dialog_contents {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 1300px;
+            padding-top: 36px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+        }
+
+        .dialog.full .dialog_contents {
+            max-height: 100%!important;
+        }
+
+        .dialog.active {
+            display: flex;
+            align-items: center;
+        }
+
+        .datepicker_header {
+            position: relative;
+            padding: 0;
+        }
+
+        .datepicker.main .datepicker_prev, .datepicker.main .datepicker_next {
+            top: 150px;
+            transform: inherit;
+        }
+
+        .datepicker_prev {
+            position: absolute;
+            display: block;
+            width: 44px;
+            height: 44px;
+            left: 0;
+            border: 0;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+            background: url(https://www.koreanair.com/datepicker-prev.svg) 50% 50%/24px 24px no-repeat;
+        }
+
+        .datepicker_next {
+            position: absolute;
+            display: block;
+            width: 44px;
+            height: 44px;
+            right: 0;
+            border: 0;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+            background: url(https://www.koreanair.com/datepicker-next.svg) 50% 50%/24px 24px no-repeat;
+        }
+        .datepicker_aligner {
+            position: relative;
+        }
+        .datepicker_list {
+            margin: 40px auto 0;
+            padding: 0;
+            height: 300px;
+        }
+
+        .datepicker.main.fixed_mode .datepicker_list {
+            width: auto;
+            height: auto;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .datepicker.main {
+            padding-bottom: 40px;
+        }
+
+
+        .datepicker_seperate {
+            padding: 0;
+        }
+
+        .datepicker_item {
+            margin: 0 30px;
+        }
+        
+        .datepicker.main .datepicker_item {
+            width: 43.66%;
+            text-align: center;
+        }
+
+        .datepicker_item.active {
+            position: relative;
+            display: block;
+            float: left;
+        }
+
+        .datepicker_year {
+            display: inline-block;
+            color: black;
+            line-height: 1.5;
+        }
+
+        .datepicker.main .datepicker_year {
+            margin-left: 0;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .datepicker.main .datepicker_item [role=application] {
+            min-height: 350px;
+        }
+
+        .datepicker.main .datepicker_table {
+            margin-top: -2px;
+        }
+
+        .datepicker_table {
+            margin: 5px 0 0;
+        }
+
+        .datepicker_table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-spacing: 0;
+            empty-cells: show;
+        }
+
+        .datepicker.main .datepicker_th {
+            padding-bottom: 5px;
+        }
+
+        .datepicker_th:first-child {
+            color: #de001b;
+        }
+
+        .datepicker_th {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .datepicker.main .datepicker_td {
+            padding: 12px 0;
+        }
+
+        .datepicker_list:after {
+            display: block;
+            clear: both;
+            content: "";
+        }
+
+        .dialog_buttons.fix {
+            padding-top: 0;
+        }
+
+        .dialog_new_datepicker_aligner {
+            position:relative;
+            display: block;
+            width: 100%;
+            bottom:0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .datepicker.main .datepicker_util {
+            margin-top: 0;
+        }
+
+        .datepicker.main .datepicker_seperate+.dialog_buttons .datepicker_util {
+            padding: 0;
+        }
+
+        .datepicker_seperate+.dialog_buttons .datepicker_util {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            box-shadow: none;
+        }
+
+        .datepicker.main .datepicker_seperate+.dialog_buttons .datepicker_directs {
+            display: flex;
+            align-items: center;
+            min-height: auto;
+            padding: 0 3px;
+            background-color: white;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .datepicker_seperate+.dialog_buttons .datepicker_directs {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .datepicker_directs {
+            border-radius: 10px;
+        }
+
+        .datepicker_guide {
+            display: block;
+            margin: 20px 0 0;
+        }
+
+        .caption {
+            margin: 8px 0;
+            padding-left: 20px;
+            text-indent: -20px;
+            color: #555;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .datepicker.main .dialog_button_area {
+            width: auto;
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+        }
+
+        .dialog_buttons_area {
+            position: relative;
+            display: flex;
+            justify-items: flex-start;
+            justify-content: center;
+            bottom: auto;
+            left: auto;
+            min-height: 48px;
+        }
+
+        .dialog_confirm {
+            display: inline-block;
+            width: auto;
+            min-width: 150px;
+            min-height: 48px;
+            padding: 11px 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            text-decoration: none;
+            text-align: center;
+            appearance: none;
+            border-radius: 10px;
+            border: 0;
+        }
+
+        .datepicker_util:after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        /**승객 선택**/
+
+        .dialog.main.passenger_num .dialog_contents, .dialog.main.seat_class .dialog_contents {
+            width: 750px;
+            margin-left: 550px;
+        }
+
+        .alert {
+            display: block;
+            margin: 20px 0;
+        }
+
+        .alert:first-child {
+            margin-top: 0;
+        }
+
+        .passenger_items {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            margin-bottom: 40px;
+        }
+
+        .passenger_item {
+            display: block;
+            padding-right: 0;
+            margin: 20px 0;
+        }
+
+
+        .passenger_items.col3 .passenger_item {
+            width: 200px;
+        }
+
+        .passenger_label {
+            margin-bottom: 4px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.5;
+            color: black;
+        }
+
+        .opener {
+            display: inline-block;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 36px;
+            height: 36px;
+            border: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            background: url(https://www.koreanair.com/ico-opener.svg) 50% 50%/24px 24px no-repeat;
+        }
+
+        .passenger_controls {
+            position: relative;
+            display: flex;
+            width: 164px;
+            margin-left: -6px;
+            margin-top: 17px;
+        }
+
+        .passenger_control {
+            position: absolute;
+            display: block;
+            width: 44px;
+            height: 44px;
+            top: 2px;
+            border: 0;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+            z-index: 1;
+        }
+
+        .passenger_control.sub {
+            left: 0;
+            background: url(https://www.koreanair.com/passenger__control-sub.svg) 50% 50%/32px 32px no-repeat;
+        }
+
+        .passenger_control.sub {
+            background: url(https://www.koreanair.com/passenger__control-sub.svg) 50% 50%/32px 32px no-repeat;
+            cursor: not-allowed;
+        }
+
+
+        .passenger_controls .forms {
+            width: 100%;
+        }
+
+        .forms {
+            position: relative;
+        }
+
+        .passenger_controls .forms [type=tel] {
+            width: 48px;
+            font-size: 24px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        .passenger_control.add {
+            right: 0;
+            background: url(https://www.koreanair.com/passenger__control-add.svg) 50% 50%/32px 32px no-repeat;
+        }
+
+        .passenger_cal_button {
+            display: inline-block;
+            padding: 0 24px;
+            border: 0;
+            background-color: white;
+            background-image: url(https://www.koreanair.com/passenger__cal.svg),url(https://www.koreanair.com/passenger__cal-down.svg);
+            background-repeat: no-repeat;
+            background-position: 0 50%, 100% 50%;
+            background-size: 16px 16px;
+            color: #0064de;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .passenger_cal_button:focus, .passenger_cal_button:hover {
+            outline: 0;
+            border-radius: 2px!important;
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #0064de;
+        }
+
+        .passenger_cal {
+            display: block;
+        }
+
+        .mix {
+            padding: 40px;
+            border: 1px solid #d9bde1;
+            border-radius: 8px;
+        }
+
+        .mix .forms_option, .mix .label {
+            max-width: 630px;
+            margin: 0 auto;
+        }
+
+        .forms_option {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .forms_option .forms:first-child {
+            margin-right: 20px;
+        }
+
+        .forms_option .forms {
+            flex: 1;
+        }
+        .forms {
+            position: relative;
+        }
+
+        .forms [type=tel] {
+            height: 45px;
+        }
+
+        .forms_option .option {
+            margin-top: 8px;
+            border-radius: 6px;
+        }
+
+        .option.ghost {
+            border-color: #767676;
+            color: #555;
+        }
+
+        .option {
+            display: inline-block;
+            margin: 0;
+            min-width: 84px;
+            padding: 7px 8px;
+            font-size: 16px;
+            line-height: 1.5;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+            background-color: white;
+            border: 1px solid #0064de;
+            color:#0064de;
+        }
+
+        .notice.main {
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .notice {
+            margin: 60px 0 40px;
+            background-color: #f8f9fc;
+            border-radius: 10px;
+        }
+
+        .notice .hidden+.list {
+            margin-top: 0;
+        }
+
+        .list:last-child {
+            margin-bottom: 0;
+        }
+
+        .list {
+            margin: 16px 0;
+            padding: 0;
+        }
+
+        .notice .list>.list_item {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .list.disc>.list_item {
+            padding-left: 12px;
+        }
+
+        .list li {
+            position: relative;
+            color: #555;
+            font-weight: 400;
+            text-indent: 0;
+        }
+
+        .notice .list.disc>.list_item:before {
+            top: 9px;
+            background-color: #767676;
+        }
+
+        .list.disc>.list_item:before {
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            content: "";
+        }
+
+        .remark.positive {
+            color: #d391e5;
+        }
+
+        .confirms.center {
+            justify-content: center;
+        }
+
+        .confirms {
+            display: flex;
+            justify-items: flex-start;
+            margin: 60px 0;
+        }
+
+        .dialog .confirm {
+            min-width: 240px;
+            min-height: 48px;
+            padding: 12px 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            border-radius: 10px;
+        }
+
+        .confirm {
+            margin: 0;
+            border: 1px solid #013066;
+            background-color: #013066;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+        }
+
+        /** 좌석 등급 선택 **/
+
+        .seatclass {
+            margin-top: 36px;
+            margin-bottom: 40px;
+        }
+
+        .seatclass_list {
+            display: flex;
+            flex-direction: row;
+            margin: 0 0 20px;
+            padding-left: 1px;
+        }
+
+        .seatclass_item {
+            position: relative;
+            width: 100%;
+            margin-left: -1px;
+            margin-bottom: 0;
+        }
+
+        .seatclass_input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            clip-path: inset(50%);
+            white-space: nowrap;
+            clip: rect(1px,1px,1px,1px);
+            overflow: hidden;
+        }
+
+        .seatclass_label {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 10px 30px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid #767676;
+            word-wrap: break-word;
+            background-color: white;
+            font-size: 16px;
+            border-radius: 0;
+        }
+
+        .seatclass_dispose {
+            margin: 40px 0 15px;
+        }
+
+        .dispose {
+            display: flex;
+        }
+
+        .dispose.left {
+            justify-content: flex-start;
+        }
+
+        .dispose.middle {
+            align-items: center;
+        }
+
+        .seatclass .seatclass_label.active, .seatclass_input:checked + .seatclass_label {
+            position: relative;
+            border: 1px solid #118fe4;
+            z-index: 1;
+        }
+
+        .seatclass .seatclass_label.active:before, .seatclass_input:checked + .seatclass_label:before {
+            position: absolute;
+            display: block;
+            width: 24px;
+            height: 24px;
+            right: 12px;
+            top: 50%;
+            margin-top: -12px;
+            background: url(https://www.koreanair.com/payment-method__item--checked.svg) 50% 50%/24px 24px no-repeat;
+            content: "";
+        }
+
+        .seatclass_label:hover {
+            outline: 0;
+            border-radius: 1px!important;
+            box-shadow: 0 0 0 1px white, 0 0 0 2px #0064de;
+        }
+
+        /**예약 조회 탭**/
+        .quickmytrips {
+            max-width: 1300px;
+            margin: 0 auto;
+            word-wrap: break-word;
+        }
+
+        .quickmytrips_aligner {
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin: 27px 0 0;
+        }
+
+        .quickmytrips_separate.number {
+            width: 26%;
+            padding: 0;
+        }
+
+        .quickmytrips_label {
+            display: flex;
+            align-items: center;
+            height: 26px;
+            margin-top: 3px;
+            margin-bottom: 9px;
+            word-break: break-word;
+        }
+
+        .booking_widget .placeholder {
+            top: 50%;
+            transform: translateY(-50%);
+            max-height: 43px;
+            line-height: 1.3;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        .placeholder {
+            position: absolute;
+            width: 100%;
+            color: #767676;
+            user-select: none;
+        }
+
+        .quickmytrips_input[type=text] {
+            font-size: 16px;
+            font-weight: bold;
+            height: 43px;
+            border-bottom: .1rem solid #767676;
+        }
+
+        .forms [type=text], .forms [type=tel], .forms select {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+            appearance: none;
+            opacity: 1;
+            border-radius: 0;
+            color: black;
+            transition: border .2s .3s,color .2s .3s,box-shadow .2s .3s;
+            border-bottom: .1rem solid #767676;
+        }
+
+        .quickmytrips_date {
+            display: flex;
+            align-items: center;
+            border-bottom: 0;
+            justify-content: flex-start;
+        }
+
+        .quickmytrips_date.off {
+            font-weight: 400;
+            line-height: 1.3;
+            text-align: left;
+            font-size: 16px;
+            letter-spacing: initial;
+            color: #767676;
+        }
+
+        .quickmytrips_date:before {
+            display: inline-block;
+            width: 25px;
+            min-width: 25px;
+            height: 25px;
+            background-position: 100% 50%;
+            background-size: 25px 25px;
+            margin-right: 5px;
+            vertical-align: middle;
+            content: "";
+            margin-bottom: 5px;
+            background: url(https://www.koreanair.com/icon-main-quick__calendar.svg) left 0/30px 30px no-repeat;
+        }
+
+        .quickmytrips_separate.date {
+            width: 20.83%;
+            padding: 0;
+        }
+
+        
+        .quickmytrips_datepicker {
+            display: block;
+            width: 100%;
+            border: 0;
+            min-height: 43px;
+            padding: 0;
+            border-bottom: .1rem solid #767676;
+            box-sizing: border-box;
+            appearance: none;
+            color: black;
+            text-align: center;
+            cursor: pointer;
+            line-height: 1.5;
+            background: 0 0;
+            transition: padding .2s,border .2s,background .2s,color .2s,box-shadow .2s;
+        }
+
+        .quickmytrips_separate.lastname, .quickmytrips_separate.firstname {
+            position: relative;
+            width: 15%;
+        }
+
+        .quickmytrips_separate.search {
+            width: 9.83%;
+            margin-right: 0;
+            margin-top: 30px;
+        }
+
+        .quickmytrips_text {
+            padding: 9px 13.28% 0 53.5%;
+        }
+
+        .quickmytrips_text .caption {
+            font-size: 13px;
+        }
+        .caption:first-child {
+            margin-top: 0;
+        }
+        .caption:last-child {
+            margin-bottom: 0;
+        }
+        .caption:before {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            background: url(https://www.koreanair.com/ico-caption.svg) center center/16px 16px no-repeat;
+            vertical-align: -.3rem;
+            content: "";
+        }
+
+        /**체크인 탭**/
+        .quickcheckin {
+            max-width: 1300px;
+            margin: 0 auto;
+            word-wrap: break-word;
+        }
+
+        .quickcheckin_aligner {
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin: 27px 0 0;
+        }
+
+        .quickcheckin_separate.number {
+            width: 26%;
+            padding: 0;
+        }
+
+        .quickcheckin_label {
+            display: flex;
+            align-items: center;
+            height: 26px;
+            margin-top: 3px;
+            margin-bottom: 9px;
+            word-break: break-word;
+        }
+
+        .quickcheckin_input[type=text] {
+            font-size: 16px;
+            font-weight: bold;
+            height: 43px;
+            border-bottom: .1rem solid #767676;
+        }
+
+        .quickcheckin_separate.date {
+            width: 20.83%;
+            padding: 0;
+        }
+
+        .quickcheckin_select.select {
+            height: 43px;
+            max-height: 43px;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom:.1rem solid #767676;
+        }
+
+        .quickcheckin_select.select:hover {
+            padding: 0 3.4rem 0 1rem;
+            background-position: calc(100% - 1rem) center;
+        }
+
+
+        .quickcheckin_separate.lastname, .quickcheckin_separate.firstname {
+            position: relative;
+            width: 15%;
+        }
+
+        .quickcheckin_text {
+            padding: 9px 13.28% 0 53.5%;
+        }
+
+        .quickcheckin_separate.search {
+            width: 9.83%;
+            margin-right: 0;
+            margin-top: 30px;
+        }
+        .quickcheckin_text .caption {
+            font-size: 13px;
+        }
+
+        .forms select {
+            padding-right: 24px;
+            background: url(https://www.koreanair.com/ico-select.svg) right center/24px 24px no-repeat white;
+        }
+        
+        /**항공편 현황 탭**/
+
+        .quickstatus {
+            max-width: 1300px;
+            margin: 0 auto;
+            word-wrap: break-word;
+        }
+
+        .booking_widget_sidewrap {
+            float: left;
+            width: auto;
+            margin-top: 0;
+            margin-right: 35px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        
+        .quickstatus_booking_type {
+            position: relative;
+            display: inline-block;
+            height: 38px;
+            margin-top: 0;
+            margin-bottom: 41px;
+            vertical-align: top;
+            line-height: 3.2rem;
+            text-align: center;
+            font-size: 0;
+        }
+
+        .quickstatus_type {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .quickstatus_type_item {
+            display: inline-block;
+            margin-top: 0;
+            padding: 0 14px;
+        }
+
+        .quickstatus_type_item [type=radio] {
+          
+            top: 0;
+            height: calc(100% - .5rem);
+        }
+        
+        .tripType {
+         	
+            opacity: 1;
+            left: 0;
+            border: 0;
+        }
+
+        .quickstatus_type_item [type=radio]~label {
+            min-height: 37px;
+            margin-bottom: 0;
+            padding: 0 4px 10px;
+            text-align: center;
+            font-size: 17px;
+            vertical-align: middle;
+        }
+
+        .quickstatus_type_item [type=radio]:checked~label {
+            color: #297de4;
+            font-weight: 600;
+        }
+
+        .quickstatus_type_item [type=radio]:checked~label:before {
+            position: absolute;
+            bottom: 0;
+            top: auto;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #0064de;
+            border-color: #0064de;
+            border-radius: .2rem;
+            content: "";
+        }
+
+        .quickstatus_aligner {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .quickstatus_separate.itinerary {
+            width: calc(21.33% + 1rem);
+            margin-left: -1rem;
+            border: 0;
+            padding: 0;
+        }
+
+        .quickstatus_separate {
+            margin-right: 3.35%;
+        }
+
+        .quickstatus_location.from {
+            float: left;
+        }
+
+        .quickstatus_location {
+            display: block;
+            width: 40.5%;
+            border: 0;
+            letter-spacing: -.01em;
+            background: none;
+            cursor: pointer;
+        }
+
+
+
+        .quickstatus_code {
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: black;
+            vertical-align: middle;
+        }
+
+        .quickstatus_airport {
+            display: block;
+            line-height: 1.5;
+            margin-top: 5px;
+            margin-left: -13px;
+            font-size: 18px;
+        }
+
+        .quickstatus_location.to {
+            float: right;
+            order: 2;
+        }
+
+        .quickstatus_swap {
+            display: block;
+            width: 45px;
+            height: 45px;
+            margin-top: 15px;
+            text-indent: 100%;
+            margin: 15px auto 0;
+            border: 0;
+            order: 1;
+            overflow: hidden;
+            background: url(https://www.koreanair.com/booking__swap--disabled.svg) 0 0/100% no-repeat;
+            white-space: nowrap;
+            cursor: not-allowed;
+        }
+
+        .quickstatus_separate.itinerary .booking_widget_message {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quickstatus_separate.date {
+            width: 41%;
+            margin-top: 20px;
+        }
+
+        .quickstatus_separate {
+            margin-right: 3.35%;
+            padding: 0;
+        }
+
+        .quickstatus_datepicker {
+            display: block;
+            width: 100%;
+            border: 0;
+            min-height: 43px;
+            padding: 0;
+            margin-top: 5px;
+            border-bottom: .1rem solid #767676;
+            box-sizing: border-box;
+            appearance: none;
+            color: black;
+            text-align: center;
+            cursor: pointer;
+            line-height: 1.5;
+            background: 0 0;
+            transition: padding .2s,border .2s,background .2s,color .2s,box-shadow .2s;
+        }
+
+        .quickstatus_datepicker:focus, .quickstatus_datepicker:hover {
+            outline: 0;
+            border-radius: .3rem;
+            box-shadow: inset 0 0 0 1px #0064de;
+            border-bottom-color: black;
+            padding-left: 1rem;
+        }
+        .quickstatus_date {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            list-style: 1.3;
+            border-bottom: 0;
+            
+            font-size: 15px;
+            
+        }
+        .quickstatus_date:before {
+            display: inline-block;
+            width: 25px;
+            min-width: 25px;
+            height: 25px;
+            background-position: 100% 50%;
+            background-size: 25px 25px;
+            margin-right: 10px;
+            vertical-align: middle;
+            content: "";
+            margin-bottom: 5px;
+            background: url(https://www.koreanair.com/icon-main-quick__calendar.svg) left 0/30px 30px no-repeat;
+        }
+
+        
+        .quickstatus_separate.search {
+            width: 9.83%;
+            margin-right: 0;
+            margin-left: auto;
+            margin-top: 30px;
+            padding: 0;
+            border-bottom: none;
+        }
+
+        /**프로모션 섹션**/
+        .fd_section {
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        #fare_deal {
+            height: 600px;
+        }
+        .fare_deal {
+            position: relative;
+            top: -250px;
+        }
+        .fd_container {
+            width: 100%;
+            max-width: 1100px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .fare_deal .fd_header {
+            width: 75%;
+            display: inline-block;
+        }
+        .fd_header {
+            font-size: 20px;
+            border-left: 3px solid orange;
+            padding-left: 10px;
+            line-height: 20px;
+            color: #00266b;
+        }
+        .fd_header_text {
+            display: inline-block;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 400;
+            word-wrap: break-word;
+            line-height: 25px;
+        
+        }
+        .fd_dropdown {
+            position: relative;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        .fd_content {
+            margin-top: 30px;
+        }
+        .fd_row {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        .fd_col {
+            float: left;
+            width: 25%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .fd_item {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px 15px 25px 15px;
+            height: 265px;
+            border-radius: 4px;
+            background-color: grey;
+            background-size: cover;
+            box-shadow: 2px 4px 4px rgb(0 0 0 / 10%);
+            transition: all 0.15x ease-out;
+        }
+
+        .fd_item::before {
+            position: absolute;
+            width: 100%;
+            height: 140px;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            content: "";
+            background-size: cover;
+            background-image: linear-gradient(-180deg, rgba(0,0,0,0) 15%, rgba(0,0,0,0.75) 60%) ;
+        }
+        .blurcontain {
+            position: absolute;
+            width: 100%;
+            opacity: 1;
+            overflow: hidden;
+            background-position: center center;
+            background-size: cover;
+        }
+        .fd_image {
+            left: 0;
+            top: 0;
+            height: 265px;
+        }
+        .fd_description_wrapper {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom:20px;
+            z-index: 2;
+            color: white;
+            border-bottom: 1px solid rgba(216,216,216,0.2);
+        }
+        .fd_description_country {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 26px;
+            margin-bottom: 8px;
+        }
+        .fd_description_cabin {
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+        .fd_description_price {
+            font-size: 15px;
+            line-height: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .fd_description_currency {
+            display: inline-block;
+            width:auto;
+            padding-left: 5px;
+            margin-bottom: 6px;
+            margin-right: 4px;
+            border-left: 2px solid orange;
+        }
+
+
+
+
+
+
+        /**푸터**/
+
+ 
+        .footer_content {
+            position: relative;
+            display: grid;
+            background-color: rgb(66, 150, 196);
+            grid-template-columns: 250px 3fr;
+            grid-template-rows: auto;
+            padding-left: 30px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            
+        }
+
+        .footer_inner {
+            display: flex;
+            padding-left: 100px;
+            grid-column-gap: 100px;
+            
+        }
+        
+        .footer_wrap {
+            
+        }
+        .footer_inner_top {
+           border : 1px solid white ;
+           
+        }
+        .footer_inner_top_header {
+            color: bisque;
+            padding-left: 38px;
+        }
+        .footer_inner_top_list {
+            padding-right: 70px;
+            padding-bottom: 10px;
+        }
+        .footer_inner_top_list a {
+            color: azure;
+        }

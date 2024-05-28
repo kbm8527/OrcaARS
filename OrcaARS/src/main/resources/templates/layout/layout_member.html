@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- pom.xml - thymeleaf-layout-dialect 추가 -->
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	  
+<head>
+    <meta charset="UTF-8">
+    <title>오카항공::회원</title>
+    
+    
+    <!--
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+	-->
+   <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
+	<script th:src="@{/js/index.js}"></script>
+	<script th:src="@{/js/login.js}"></script>
+	<script th:src="@{/js/register.js}"></script>
+	<script th:src="@{/js/zipcode.js}"></script>
+	
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+    <link rel="stylesheet" th:href="@{/css/term.css}">
+    
+   
+ 
+	
+
+</head>
+<body>
+    <div>
+       <header th:insert="~{fragments/header.html::header}">   
+		   
+	   </header>
+	   
+	   
+        <main>
+        	<!-- member content 시작
+        	
+        	<a th:href="@{/index}"><img src="../img/header_logo.png" alt=""></a>
+        	
+        	 -->
+        	
+        	<div layout:fragment="content"></div>
+        	
+        	
+        	<!-- member content 끝 -->
+        </main>        
+        
+        <!-- footer 시작 -->
+        <footer th:insert="~{fragments/footer.html::footer}"></footer>
+        <!-- footer 끝 -->
+        
+    </div>    
+</body>
+
+	
+</html>

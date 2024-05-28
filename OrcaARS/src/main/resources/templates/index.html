@@ -1,0 +1,2391 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout/layout_main.html">
+
+
+  <div layout:fragment="content">
+    
+	 
+    <!--메인 시작-->  
+    <main>
+        <div id="mainhead">
+            <div class="header_wrap">
+                <div class="mainhead_wrap">
+                    <div class="blurcontain">
+                    </div>
+                    <div class="blurcontain blur_image" id="mainhead_image" style="cursor: pointer;">
+                    </div>
+                    <div class="component_mainhead" style="cursor: pointer;">
+                        <div class="mainhead_copy">
+                            <div class="mainhead_content">
+                                <span class="mainhead_intro_msg" >
+                                    꿈의 도시를 찾아서
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="booking_widget" id="main_booking_widget">
+            <div class="booking_widget_inner">
+                <h2 class="hidden" id="bookin_widget">빠른 예매</h2>
+                <ul class="booking_widget_list">
+                    <li class="booking_widget_item active">
+                        <button class="booking_widget_button active" id="tab0" tabindex="0">
+                            <span class="booking_widget_text">항공권 예매</span>
+                        </button>
+                    </li>
+                    <li class="booking_widget_item">
+                        <button class="booking_widget_button" id="tab0" tabindex="-1">
+                            <span class="booking_widget_text">예약 조회</span> 
+                        </button>
+                    </li>
+                    <li class="booking_widget_item">
+                        <button class="booking_widget_button" id="tab0" tabindex="-1">
+                            <span class="booking_widget_text">체크인</span>
+                        </button>
+                    </li>
+                    <li class="booking_widget_item">
+                        <button class="booking_widget_button" id="tab0" tabindex="-1">
+                            <span class="booking_widget_text">항공편 현황</span>
+                        </button>
+                    </li>
+                </ul>
+                <!--항공권 예매 탭-->
+                <div aria-labelledby="tab_0" class="booking_widget_panel show" id="panel_0">
+                    <div class="quickbookings">
+                        <div class="booking_widget_side_wrap">
+                            <div class="booking_widget_tabs">
+                                <ul class="booking_widget_tab" aria-level="예매 종류">
+                                    <li class="booking_widget_item1 active">
+                                        <button class="booking_widget_item_press">예매</button>
+                                    </li>
+                                    <li class="booking_widget_item1">
+                                        <button class="booking_widget_item_press">마일리지 예매</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="quickbookings_panel">
+                            <div class="quickbookings_booking_type">
+                                <div class="quickbookings_type" aria-level="여정 타입">
+                                    <div class="quickbookings_type_item">
+                                        <div class="selection">
+                                            <input type="radio" name="tripType" class="untouched pristine tripType" checked>
+                                            <label for="roungdTrip" class="label">왕복</label>
+                                        </div>
+                                    </div>
+                                    <div class="quickbookings_type_item">
+                                        <div class="selection">
+                                            <input type="radio" name="tripType" class="untouched pristine tripType">
+                                            <label for="onewayTrip" class="label">편도</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quickbookings_type_link">
+                                    <div class="selection">
+                                        <a href="javascrip:void(0)" class="quickbookings_multiple">
+                                            다구간
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quickbookings_ali">
+                                <div class="quickbookings_separate itinerary">
+                                    <div class="quickbookings_ali_inner star_inserted">
+                                        <button type="button" class="star_inserted quickbookings_location dialog dialog1 from active1">
+                                            <span class="hidden star_inserted">출발지&nbsp;</span>
+                                            <span class="quickbookings_code">SEL</span>
+                                            <span class="quickbookings_airport star_inserted">
+                                                &nbsp;서울
+                                            </span>
+                                        </button>
+                                        <button type="button" class="star_inserted quickbookings_location dialog dialog1 to">
+            
+                                            <span class="quickbookings_code">To</span>
+                                            <span class="quickbookings_airport star_inserted">
+                                                &nbsp;도착지
+                                            </span>
+                                        </button>
+                                        <button type="button" class="quickbookings_swap star_inserted" disabled>출발지와 도착지 바꾸기</button>
+                                        <div class="hidden star_inserted"></div>
+                                    </div>
+                                    <div class="booking_widget_message">
+                                        <div class="message error star_inserted" id="arriveError">도착지를 선택해주세요.</div>
+                                        <div aria-live="assertive">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quickbookings_separate date">
+                                    <p class="quickbookings_label label mo_hidden">탑승일&nbsp;</p>
+                                    <div class="forms">
+                                        <button type="button" class="quickbookings_datepicker dialog dialog1">
+                                            <span class="hidden">탑승일&nbsp;</span>
+                                            <span class="quickbookings_date off star_inserted">
+                                                <span class="from">가는 날</span>
+                                                <span class="wave star_inserted">~</span>
+                                                <span class="to star_inserted">오는 날</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    
+
+                                    <div aria-hidden="true"></div>
+                                </div>
+                                <div class="quickbookings_separate passenger">
+                                    <p class="quickbookings_label label">탑승객&nbsp;</p>
+                                    <div class="forms">
+                                        <button type="button" class="quickbookings_passenger dialog dialog1">
+                                            <span class="hidden">탑승객&nbsp;</span>
+                                            <span class="quickbookings_select_data">성인 1명</span>
+                                        </button>
+                                    </div>
+                                    <div aria-hidden="true"></div>
+                                </div>
+                                <div class="quickbookings_separate seats">
+                                    <p class="quickbookings_label label">좌석 등급&nbsp;</p>
+                                    <div class="forms">
+                                        <button type="button" class="quickbookings_seatclass dialog dialog1">
+                                            <span class="hidden">좌석등급&nbsp;</span>
+                                            <span class="quickbookings_select_data off">선택하세요.</span>
+                                        </button>
+                                    </div>
+                                    <div aria-hidden="true"></div>
+                                </div>
+                                <div class="quickbookings_separate search">
+                                    <button type="button" class="booking_widget_find">검색</button>
+                                </div>
+                            </div>                     
+                        </div>
+                    </div>
+                </div>
+                <!--예약 조회 탭-->
+                <div aria-labelledby="tab_1" class="booking_widget_panel" id="panel_1" >
+                    <div class="star_inserted">
+                        <div class="star_inserted">
+                            <div class="quickmytrips">
+                                <div>
+
+                                </div>
+                                <div>
+
+                                </div>
+                                <div class="quickmytrips_aligner">
+                                    <div class="quickmytrips_separate number">
+                                        <div class="untouched pristine" maxlength="13" >
+                                            <label for="textinput" class="label quickmytrips_label star_inserted">
+                                                예약번호 또는 항공권번호
+                                            </label>
+                                            <div class="forms">
+                                                <span class="placeholder star_inserted" style="display: block;">
+                                                    <span class="star_inserted">예) A1345 또는 1234567890</span>
+                                                </span>
+                                                <input type="text" class="quickmytrips_input upper untouched pristine" maxlength="13">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quickmytrips_separate date">
+                                        <p class="quickmytrips_label label">탑승일</p>
+                                        <div class="forms">
+                                            <button type="button" class="quickmytrips_datepicker valid">
+                                                <span class="hidden">탑승일&nbsp;</span>
+                                                <span class="quickmytrips_date off star_inserted">
+                                                    탑승일을 선택해 주세요
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div></div>
+                                    </div>
+                                    <div class="quickmytrips_separate lastname">
+                                        <div class="untouched pristine">
+                                            <label for="textinput" class="label quickmytrips_label star_inserted">
+                                                승객 성
+                                            </label>
+                                            <div class="forms">
+                                                <input type="text" class="quickmytrips_input upper untouched pristine">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quickmytrips_separate firstname">
+                                        <div class="untouched pristine">
+                                            <label for="textinput" class="label quickmytrips_label star_inserted">
+                                                승객 이름
+                                            </label>
+                                            <div class="forms">
+                                                <input type="text" class="quickmytrips_input upper untouched pristine">
+                                                <p class="hidden star_inserted" id="guide_name">
+                                                    국내선 한글 예약인 경우, 한글 성과 이름을 입력하세요.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quickbookings_separate hidden">
+                                        <p class="caption">국내선 한글 예약인 경우, 한글 성과 이릅을 입력하세요.</p>
+                                    </div>
+                                    <div class="quickmytrips_separate search">
+                                        <button type="button" class="booking_widget_find">조회</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quickmytrips_text mo_hidden">
+                                <p class="caption">국내선 한글 예약인 경우, 한글 성과 이름을 입렵하세요.</p>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                  <!--체크인 탭-->
+                <div aria-labelledby="tab_2" class="booking_widget_panel" id="panel_2" >
+                    <div class="star_inserted">
+                        <div></div>
+                        <div></div>
+                        <div class="quickcheckin">
+                            <div class="quickcheckin_aligner star_inserted touched">
+                                <div class="quickcheckin_separate number">
+                                    <div class="pristine valid touched">
+                                        <label for="textinput" class="label quickcheckin_label star_inserted">
+                                            <span class="hidden star_inserted">체크인&nbsp;</span>
+                                            예약번호 또는 항공권번호             
+                                        </label>
+                                        <div class="forms">
+                                            <span class="placeholder star_inserted" style="display: block;">
+                                                <span class="star_inserted">예 123ABC 또는 12345</span>
+                                            </span>
+                                            <input type="text" class="quickcheckin_input upper pristine touched">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quickcheckin_separate date">
+                                    <div class="untouched valid dirty">
+                                        <label for="select" class="label booking_label quickcheckin_label">
+                                            <span class="hidden star_inserted">체크인&nbsp;</span>
+                                            출발일
+                                        </label>
+                                        <div class="forms">
+                                            <select class="quickcheckin_select select valid touched">
+                                                <option value="0: object" class="star_inserted">2023년 5월 16일</option>
+                                                <option value="1: object" class="star_inserted">2023년 5월 16일</option>
+                                                <option value="2: object" class="star_inserted">2023년 5월 16일</option>
+                                                <option value="3: object" class="star_inserted">2023년 5월 16일</option>
+                                            </select>
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="quickcheckin_separate lastname">
+                                    <div class="untouched pristine">
+                                        <label for="textinput" class="label quickcheckin_label star_inserted">
+                                            <span class="hidden star_inserted">체크인&nbsp;</span>
+                                            승객 성
+                                        </label>
+                                        <div class="forms">
+                                            <input type="text" class="quickcheckin_input upper untouched pristine">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quickcheckin_separate firstname">
+                                    <div class="untouched pristine valid">
+                                        <label for="textinput" class="label quickcheckin_label star_inserted">
+                                            <span class="hidden star_inserted">체크인&nbsp;</span>
+                                            승객 이름
+                                        </label>
+                                        <div class="forms">
+                                            <input type="text" class="quickcheckin_input upper untouched pristine valid">
+                                        </div>
+                                    </div>
+                                    <p class="hidden">국내선 한글 예얀인 경우, 한글 성과 이름을 입력하세요.</p>
+                                </div>
+                                <div class="quickbookings_separate hidden">
+                                    <p class="caption">국내선 한글 예약인 경우, 한글 성과 이름을 입력하세요.</p>
+                                </div>
+                                <div class="quickcheckin_separate search">
+                                    <button type="button" class="booking_widget_find">조회</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quickcheckin_text mo_hidden star_inserted">
+                            <p class="caption">
+                                국내선 한글 예약인 경우, 한글 성과 이름을 입력하세요.
+                            </p>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+                 <!--항공편 현황 탭-->
+                 <div aria-labelledby="tab_3" class="booking_widget_panel" id="panel_3">
+                    <div class="star_inserted">
+                        <div class="quickstatus">
+                            <div class="booking_widget_sidewrap">
+                                <div class="booking_widget_tabs">
+                                    <ul class="booking_widget_tab" role="group">
+                                        <li class="booking_widget_item1 active">
+                                            <button type="button" class="booking_widget_item_press">
+                                                출도착 현황
+                                            </button>
+                                        </li>
+                                        <li class="booking_widget_item1">
+                                            <button type="button" class="booking_widget_item_press">
+                                                주간 스케줄
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="quickstatus_panel active">
+                                <div class="star_inserted">
+                                    <div class="quickstatus_booking_type">
+                                        <div class="quickstatus_type" role="group">
+                                            <div class="quickstatus_type_item">
+                                                <div class="selection">
+                                                    <input type="radio" name="trip1" checked="checked">
+                                                    <label for="radio" class="label">
+                                                        출/도착지
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="quickstatus_type_item">
+                                                <div class="selection">
+                                                    <input type="radio" name="trip1">
+                                                    <label for="radio" class="label">편명</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quickstatus_aligner">
+                                        <div class="quickstatus_separate itinerary">
+                                            <div class="star_inserted">
+                                                <div class="quickstatus_aligner_inner star_inserted">
+                                                    <button type="button" class="quickstatus_location from off star_inserted">
+                                                        <span class="quickstatus_code">From</span>
+                                                        <span class="quickstatus_airport star_inserted">
+                                                            &nbsp;출발지
+                                                        </span>
+                                                    </button>
+                                                    <button type="button" class="quickstatus_location to off star_inserted" tabindex="-1">
+                                                        <span class="quickstatus_code">To</span>
+                                                        <span class="quickstatus_airport star_inserted">
+                                                            &nbsp;도착지
+                                                        </span>
+                                                    </button>
+                                                    <button type="button" class="quickstatus_swap star_inserted">
+                                                        출발지와 도착지 바꾸기
+                                                    </button>
+                                                    <div class="hidden star_inserted"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="quickstatus_separate date">
+                                            <p class="quickstatus_label label">탑승일</p>
+                                            <div class="forms">
+                                                <button type="button" class="quickstatus_datepicker">
+                                                    <span class="hidden">탑승일&nbsp;</span>
+                                                    <span class="quickstatus_date">
+                                                        2023년 5월 17일
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                        <div class="quickstatus_separate search">
+                                            <button type="button" class="booking_widget_find">조회</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>    
+            <div class="departure_city show1" >
+                <div>
+                    <div class="star_inserted">
+                        <div class="dialog full main departure active" style="top:468px">
+                            <div class="dialog_contents">
+                                <h2 class="h2">출발지 검색</h2>
+                                <span class="hidden ">인터넷 익스플로러 11버전과 센스리더를 사용하시는 경우 가상커서모드를 끄고 사용해주세요</span>
+                                <div class="dialog_aligner">
+                                    <div class="search_airport">
+                                        <label for="search_airport" class="hidden">도시 및 공항 검색</label>
+                                        <div>
+                                            <div class="combobox">
+                                                <div class="auto_search">
+                                                    <span class="placeholder" style="display: block;">도시, 공항</span>
+                                                    <input type="text" class="auto_search_text pristine">
+                                                    <button type="button" class="auto_search_clear">
+                                                        <span class="hidden">전체 삭제</span>
+                                                    </button>
+                                                    <div class="hidden"></div>
+                                                </div>
+                                                <div class="combobix_listbox">
+                                                    <ul class="combobox_list mo_hidden">
+                                                        <li class="combobox_item auto_complete_item" id="item0">
+                                                            <em class="combobox_code">
+                                                                <mark class="combobox_highlight">A</mark>
+                                                                VK&nbsp;
+                                                            </em>
+                                                            <span class="combobox_airport">
+                                                                낸터킷, m
+                                                                <mark class="combobox_highlight">A</mark>
+                                                                , 미국
+                                                            </span>
+                                                            <span class="hidden">공항</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search_airport_wrap">
+
+                                        </div>
+                                        <button type="button" class="search_airport_local">모든 지역 보기</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="dialog_close">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="departure_city1"  >
+                <div>
+                    <div class="star_inserted">
+                        <div class="dialog main departure active" style="top:468px">
+                            <div class="dialog_contents" tabindex="-1">
+                                <div class="local">
+                                    <h2 class="h2" id="dialog_local">지역과 도시 선택</h2>
+                                    <div class="tab y mo_hidden star_inserted" id="tab_local">
+                                        <ul class="tab_list">
+                                            <li class="tab_item active star_inserted">
+                                                <button type="button" class="tab_button">
+                                                    대한민국
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    동북아시아
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    동남아시아/서남아시아
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    미주
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    대양주/괌
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    러시아/몽골/중앙아시아
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    중동/아프리카
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <div class="tab_panel active star_inserted" tabindex="0">
+                                            <h3 class="local_title star_inserted">대한항공 취항지</h3>
+                                            <ul class="local_list star_inserted">
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button all">
+                                                        <span class="local_code">SEL</span>
+                                                        <span class="local_airport">서울/모든 공항</span>
+                                                        <span class="hidden star_inserted">도시&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item indent star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">ICN</span>
+                                                        <span class="local_airport">서울/인천</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item indent star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">GMP</span>
+                                                        <span class="local_airport">서울/김포</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">PUS</span>
+                                                        <span class="local_airport">부산/김해</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CJU</span>
+                                                        <span class="local_airport">제주</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KWJ</span>
+                                                        <span class="local_airport">광주</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TAE</span>
+                                                        <span class="local_airport">대구</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">RSU</span>
+                                                        <span class="local_airport">여수/순천</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">USN</span>
+                                                        <span class="local_airport">울산</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HIN</span>
+                                                        <span class="local_airport">진주/사천</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CJJ</span>
+                                                        <span class="local_airport">청주</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KPO</span>
+                                                        <span class="local_airport">포항/경주</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!--동북아시아-->
+                                        <div class="tab_panel active star_inserted" tabindex="0" style="display: none;">
+                                            <h3 class="local_title star_inserted">대한항공 취항지</h3>
+                                            <ul class="local_list star_inserted">
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button all">
+                                                        <span class="local_code">KOJ</span>
+                                                        <span class="local_airport">가고시마</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item indent star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KHH</span>
+                                                        <span class="local_airport">가오슝</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item indent star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KMQ</span>
+                                                        <span class="local_airport">고마쓰</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CAN</span>
+                                                        <span class="local_airport">광저우</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KKJ</span>
+                                                        <span class="local_airport">기타큐슈</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">NGO</span>
+                                                        <span class="local_airport">나고야</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">NKG</span>
+                                                        <span class="local_airport">난징</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KIJ</span>
+                                                        <span class="local_airport">니가타</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">DLC</span>
+                                                        <span class="local_airport">다롄</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TYO</span>
+                                                        <span class="local_airport">도쿄/모든 공항</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">NRT</span>
+                                                        <span class="local_airport">도쿄/나리타</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HND</span>
+                                                        <span class="local_airport">도쿄/하네다</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">MFM</span>
+                                                        <span class="local_airport">마카오</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">MDG</span>
+                                                        <span class="local_airport">무단장</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">PEK</span>
+                                                        <span class="local_airport">베이징/서우두</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CTS</span>
+                                                        <span class="local_airport">삿포로/치토세</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button all">
+                                                        <span class="local_code">SHA</span>
+                                                        <span class="local_airport">상하이/모든 공항</span>
+                                                        <span class="hidden star_inserted">도시&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">PVG</span>
+                                                        <span class="local_airport">상하이/푸동</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">SHA</span>
+                                                        <span class="local_airport">상하이/홍차오</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">XMN</span>
+                                                        <span class="local_airport">샤먼</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">SHE</span>
+                                                        <span class="local_airport">선양</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">SZX</span>
+                                                        <span class="local_airport">선전</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">XIY</span>
+                                                        <span class="local_airport">시안/셴양</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">AOJ</span>
+                                                        <span class="local_airport">아오모리</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">YNJ</span>
+                                                        <span class="local_airport">옌지</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">YNT</span>
+                                                        <span class="local_airport">옌타이</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KIX</span>
+                                                        <span class="local_airport">오사카/간사이</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">OIT</span>
+                                                        <span class="local_airport">오이타</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">OKJ</span>
+                                                        <span class="local_airport">오카야마</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">OKA</span>
+                                                        <span class="local_airport">오키나와</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">URC</span>
+                                                        <span class="local_airport">우루무치</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">WUH</span>
+                                                        <span class="local_airport">우한</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">WEH</span>
+                                                        <span class="local_airport">웨이하이</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">DYG</span>
+                                                        <span class="local_airport">장자제</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CGO</span>
+                                                        <span class="local_airport">정저우</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">DYG</span>
+                                                        <span class="local_airport">장자제</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CGO</span>
+                                                        <span class="local_airport">정저우</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TNA</span>
+                                                        <span class="local_airport">지난</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CSX</span>
+                                                        <span class="local_airport">창사</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TAO</span>
+                                                        <span class="local_airport">칭다오</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KMG</span>
+                                                        <span class="local_airport">쿤밍</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TPE</span>
+                                                        <span class="local_airport">타이베이/타오위엔</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TSN</span>
+                                                        <span class="local_airport">톈진</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HGH</span>
+                                                        <span class="local_airport">항저우</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HFE</span>
+                                                        <span class="local_airport">허페이</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HKG</span>
+                                                        <span class="local_airport">홍콩</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TXN</span>
+                                                        <span class="local_airport">황산</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">FUK</span>
+                                                        <span class="local_airport">후쿠오카</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <button type="button" class="dialog_close">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+         
+
+            <div class="departure_city" >
+                <div>
+                    <div class="star_inserted">
+                        <div class="dialog full main arrival active" style="top:468px; " >
+                            <div class="dialog_contents">
+                                <h2 class="h2">도착지 검색</h2>
+                                <span class="hidden ">인터넷 익스플로러 11버전과 센스리더를 사용하시는 경우 가상커서모드를 끄고 사용해주세요</span>
+                                <div class="dialog_aligner">
+                                    <div class="search_airport">
+                                        <label for="search_airport" class="hidden">도시 및 공항 검색</label>
+                                        <div>
+                                            <div class="combobox">
+                                                <div class="auto_search">
+                                                    <span class="placeholder" style="display: block;">도시, 공항</span>
+                                                    <input type="text" class="auto_search_text pristine">
+                                                    <button type="button" class="auto_search_clear">
+                                                        <span class="hidden">전체 삭제</span>
+                                                    </button>
+                                                    <div class="hidden"></div>
+                                                </div>
+                                                <div class="combobix_listbox">
+                                                    <ul class="combobox_list mo_hidden">
+                                                        <li class="combobox_item auto_complete_item" id="item0">
+                                                            <em class="combobox_code">
+                                                                <mark class="combobox_highlight">A</mark>
+                                                                VK&nbsp;
+                                                            </em>
+                                                            <span class="combobox_airport">
+                                                                낸터킷, m
+                                                                <mark class="combobox_highlight">A</mark>
+                                                                , 미국
+                                                            </span>
+                                                            <span class="hidden">공항</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search_airport_wrap">
+
+                                        </div>
+                                        <button type="button" class="search_airport_local">모든 지역 보기</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="dialog_close">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="departure_city1" >
+                <div>
+                    <div class="star_inserted">
+                        <div class="dialog main arrival active" style="top:468px">
+                            <div class="dialog_contents" tabindex="-1">
+                                <div class="local">
+                                    <h2 class="h2" id="dialog_local">지역과 도시 선택</h2>
+                                    <div class="tab y mo_hidden star_inserted" id="tab_local">
+                                        <ul class="tab_list">
+                                            <li class="tab_item active star_inserted">
+                                                <button type="button" class="tab_button">
+                                                    대한민국
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    동북아시아
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    동남아시아/서남아시아
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    미주
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    대양주/괌
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    러시아/몽골/중앙아시아
+                                                </button>
+                                            </li>
+                                            <li class="tab_item star_inserted">
+                                                <button type="button" class="tab_button" tabindex="-1">
+                                                    중동/아프리카
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <div class="tab_panel active star_inserted" tabindex="0">
+                                            <h3 class="local_title star_inserted">대한항공 취항지</h3>
+                                            <ul class="local_list star_inserted">
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button all">
+                                                        <span class="local_code">SEL</span>
+                                                        <span class="local_airport">서울/모든 공항</span>
+                                                        <span class="hidden star_inserted">도시&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item indent star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">ICN</span>
+                                                        <span class="local_airport">서울/인천</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item indent star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">GMP</span>
+                                                        <span class="local_airport">서울/김포</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">PUS</span>
+                                                        <span class="local_airport">부산/김해</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CJU</span>
+                                                        <span class="local_airport">제주</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KWJ</span>
+                                                        <span class="local_airport">광주</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TAE</span>
+                                                        <span class="local_airport">대구</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">RSU</span>
+                                                        <span class="local_airport">여수/순천</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">USN</span>
+                                                        <span class="local_airport">울산</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HIN</span>
+                                                        <span class="local_airport">진주/사천</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CJJ</span>
+                                                        <span class="local_airport">청주</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KPO</span>
+                                                        <span class="local_airport">포항/경주</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!--동북아시아-->
+                                        <div class="tab_panel active star_inserted" tabindex="0" style="display: none;">
+                                            <h3 class="local_title star_inserted">대한항공 취항지</h3>
+                                            <ul class="local_list star_inserted">
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button all">
+                                                        <span class="local_code">KOJ</span>
+                                                        <span class="local_airport">가고시마</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item indent star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KHH</span>
+                                                        <span class="local_airport">가오슝</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item indent star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KMQ</span>
+                                                        <span class="local_airport">고마쓰</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CAN</span>
+                                                        <span class="local_airport">광저우</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KKJ</span>
+                                                        <span class="local_airport">기타큐슈</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">NGO</span>
+                                                        <span class="local_airport">나고야</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">NKG</span>
+                                                        <span class="local_airport">난징</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KIJ</span>
+                                                        <span class="local_airport">니가타</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">DLC</span>
+                                                        <span class="local_airport">다롄</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TYO</span>
+                                                        <span class="local_airport">도쿄/모든 공항</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">NRT</span>
+                                                        <span class="local_airport">도쿄/나리타</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HND</span>
+                                                        <span class="local_airport">도쿄/하네다</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">MFM</span>
+                                                        <span class="local_airport">마카오</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">MDG</span>
+                                                        <span class="local_airport">무단장</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">PEK</span>
+                                                        <span class="local_airport">베이징/서우두</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CTS</span>
+                                                        <span class="local_airport">삿포로/치토세</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button all">
+                                                        <span class="local_code">SHA</span>
+                                                        <span class="local_airport">상하이/모든 공항</span>
+                                                        <span class="hidden star_inserted">도시&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">PVG</span>
+                                                        <span class="local_airport">상하이/푸동</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">SHA</span>
+                                                        <span class="local_airport">상하이/홍차오</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">XMN</span>
+                                                        <span class="local_airport">샤먼</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">SHE</span>
+                                                        <span class="local_airport">선양</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">SZX</span>
+                                                        <span class="local_airport">선전</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">XIY</span>
+                                                        <span class="local_airport">시안/셴양</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">AOJ</span>
+                                                        <span class="local_airport">아오모리</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">YNJ</span>
+                                                        <span class="local_airport">옌지</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">YNT</span>
+                                                        <span class="local_airport">옌타이</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KIX</span>
+                                                        <span class="local_airport">오사카/간사이</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">OIT</span>
+                                                        <span class="local_airport">오이타</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">OKJ</span>
+                                                        <span class="local_airport">오카야마</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">OKA</span>
+                                                        <span class="local_airport">오키나와</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">URC</span>
+                                                        <span class="local_airport">우루무치</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">WUH</span>
+                                                        <span class="local_airport">우한</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">WEH</span>
+                                                        <span class="local_airport">웨이하이</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">DYG</span>
+                                                        <span class="local_airport">장자제</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CGO</span>
+                                                        <span class="local_airport">정저우</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">DYG</span>
+                                                        <span class="local_airport">장자제</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CGO</span>
+                                                        <span class="local_airport">정저우</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TNA</span>
+                                                        <span class="local_airport">지난</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">CSX</span>
+                                                        <span class="local_airport">창사</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TAO</span>
+                                                        <span class="local_airport">칭다오</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">KMG</span>
+                                                        <span class="local_airport">쿤밍</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TPE</span>
+                                                        <span class="local_airport">타이베이/타오위엔</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TSN</span>
+                                                        <span class="local_airport">톈진</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HGH</span>
+                                                        <span class="local_airport">항저우</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HFE</span>
+                                                        <span class="local_airport">허페이</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">HKG</span>
+                                                        <span class="local_airport">홍콩</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">TXN</span>
+                                                        <span class="local_airport">황산</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                                <li class="local_item star_inserted">
+                                                    <button type="button" class="local_button">
+                                                        <span class="local_code">FUK</span>
+                                                        <span class="local_airport">후쿠오카</span>
+                                                        <span class="hidden star_inserted">공항&nbsp;</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <button type="button" class="dialog_close">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+
+            <div id="quickmytrips_datepicker" class="departure_city">
+                <div>
+                    <div>
+                        <div class="tns star_inserted">
+                            <div class="dialog active tns main full star_inserted" id="dialog_datepicker" style="transform:translateX(-50%); left:50%; top:468px;">
+                                <div class="dialog_contents datepicker">
+                                    <div class="datepicker fixed_mode main">
+                                        <div class="datepicker_seperate">
+                                            <div class="hidden">
+
+                                            </div>
+                                            <div class="datepicker_aligner">
+                                                <div class="datepicker_controls mo_hidden" role="navigation">
+                                                    <button type="button" class="datepicker_prev">지난 2달</button>
+                                                    <button type="button" class="datepicker_next">다음 2달</button>
+                                                </div>
+                                                <div class="datepicker_list case2">
+                                                    <div class="tns datepicker_item active star_inserted">
+                                                        <div class="datepicker_year">
+                                                            <span class="tns">
+                                                                2023
+                                                                <span class="datepicker_month">5월</span>
+                                                            </span>
+                                                            <span class="hidden">2023년 5월</span>
+                                                        </div>
+                                                        <div class="tns" role="application">
+                                                            <table class="datepicker_table" role="presentation">
+                                                                <colgroup class="tns star_inserted">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                </colgroup>
+                                                                <thead class="datepicker_thead">
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_th">일</td>
+                                                                        <td class="datepicker_th">월</td>
+                                                                        <td class="datepicker_th">화</td>
+                                                                        <td class="datepicker_th">수</td>
+                                                                        <td class="datepicker_th">목</td>
+                                                                        <td class="datepicker_th">금</td>
+                                                                        <td class="datepicker_th">토</td>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="datepicker_error">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="tns datepicker_item active star_inserted">
+                                                        <div class="datepicker_year">
+                                                            <span class="tns">
+                                                                2023
+                                                                <span class="datepicker_month">5월</span>
+                                                            </span>
+                                                            <span class="hidden">2023년 5월</span>
+                                                        </div>
+                                                        <div class="tns" role="application">
+                                                            <table class="datepicker_table" role="presentation">
+                                                                <colgroup class="tns star_inserted">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                    <col class="tns" style="width:14.28%">
+                                                                </colgroup>
+                                                                <thead class="datepicker_thead">
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_th">일</td>
+                                                                        <td class="datepicker_th">월</td>
+                                                                        <td class="datepicker_th">화</td>
+                                                                        <td class="datepicker_th">수</td>
+                                                                        <td class="datepicker_th">목</td>
+                                                                        <td class="datepicker_th">금</td>
+                                                                        <td class="datepicker_th">토</td>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="tns">
+                                                                        <td class="datepicker_td tns"></td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                        <td class="tns datepicker_td available" tabindex="-1">
+                                                                            <span class="tns">
+                                                                                1
+                                                                            </span>
+                                                                            <span class="hidden">
+                                                                                1일, 월요일
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="datepicker_error">
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dialog_buttons datepicker fix">
+                                            <div class="dialog_new_datepicker_aligner">
+                                                <div class="datepicker_util">
+                                                    <div class="datepicker_directs multi">
+                                                        <div class="datepicker_guide">
+                                                            <p class="caption center">
+                                                                키보드 운용방법 : 화살표 키로 날짜를 탐색하고 Enter키로 날짜를 선택할 수 있습니다.
+                                                            </p>
+                                                        </div>
+                                                        <div class="dialog_buttons_area">
+                                                            <button type="button" class="dialog_confirm">확인</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="dialog_close">닫기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="departure_city" >
+                <div>
+                    <div class="star_inserted">
+                        <div class="dialog active passenger_num main" style="top:468px; transform:translateX(-50%); left: 50%;" >
+                            <div class="dialog_contents" tabindex="-1">                               
+                                <h2 class="h2" id="dialog_local">승객 선택</h2>
+                                <div class="dialog_aligner">
+                                        <div class="alert">
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                        <div class="passenger">
+                                            <div class="passenger_items col3">
+                                                <div class="passenger_item">
+                                                    <div>
+                                                        <div class="passenger_title">
+                                                            <label for="adultCount">
+                                                                <span class="passenger_label">성인</span>
+                                                            </label>
+                                                            <button type="button" class="opener popover_trigger">
+                                                                성인 기준 상세 안내
+                                                            </button>
+                                                            <div class="toggleWrap">
+    
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="passenger_controls">
+                                                        <button type="button" class="passenger_control sub">
+                                                            성인 탑승자 한명 줄이기
+                                                        </button>
+                                                        <div class="forms">
+                                                            <input type="tel" class="center untouched pristine valid" maxlength="1">
+                                                        </div>
+                                                        <div class="hidden">
+    
+                                                        </div>
+                                                        <button type="button" class="passenger_control add">
+                                                            성인 탑승자 한 명 늘리기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="passenger_item">
+                                                    <div>
+                                                        <div class="passenger_title">
+                                                            <label for="childCount">
+                                                                <span class="passenger_label">소아</span>
+                                                            </label>
+                                                            <button type="button" class="opener popover_trigger">
+                                                                소아 기준 상세 안내
+                                                            </button>
+                                                            <div class="toggleWrap"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="passenger_controls">
+                                                        <button type="button" class="passenger_control sub">
+                                                            소아 탑승자 한 명 줄이기
+                                                        </button>
+                                                        <div class="forms">
+                                                            <input type="tel" class="center untouched pristine valid" maxlength="1">
+                                                        </div>
+                                                        <div class="hidden">
+    
+                                                        </div>
+                                                        <button type="button" class="passenger_control add">소아 탑승자 한 명 늘리기</button>
+                                                    </div>
+                                                </div>
+                                                <div class="passenger_item">
+                                                    <div>
+                                                        <div class="passenger_title">
+                                                            <label for="infantCount">
+                                                                <span class="passenger_label">유아</span>
+                                                            </label>
+                                                            <button type="button" class="opener popover_trigger">
+                                                                유아 기준 상세 안내
+                                                            </button>
+                                                            <div class="toggleWrap"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="passenger_controls">
+                                                        <button type="button" class="passenger_control sub">
+                                                            유아 탑승자 한 명 줄이기
+                                                        </button>
+                                                        <div class="forms">
+                                                            <input type="tel" class="center untouched pristine valid" maxlength="1">
+                                                        </div>
+                                                        <div class="hidden">
+    
+                                                        </div>
+                                                        <button type="button" class="passenger_control add">유아 탑승자 한 명 늘리기</button>
+                                                    </div>
+                                                </div>
+                                            </div>                                       
+                                            <div>
+                                                <button type="button" class="passenger_cal_button">나이계산기</button>
+                                                <div class="passenger_cal">
+                                                    <div class="mix">
+                                                        <label for="birthday" class="label">
+                                                            생년월일
+                                                            <span>(YYYY.MM.DD.)</span>
+                                                        </label>
+                                                        <div class="forms_option">
+                                                            <div class="forms">
+                                                                <span class="placeholder" style="display: block;">
+                                                                    <span class="hidden"> 년도 4자리, 월 2자리. 일 2자리</span>
+                                                                </span>
+                                                                <input type="tel" class="untouched pristine invalid" maxlength="11">
+                                                            </div>
+                                                            <button type="button" class="option ghost">
+                                                                <span class="hidden">나이(탑승일 기준)&nbsp;</span>
+                                                                계산하기
+                                                            </button>
+                                                        </div>
+                                                        <div class="mix_message active">
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="notice main">
+                                            <h3 class="hidden">유의사항</h3>
+                                            <ul class="list disc">
+                                                <li class="list_item">
+                                                    구매와 동시승급을 이용하시는 경우 마일리지 공제를 위해 등록된 가족 기준으로 승객선택을 해주시기 바랍니다.
+                                                </li>
+                                                <li class="list_item remark positive">
+                                                    만 14세 미만 승객은 예매 시 법정대리인의 동의 및 이증이 필요합니다. 로그인 후 예매를 진행하여 주시기 바랍니다.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="confirms center">
+                                            <button type="button" class="confirm">확인</button>
+                                        </div>
+                                </div>  
+                                <button type="button" class="dialog_close">닫기</button>                                                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div> 
+            
+            
+            
+              
+            <div class="departure_city" >
+                <div>
+                    <div class="star_inserted">
+                        <div class="dialog active full main seat_class" style="top:468px; transform:translateX(-50%); left: 50%;" >
+                            <div class="dialog_contents">                                                             
+                                <div class="dialog_aligner">
+                                    <h2 class="h2" id="dialog_seatclass">좌석 등급 선택</h2>    
+                                        <div class>
+                                       
+                                        </div>
+                                        <div class="seatclass">
+                                            <div class="seatclass_list" role="group">
+                                                <div class="seatclass_item star_inserted">
+                                                    <input type="radio" value="Y" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        일반석
+                                                    </label>
+                                                </div>
+                                                <div class="seatclass_item star_inserted">
+                                                    <input type="radio" value="C" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        프레스티지석
+                                                    </label>
+                                                </div>
+                                                <div class="seatclass_item star_inserted">
+                                                    <input type="radio" value="F" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        일등석
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="seatclass_dispose dispose left middle star_inserted">
+                                                <h3 class="h3">구매와 동시 승급</h3>
+                                                <button type="button" class="opener popover_trigger">
+                                                    좌석 승급 상세 안내
+                                                </button>
+                                                <div class="togglewrap"></div>
+                                            </div>
+                                            <div class="seatclass_list star_inserted" role="group">
+                                                <div class="seatclass_item">
+                                                    <input type="radio" value="Y,C" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        일반석 구매 + 프레스티지석 승급
+                                                    </label>
+                                                </div>
+                                                <div class="seatclass_item star_inserted">
+                                                    <input type="radio" value="C,F" class="seatclass_input untouched pristine valid">
+                                                    <label for="seatclass" class="seatclass_label">
+                                                        프레스티지석 구매 + 일등석 승급
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="confirms center">
+                                            <button type="button" class="confirm" disabled>확인</button>
+                                        </div>
+                                    </div>  
+                                <button type="button" class="dialog_close">닫기</button>                                                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>           
+            </div>   
+        
+        
+        
+        </div>
+       
+
+
+
+        <div id="fare_deal">
+            <section class="fd_section fare_deal">
+                <div class="fd_container">
+                    <div class="fd_header_cont">
+                        <div class="fd_header">
+                            <h3 class="fd_header_text">
+                                <div place="country" class="fd_dropdown">
+                                    <span class="fd_header_text">서울</span>
+                                </div>
+                                출발 프로모션 운임
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="fd_content hidden_XS">
+                        <div class="fd_row">
+                            <div class="fd_col">
+                                <a href="#" class="fd_item">
+                                    <div class="blurcontain fd_image" style="background-image: url(img/bangkok.jpg);">
+
+                                    </div>
+                                    <div class="fd_description_wrapper">
+                                        <div class="fd_description_country">방콕</div>
+                                        <div class="fd_description_cabin">이코노미</div>
+                                        <div class="fd_description_price">
+                                            <table>
+                                                <tr>
+                                                    <td class="fd_description_currency">
+                                                        "최저"
+                                                        <span>KRW 400,000</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <!--메인 끝-->
+
+
+
+  </div>
